@@ -1,0 +1,36 @@
+{
+  "short_name": "Mayro",
+  "name": "Mayro: Google Material Design Theme",
+  "description": "Google Material Design Theme for Question2Answer (Q2A).",
+  "icons": [
+    {
+      "src": "/images/icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#EEEEEE",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#320b86",
+  "shortcuts": [
+    {
+      "name": "My Updates",
+      "short_name": "Updates",
+      "url": "/updates",
+      "icons": [{ "src": "/images/updates.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Ask a Question",
+      "short_name": "Ask",
+      "url": "/ask",
+      "icons": [{ "src": "/images/ask.png", "sizes": "192x192" }]
+    }
+  ]  
+}
