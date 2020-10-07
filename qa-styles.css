@@ -1,11 +1,8 @@
 /*
-    Theme URI: https://github.com/MominRaza/Mayro
-	Theme Version: 1.2
-    Theme Date: 2020-10-4
+	Theme Version: 1.4
+    Theme Date: 2020-10-6
     Theme Author: Momin Raza
     Theme Author URI: https://github.com/MominRaza
-    Theme License: GPLv3
-    Theme Update Check URI: https://github.com/MominRaza/Mayro/releases
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
@@ -16,12 +13,16 @@
 	find them from here https://material.io/resources/color
 */
 :root{
-	/* --primary: #673ab7; */
-	--primary-rgb: 103, 58, 183;
-	--primary: rgb(var(--primary-rgb));
+	color-scheme: light dark;
+
+	--primary-900: #311b92;
+	--primary-light-900: #6746c3;
+	--primary-dark-900: #000063;
+	--primary-rgb: 49, 27, 146;
+	--primary: var(--primary-900);
 	/* primary dark used in manifest file as theme_color */
-	--primary-dark: #320b86;
-	--primary-light: #9a67ea;
+	--primary-dark: var(--primary-dark-900);
+	--primary-light: var(--primary-light-900);
     --secondary: #ffab91;
 	--secondary-dark: #c97b63;
 	--secondary-light: #ffddc1;
@@ -36,8 +37,48 @@
 	--on-surface: #000000;
 	--on-error: #FFFFFF;
 
-	--link: #2980b9;
+	--link: #005c98;
+	--selected: var(--primary);
+
+	--appbar-shadow: 0 2px 2px gray;
+	--fab-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+					0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+					0px 1px 18px 0px rgba(0,0,0,.12);
 }
+/* @media (prefers-color-scheme: dark){
+	:root{
+		--primary-rgb: 255, 255, 255;
+		--primary: #2f2f2f;
+		--primary-dark: rgba(255, 255, 255, .14);
+		--primary-light: rgba(255, 255, 255, .10);
+		--secondary: #2c2c2c;
+		--secondary-dark: rgba(255, 255, 255, .13);
+		--secondary-light: rgba(255, 255, 255, .09);
+	
+		--background: #121212;
+		--surface: rgba(255,255,255,.05);
+		--surface-solid: #1e1e1e;
+		--error: #CF6679;
+	
+		--on-primary: #b39ddb;
+		--on-secondary: #ffab91;
+		--on-background: #ffffff;
+		--on-surface: rgb(255, 255, 255, .87);
+		--on-error: #FFFFFF;
+	
+		--link: #7dafcf;
+		--selected: var(--on-primary);
+
+		--appbar-shadow: 0 transparent;
+		--fab-shadow: 0 transparent;
+	}
+	img {
+		filter: brightness(.8) contrast(1.2);
+	}
+	p,li{
+		color: rgba(255, 255, 255, .60);
+	}
+} */
 
 body{
 	font-family: 'Roboto', sans-serif;
@@ -50,23 +91,32 @@ body{
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	color: var(--on-surface);
 }
-
 a{
 	color: var(--link);
 	text-decoration: none;
 }
-input[type='text'], input[type='submit'], input[type='password'], select, textarea{
+hr{
+	background-color: var(--on-surface);
+	border: none;
+	height: 1px;
+	margin: 10px 0;
+}
+input[type='text'], input[type='password'], select, textarea{
 	width: 100%;
 	padding: 5px 10px;
 	font-size: 1.2em;
 	border-radius: 4px;
+	background-color: var(--surface);
 }
 input[type='checkbox'], input[type='radio']{
 	margin-right: 10px;
 }
 input[type='submit']{
-	width: auto;
+	padding: 5px 10px;
+	font-size: 1.2em;
+	border-radius: 4px;
 }
 select{
 	margin-top: 10px;
@@ -84,7 +134,7 @@ select{
 	height: 56px;
 	padding-top: 13px;
 	background-color: var(--primary);
-	box-shadow: 0 2px 3px gray;
+	box-shadow: var(--appbar-shadow);
     z-index: 4;
 }
 .qa-logo-link{
@@ -195,7 +245,7 @@ select{
 }
 .qa-nav-user-link.qa-nav-user-selected{
 	background-color: rgba(var(--primary-rgb), .12);
-	color: var(--primary);
+	color: var(--selected);
 }
 .qa-nav-user-link:hover{
 	background-color: rgba(var(--primary-rgb), .12);
@@ -235,6 +285,7 @@ select{
 }
 .qa-search-button i{
 	font-size: 30px;
+	color: var(--on-primary);
 }
 @media(min-width:1024px){
 	.qa-search{
@@ -263,7 +314,7 @@ select{
 	left: 0;
 	width: 300px;
 	height: 100vh;
-	background-color: var(--surface);
+	background-color: var(--surface-solid, var(--surface));
 	box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
 				0px 1px 1px 0px rgba(0, 0, 0, 0.14),
 				0px 1px 3px 0px rgba(0,0,0,.12);
@@ -293,10 +344,10 @@ select{
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: 300px;
+		width: 299px;
 		height: 56px;
 		padding-top: 13px;
-		background-color: var(--surface);
+		background-color: var(--surface-solid, var(--surface));
 		box-shadow: unset;
 		z-index: 6;
 	}
@@ -325,7 +376,7 @@ select{
 	color: var(--on-surface);
 }
 .qa-nav-main-link.qa-nav-main-selected{
-	color: var(--primary);
+	color: var(--selected);
 	background-color: rgba(var(--primary-rgb), 0.12);
 }
 .qa-nav-main-link:hover{
@@ -381,7 +432,7 @@ select{
 }
 .qa-nav-sub-list{
 	position: fixed;
-	top: 55px;
+	top: 56px;
 	left: 0;
 	width: 100%;
 	background-color: var(--primary);
@@ -389,7 +440,7 @@ select{
 	overflow: hidden;
 	overflow-x: auto;
 	list-style: none;
-	box-shadow: 0 2px 3px gray;
+	box-shadow: var(--appbar-shadow);
 	z-index: 4;
 }
 .qa-nav-sub-list::-webkit-scrollbar,
@@ -642,7 +693,7 @@ select{
 				0px 1px 3px 0px rgba(0,0,0,.12);
 }
 .qa-q-list-item.qa-q-favorited{
-	border-left: 3px solid var(--primary);
+	border-left: 3px solid var(--selected);
 	border-radius: 0 4px 4px 0;
 	padding-left: 13px;
 }
@@ -793,7 +844,7 @@ select{
     position: fixed;
     bottom: 15px;
 	right: 15px;
-	box-shadow: 1px 1px 10px gray;
+	box-shadow: var(--fab-shadow)
 }
 .qam-ask-link{
 	padding: 10px 15px;
@@ -801,7 +852,8 @@ select{
 	color: var(--on-secondary);
 }
 .qam-ask .material-icons{
-    margin-right: 5px;
+	margin-right: 8px;
+	color: var(--on-secondary);
 }
 
 /* footer */
@@ -950,7 +1002,7 @@ select{
 				0px 1px 3px 0px rgba(0,0,0,.12);
 }
 .qa-a-list-item-selected{
-	border: 3px solid var(--primary-dark);
+	border: 3px solid var(--selected);
 	border-top-width: 8px;
 }
 
@@ -983,10 +1035,10 @@ select{
 	color: var(--error);
 }
 .qa-a-selection i.select{
-	color: var(--primary);
+	color: var(--selected);
 }
 .qa-a-selection i.selected{
-	color: var(--primary-dark);
+	color: var(--selected);
 	font-size: 40px;
 }
 /* post content */
@@ -1395,7 +1447,7 @@ select{
 	color: gray;
 }
 .qa-vote-buttons i.enabled{
-	color: black;
+	color: var(--on-surface);
 }
 .qa-vote-buttons i.voted_up{
 	color: var(--link);
