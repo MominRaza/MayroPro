@@ -14,10 +14,11 @@
 */
 :root{
 	color-scheme: light dark;
-
 	--primary-900: #311b92;
 	--primary-light-900: #6746c3;
 	--primary-dark-900: #000063;
+}
+body{
 	--primary-rgb: 49, 27, 146;
 	--primary: var(--primary-900);
 	/* primary dark used in manifest file as theme_color */
@@ -45,8 +46,42 @@
 					0px 6px 10px 0px rgba(0, 0, 0, 0.14),
 					0px 1px 18px 0px rgba(0,0,0,.12);
 }
-/* @media (prefers-color-scheme: dark){
-	:root{
+
+body.dark-theme{
+	--primary-rgb: 255, 255, 255;
+	--primary: #2f2f2f;
+	--primary-dark: rgba(255, 255, 255, .14);
+	--primary-light: rgba(255, 255, 255, .10);
+	--secondary: #2c2c2c;
+	--secondary-dark: rgba(255, 255, 255, .13);
+	--secondary-light: rgba(255, 255, 255, .09);
+
+	--background: #121212;
+	--surface: rgba(255,255,255,.05);
+	--surface-solid: #1e1e1e;
+	--error: #CF6679;
+
+	--on-primary: #b39ddb;
+	--on-secondary: #ffab91;
+	--on-background: #ffffff;
+	--on-surface: rgb(255, 255, 255, .87);
+	--on-error: #FFFFFF;
+
+	--link: #7dafcf;
+	--selected: var(--on-primary);
+
+	--appbar-shadow: 0 transparent;
+	--fab-shadow: 0 transparent;
+}
+body.dark-theme img {
+	filter: brightness(.8) contrast(1.2);
+}
+body.dark-theme p, body.dark-theme li{
+	color: rgba(255, 255, 255, .60);
+}
+
+@media (prefers-color-scheme: dark){
+	body{
 		--primary-rgb: 255, 255, 255;
 		--primary: #2f2f2f;
 		--primary-dark: rgba(255, 255, 255, .14);
@@ -78,7 +113,42 @@
 	p,li{
 		color: rgba(255, 255, 255, .60);
 	}
-} */
+
+	body.light-theme{
+		--primary-rgb: 49, 27, 146;
+		--primary: var(--primary-900);
+		--primary-dark: var(--primary-dark-900);
+		--primary-light: var(--primary-light-900);
+		--secondary: #ffab91;
+		--secondary-dark: #c97b63;
+		--secondary-light: #ffddc1;
+	
+		--background: #EEEEEE;
+		--surface: #FFFFFF;
+		--surface-solid: unset;
+		--error: #B00020;
+	
+		--on-primary: #FFFFFF;
+		--on-secondary: #000000;
+		--on-background: #000000;
+		--on-surface: #000000;
+		--on-error: #FFFFFF;
+	
+		--link: #005c98;
+		--selected: var(--primary);
+	
+		--appbar-shadow: 0 2px 2px gray;
+		--fab-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+						0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+						0px 1px 18px 0px rgba(0,0,0,.12);
+	}
+	body.light-theme img {
+		filter: unset;
+	}
+	body.light-theme p, body.light-theme li{
+		color: unset;
+	}
+}
 
 body{
 	font-family: 'Roboto', sans-serif;
@@ -193,7 +263,7 @@ select{
 	top: 40%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	background-color: var(--surface);
+	background-color: var(--surface-solid, var(--surface));
 	border-radius: 4px;
 	box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2),
 				0px 24px 38px 3px rgba(0, 0, 0, 0.14),
@@ -204,15 +274,18 @@ select{
 	z-index: 4;
 	padding: 10px 0;
 }
-#qa-nav-user.active{
+#qa-nav-user.active #qa-nav-user-clear{
 	z-index: 5;
 	background-color: rgba(0,0,0,.32);
 	position: fixed;
 	height: 100vh;
 	width: 100%;
+	top: 0;
+	left: 0;
 }
 #qa-nav-user.active .qa-nav-user{
 	display: block;
+	z-index: 6;
 }
 .qa-nav-user .qa-logged-in{
 	font-size: 1.25rem;
@@ -332,12 +405,14 @@ select{
 					0px 9px 46px 8px rgba(0,0,0,.12);
 		padding-top: 56px;
 	}
-	.menu-active #qa-nav-main{
-		z-index: 5;
+	.menu-active #qa-nav-main-clear{
+		z-index: 4;
 		background-color: rgba(0,0,0,.32);
 		position: fixed;
 		height: 100vh;
 		width: 100%;
+		top: 0;
+		left: 0;
 	}
 	.menu-active #qa-nav-main .qa-logo{
 		display: block;
@@ -673,6 +748,8 @@ select{
 }
 .qa-main-heading h1{
 	width: 100%;
+	font-size: 24px;
+	margin-right: 10px;
 }
 .qa-main-heading,
 #a_list_title,
@@ -829,10 +906,6 @@ select{
 .qa-suggest-next{
 	margin-bottom: 20px;
 }
-/* question page */
-.qa-main-heading h1{
-	font-size: 24px;
-}
 
 /* fab */
 .qam-ask{
@@ -861,6 +934,11 @@ select{
 	margin-top: 20px;
 	padding: 10px;
 }
+@media(max-width:768px){
+	.qa-footer{
+		padding-bottom: 0;
+	}
+}
 .qa-nav-footer-list{
 	display: flex;
 	list-style: none;
@@ -870,18 +948,22 @@ select{
 	margin-bottom: 10px;
 }
 .qa-attribution{
-	float: left;
 	margin-right: 10px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 @media(min-width:768px){
 	.qa-attribution{
-		margin-bottom: 10px;
-	}	
+		float: left;
+	}
 	.qa-attribution:nth-child(3){
 		padding-left: 10px;
 		border-left: 1px solid var(--on-surface);
 	}
+}
+.theme-toggle{
+	cursor: pointer;
+	font-size: 20px !important;
+    top: 4px !important;
 }
 
 /* form */
@@ -1048,14 +1130,18 @@ select{
 	font-size: 1.2em;
 }
 .qa-post-content p, .qa-part-custom p{
-	padding-bottom: 5px;
+	padding: 5px 0;
 }
 .qa-post-content img{
 	max-width: 100%;
 	height: auto !important;
 }
 .qa-post-content li, .qa-part-custom li{
-	margin-left: 20px;
+	margin-left: 25px;
+}
+.qa-post-content ul, .qa-part-custom ul,
+.qa-post-content ol, .qa-part-custom ol{
+	margin: 5px 0;
 }
 .qa-post-content blockquote{
 	background-color: rgba(var(--primary-rgb), .12);
@@ -1503,4 +1589,57 @@ select{
 .qa-related-qs .qa-related-q-item:last-child,
 .qa-ask-similar .qa-q-title-item:last-child{
 	border-bottom: none;
+}
+
+/* extra menu */
+.qam-stats-buttons .qa-form-light-button-edit,
+.qam-stats-buttons .qa-form-light-button-close,
+.qam-stats-buttons .qa-form-light-button-hide,
+.qam-stats-buttons .qa-form-light-button-flag,
+.qam-stats-buttons .qa-form-light-button-follow,
+.qam-stats-buttons .qa-form-light-button-unflag{
+	display: none;
+}
+.qa-q-view-main{
+	
+    position: relative;
+}
+#qam-q-extra-menu{
+	float: right;
+	display: inline-block;
+    position: absolute;
+    top: 19px;
+    right: 19px;
+}
+#qam-q-extra-menu .qa-form-light-button-answer,
+#qam-q-extra-menu .qa-form-light-button-comment{
+	display: none;
+}
+#qam-q-extra-menu .qa-q-view-buttons{
+	position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 2px;
+    padding: 8px 0;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,.302), 0 1px 3px 1px rgba(60,64,67,.149);
+    background-color: var(--surface-solid, var(--surface));
+    min-width: 175px;
+    will-change: opacity,transform;
+    transition: opacity .3s cubic-bezier(.175,.885,.22,1.105),transform .3s cubic-bezier(.175,.885,.22,1.105);
+    transform: scale(1);
+    transform-origin: 100% 100%;
+    pointer-events: auto;
+    visibility: visible;
+    opacity: 1;
+    border-radius: 4px;
+    z-index: 5;
+}
+#qam-q-extra-menu .qa-form-light-button{
+	background-color: unset;
+	width: 100%;
+	margin: 0;
+	border-radius: unset;
+	text-align: left;
+	padding: .8rem 16px;
+	color: var(--on-surface);
 }

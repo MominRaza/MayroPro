@@ -25,6 +25,19 @@ class qa_html_theme extends qa_html_theme_base
 		parent::head_script();
 	}
 
+	public function body_tags()
+	{
+		$themeClass = '';
+		if (!empty($_COOKIE['theme'])) {
+			if ($_COOKIE['theme'] == 'dark') {
+				$themeClass = 'dark-theme';
+			} else if ($_COOKIE['theme'] == 'light') {
+				$themeClass = 'light-theme';
+			}
+		}
+		$this->output('class="'.$themeClass.'"');
+	}
+
 	// Adding point count for logged in user
 	public function logged_in()
 	{
@@ -110,8 +123,9 @@ class qa_html_theme extends qa_html_theme_base
 	public function nav_user_search()
 	{
 		$this->qam_user_account();
-		$this->output('<div id="qa-nav-user" onclick="toggleUser()">');
+		$this->output('<div id="qa-nav-user">');
 		$this->nav('user');
+		$this->output('<div id="qa-nav-user-clear" onclick="toggleUser()"></div>');
 		$this->output('</div>');
 		$this->output('<div id="qa-search">');
 		$this->search();
@@ -120,10 +134,11 @@ class qa_html_theme extends qa_html_theme_base
 
 	public function nav_main_sub()
 	{
-		$this->output('<div id="qa-nav-main" onclick="toggleMenu()">');
+		$this->output('<div id="qa-nav-main">');
 		$this->logo();
 		$this->nav('main');
 		$this->output('</div>');
+		$this->output('<div id="qa-nav-main-clear" onclick="toggleMenu()"></div>');
 		$this->nav('sub');
 	}
 
@@ -230,6 +245,7 @@ class qa_html_theme extends qa_html_theme_base
 		$this->avatar($post, $class, $avatarprefix);
 		$this->post_meta($post, $class, $metaprefix, $metaseparator);
 		$this->output('</span>');
+
 		$this->output('</div>');
 	}
 
@@ -249,6 +265,17 @@ class qa_html_theme extends qa_html_theme_base
 	{
 		$this->output('<div class="qa-q-view-main">');
 
+		$this->output('<div id="qam-q-extra-menu">');
+			if (isset($q_view['main_form_tags'])) {
+				$this->output('<form ' . $q_view['main_form_tags'] . '>'); // form for buttons on question
+			}
+			$this->q_view_buttons($q_view);
+			if (isset($q_view['main_form_tags'])) {
+				$this->form_hidden_elements(@$q_view['buttons_form_hidden']);
+				$this->output('</form>');
+			}
+		$this->output('</div>');
+		
 		$this->post_avatar_meta($q_view, 'qa-q-view');
 		$this->q_view_content($q_view);
 		$this->q_view_extra($q_view);
@@ -503,12 +530,28 @@ class qa_html_theme extends qa_html_theme_base
 	 */
 	public function attribution()
 	{
+		$themeIcon = 'brightness_auto';
+		$themeTitle = 'System default';
+		if (!empty($_COOKIE['theme'])) {
+			if ($_COOKIE['theme'] == 'dark') {
+				$themeIcon = 'brightness_4';
+				$themeTitle = 'Dark';
+			} else if ($_COOKIE['theme'] == 'light') {
+				$themeIcon = 'brightness_high';
+				$themeTitle = 'Light';
+			}
+		}
 		$this->output(
 			'<div class="qa-attribution">',
-			'<a href="https://github.com/MominRaza/Mayro">Mayro Theme</a> <i class="material-icons md-18" title="Developed">code</i> with <i class="material-icons md-18" title="Love">favorite</i> by <a href="https://github.com/MominRaza">Momin Raza</a>',
+				'Theme:',
+				'<i class="material-icons theme-toggle" onclick="toggleTheme(this)" title="'.$themeTitle.'">'.$themeIcon.'</i>',
 			'</div>'
 		);
-		parent::attribution();
+		$this->output(
+			'<div class="qa-attribution">',
+			'Mayro by <a href="https://github.com/MominRaza">Momin Raza</a>',
+			'</div>'
+		);
 	}
 }
 ?>
