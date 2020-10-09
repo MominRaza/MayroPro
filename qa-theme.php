@@ -22,6 +22,13 @@ class qa_html_theme extends qa_html_theme_base
 		$jsUrl = $this->rooturl . 'js/main.js?' . QA_VERSION;
 		$this->content['script'][] = '<script src="' . $jsUrl . '"></script>';
 
+		switch ( $this->template ) {
+			case 'qa' :
+			case 'custom' :
+				$this->content['script'][] = '<script src="'. $this->rooturl .'js/app.js"></script>';
+			break;
+		}
+
 		parent::head_script();
 	}
 
@@ -245,7 +252,6 @@ class qa_html_theme extends qa_html_theme_base
 		$this->avatar($post, $class, $avatarprefix);
 		$this->post_meta($post, $class, $metaprefix, $metaseparator);
 		$this->output('</span>');
-
 		$this->output('</div>');
 	}
 
@@ -265,9 +271,10 @@ class qa_html_theme extends qa_html_theme_base
 	{
 		$this->output('<div class="qa-q-view-main">');
 
-		$this->output('<div id="qam-q-extra-menu">');
+		$this->output('<div onclick="toggleExtra(this)" class="qam-q-extra-menu">');
 			if (isset($q_view['main_form_tags'])) {
 				$this->output('<form ' . $q_view['main_form_tags'] . '>'); // form for buttons on question
+				$this->output('<div class="qam-q-extra-menu-toggle"><i class="material-icons">more_vert</i></div>');
 			}
 			$this->q_view_buttons($q_view);
 			if (isset($q_view['main_form_tags'])) {
@@ -275,7 +282,7 @@ class qa_html_theme extends qa_html_theme_base
 				$this->output('</form>');
 			}
 		$this->output('</div>');
-		
+
 		$this->post_avatar_meta($q_view, 'qa-q-view');
 		$this->q_view_content($q_view);
 		$this->q_view_extra($q_view);
@@ -293,7 +300,7 @@ class qa_html_theme extends qa_html_theme_base
 			}
 			$this->view_count($q_view);
 			if (isset($q_view['main_form_tags'])) {
-				$this->output('<form ' . $q_view['main_form_tags'] . '>'); // form for buttons on question
+				$this->output('<form ' . $q_view['main_form_tags'] . ' class="qam-rest-buttons">'); // form for buttons on question
 			}
 			$this->q_view_buttons($q_view);
 			if (isset($q_view['main_form_tags'])) {
@@ -324,6 +331,17 @@ class qa_html_theme extends qa_html_theme_base
 	{
 		$this->error(@$c_item['error']);
 
+		$this->output('<div onclick="toggleExtra(this)" class="qam-q-extra-menu">');
+			if (isset($c_item['main_form_tags'])) {
+				$this->output('<form ' . $c_item['main_form_tags'] . '>'); // form for buttons on comment
+				$this->output('<div class="qam-q-extra-menu-toggle"><i class="material-icons">more_vert</i></div>');
+			}
+			$this->c_item_buttons($c_item);
+			if (isset($c_item['main_form_tags'])) {
+				$this->form_hidden_elements(@$c_item['buttons_form_hidden']);
+				$this->output('</form>');
+			}
+		$this->output('</div>');
 		$this->post_avatar_meta($c_item, 'qa-c-item');
 		if (isset($c_item['expand_tags']))
 			$this->c_item_expand($c_item);
@@ -341,7 +359,7 @@ class qa_html_theme extends qa_html_theme_base
 				$this->output('</form>');
 			}
 			if (isset($c_item['main_form_tags'])) {
-				$this->output('<form ' . $c_item['main_form_tags'] . '>'); // form for buttons on comment
+				$this->output('<form ' . $c_item['main_form_tags'] . ' class="qam-rest-buttons">'); // form for buttons on comment
 			}
 			$this->c_item_buttons($c_item);
 			if (isset($c_item['main_form_tags'])) {
@@ -367,6 +385,17 @@ class qa_html_theme extends qa_html_theme_base
 	{
 		$this->output('<div class="qa-a-item-main">');
 
+		$this->output('<div onclick="toggleExtra(this)" class="qam-q-extra-menu">');
+			if (isset($a_item['main_form_tags'])) {
+				$this->output('<form ' . $a_item['main_form_tags'] . '>'); // form for buttons on answer
+				$this->output('<div class="qam-q-extra-menu-toggle"><i class="material-icons">more_vert</i></div>');
+			}
+			$this->a_item_buttons($a_item);
+			if (isset($a_item['main_form_tags'])) {
+				$this->form_hidden_elements(@$a_item['buttons_form_hidden']);
+				$this->output('</form>');
+			}
+		$this->output('</div>');
 		$this->post_avatar_meta($a_item, 'qa-a-item');
 		
 		if ($a_item['hidden'])
@@ -397,7 +426,7 @@ class qa_html_theme extends qa_html_theme_base
 				$this->output('</form>');
 			}	
 			if (isset($a_item['main_form_tags'])) {
-				$this->output('<form ' . $a_item['main_form_tags'] . '>'); // form for buttons on answer
+				$this->output('<form ' . $a_item['main_form_tags'] . ' class="qam-rest-buttons">'); // form for buttons on answer
 			}
 			$this->a_item_buttons($a_item);
 			if (isset($a_item['main_form_tags'])) {

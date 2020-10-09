@@ -39,12 +39,6 @@ function toggleTheme(themeToggle) {
         document.cookie = "theme=light; max-age=2592000; path=/;";
     }
 }
-
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker
-            .register('sw.js')
-            .then(reg => console.log('Service Worker: Register'))
-            .catch(err => console.log(`Service Worker: Error: ${err}`));
-    })
+function toggleExtra(e) {
+    e.classList.toggle('active');
 }

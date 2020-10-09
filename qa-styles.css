@@ -563,7 +563,8 @@ select{
 .qa-part-form-activity,
 .qa-part-message-list,
 .qa-part-form-profile,
-.qa-part-form-password{
+.qa-part-form-password,
+.qa-q-view-follows{
 	margin: 10px 0;
 	background-color: var(--surface);
 	padding: 16px 16px 8px 16px;
@@ -788,6 +789,7 @@ select{
 .qam-q-post-meta{
 	min-height: 60px;
 	padding-left: 56px;
+	margin-right: 18px;
 }
 .qa-q-view-main > .qam-q-post-meta{
 	min-height: 70px;
@@ -1036,7 +1038,8 @@ select{
 .qa-form-tall-button-answer,
 .qa-form-light-button-answer,
 .qa-form-light-button-follow,
-.qa-form-tall-button-send{
+.qa-form-tall-button-send,
+.qa-form-tall-button-close{
 	margin-top: 10px;
 	background-color: var(--primary-dark);
 	color: var(--on-primary);
@@ -1125,7 +1128,6 @@ select{
 }
 /* post content */
 .qa-post-content{
-	padding: 10px 0;
 	line-height: 1.5em;
 	font-size: 1.2em;
 }
@@ -1592,49 +1594,69 @@ select{
 }
 
 /* extra menu */
+.qam-rest-buttons{
+	margin-left: auto;
+}
 .qam-stats-buttons .qa-form-light-button-edit,
 .qam-stats-buttons .qa-form-light-button-close,
 .qam-stats-buttons .qa-form-light-button-hide,
 .qam-stats-buttons .qa-form-light-button-flag,
 .qam-stats-buttons .qa-form-light-button-follow,
-.qam-stats-buttons .qa-form-light-button-unflag{
+.qam-stats-buttons .qa-form-light-button-unflag,
+.qam-stats-buttons .qa-form-light-button-retagcat,
+.qam-stats-buttons .qa-form-light-button-reopen,
+.qam-stats-buttons .qa-form-light-button-reshow,
+.qam-stats-buttons .qa-form-light-button-delete{
 	display: none;
 }
-.qa-q-view-main{
-	
+.qa-q-view-main,.qa-c-list-item,.qa-a-list-item{
     position: relative;
 }
-#qam-q-extra-menu{
-	float: right;
+.qam-q-extra-menu{
+	/* float: right; */
 	display: inline-block;
     position: absolute;
     top: 19px;
     right: 19px;
 }
-#qam-q-extra-menu .qa-form-light-button-answer,
-#qam-q-extra-menu .qa-form-light-button-comment{
+.qa-c-list-item .qam-q-extra-menu,
+.qa-a-list-item .qam-q-extra-menu{
+    top: 29px;
+    right: 29px;
+}
+.qam-q-extra-menu .qa-form-light-button-answer,
+.qam-q-extra-menu .qa-form-light-button-comment{
 	display: none;
 }
-#qam-q-extra-menu .qa-q-view-buttons{
+.qam-q-extra-menu .qa-q-view-buttons,
+.qam-q-extra-menu .qa-c-item-buttons,
+.qam-q-extra-menu .qa-a-item-buttons{
 	position: absolute;
-    top: 0;
-    right: 0;
-    margin-right: 2px;
+    top: -5px;
+    right: -5px;
     padding: 8px 0;
     box-shadow: 0 1px 2px 0 rgba(60,64,67,.302), 0 1px 3px 1px rgba(60,64,67,.149);
     background-color: var(--surface-solid, var(--surface));
     min-width: 175px;
     will-change: opacity,transform;
     transition: opacity .3s cubic-bezier(.175,.885,.22,1.105),transform .3s cubic-bezier(.175,.885,.22,1.105);
+    transform: scale(.2);
+    transform-origin: 100% 0;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+	border-radius: 4px;
+	z-index: 3;
+}
+.qam-q-extra-menu.active .qa-q-view-buttons,
+.qam-q-extra-menu.active .qa-c-item-buttons,
+.qam-q-extra-menu.active .qa-a-item-buttons{
     transform: scale(1);
-    transform-origin: 100% 100%;
     pointer-events: auto;
     visibility: visible;
     opacity: 1;
-    border-radius: 4px;
-    z-index: 5;
 }
-#qam-q-extra-menu .qa-form-light-button{
+.qam-q-extra-menu .qa-form-light-button{
 	background-color: unset;
 	width: 100%;
 	margin: 0;
@@ -1642,4 +1664,30 @@ select{
 	text-align: left;
 	padding: .8rem 16px;
 	color: var(--on-surface);
+}
+.qam-q-extra-menu .qa-form-light-button:hover{
+	background-color: rgba(var(--primary-rgb), .12);
+}
+.qam-q-extra-menu-toggle {
+    position: absolute;
+    top: -18px;
+	right: -25px;
+	cursor: pointer;
+}
+.qam-q-extra-menu-toggle::before {
+    content: "";
+    width: 32px;
+    height: 32px;
+    background-color: rgba(var(--primary-rgb), .12);
+    transition: all .3s cubic-bezier(.175,.885,.22,1.105);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(.2);
+    border-radius: 50px;
+    opacity: 0;
+}
+.qam-q-extra-menu.active .qam-q-extra-menu-toggle::before {
+	opacity: 1;
+	transform: translateX(-50%) translateY(-50%) scale(1);
 }
