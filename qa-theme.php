@@ -255,6 +255,64 @@ class qa_html_theme extends qa_html_theme_base
 		$this->output('</div>');
 	}
 
+	public function post_meta($post, $class, $prefix = null, $separator = '<br/>')
+	{
+		$this->output('<span class="' . $class . '-meta">');
+
+		if (isset($prefix))
+			$this->output($prefix);
+
+		$order = Array('who', 'where', 'what', 'when');
+
+		foreach ($order as $element) {
+			switch ($element) {
+				case 'what':
+					$this->post_meta_what($post, $class);
+					break;
+
+				case 'when':
+					$this->post_meta_when($post, $class);
+					break;
+
+				case 'where':
+					$this->post_meta_where($post, $class);
+					break;
+
+				case 'who':
+					$this->post_meta_who($post, $class);
+					break;
+			}
+		}
+
+		$this->post_meta_flags($post, $class);
+
+		if (!empty($post['what_2'])) {
+			$this->output($separator);
+			$this->output('<div class="qam-what-2" onclick="toggleExtra(this)">');
+				$this->output('<i class="material-icons-outlined md-18">info</i>');
+				$this->output('<div class="qam-what-2-body">');
+				foreach ($order as $element) {
+					switch ($element) {
+						case 'what':
+							$this->output('<span class="' . $class . '-what">' . $post['what_2'] . '</span>');
+							break;
+
+						case 'when':
+							$this->output_split(@$post['when_2'], $class . '-when');
+							break;
+
+						case 'who':
+							$this->output_split(@$post['who_2'], $class . '-who');
+							break;
+					}
+				}
+				$this->output('</div>');
+			$this->output('</div>');
+		}
+
+		$this->output('</span>');
+	}
+
 	public function q_view($q_view)
 	{
 		if (!empty($q_view)) {
@@ -578,7 +636,7 @@ class qa_html_theme extends qa_html_theme_base
 		);
 		$this->output(
 			'<div class="qa-attribution">',
-			'Mayro by <a href="https://github.com/MominRaza">Momin Raza</a>',
+			'Mayro by <a href="https://mominraza.github.io">Momin Raza</a>',
 			'</div>'
 		);
 	}

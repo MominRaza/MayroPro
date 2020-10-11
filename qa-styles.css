@@ -2,7 +2,7 @@
 	Theme Version: 1.4
     Theme Date: 2020-10-6
     Theme Author: Momin Raza
-    Theme Author URI: https://github.com/MominRaza
+    Theme Author URI: https://mominraza.github.io
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
@@ -251,11 +251,12 @@ select{
 #user-toggle i{
 	font-size: 36px;
 	margin-left: -2px;
+	color: var(--on-primary);
 }
 #search-toggle.active{
 	left: 10px;
 }
-.qa-nav-user, .qa-search, .qa-nav-main{
+.qa-nav-user, .qa-search{
 	display: none;
 }
 .qa-nav-user{
@@ -381,6 +382,9 @@ select{
 	}
 }
 .qa-nav-main{
+	/* display: none; */
+	/* width: 0px; */
+	transform: translateX(-300px);
 	z-index: 5;
 	position: fixed;
 	top: 56px;
@@ -393,6 +397,7 @@ select{
 				0px 1px 3px 0px rgba(0,0,0,.12);
 	overflow: hidden;
 	overflow-y: auto;
+	transition: .5s;
 }
 #qa-nav-main .qa-logo{
 	display: none;
@@ -432,7 +437,9 @@ select{
 	}
 }
 .menu-active .qa-nav-main{
-	display: block;
+	/* display: block; */
+	/* width: 300px; */
+	transform: translateX(0);
 }
 
 .qa-nav-main-list{
@@ -564,7 +571,8 @@ select{
 .qa-part-message-list,
 .qa-part-form-profile,
 .qa-part-form-password,
-.qa-q-view-follows{
+.qa-q-view-follows,
+.qa-q-view-closed{
 	margin: 10px 0;
 	background-color: var(--surface);
 	padding: 16px 16px 8px 16px;
@@ -572,6 +580,31 @@ select{
 	box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
 				0px 1px 1px 0px rgba(0, 0, 0, 0.14),
 				0px 1px 3px 0px rgba(0,0,0,.12);
+}
+.qa-q-view-follows a,
+.qa-q-view-closed span{
+	display: block;
+	margin-top: 10px;
+	margin-left: -24px;
+}
+.qa-q-view-follows,
+.qa-q-view-closed{
+	padding-left: 40px;
+	position: relative;
+}
+.qa-q-view-follows::before,
+.qa-q-view-closed::before{
+	font-family: 'Material Icons';
+	font-size: 24px;
+	position: absolute;
+	left: 12px;
+	top: 12px;
+}
+.qa-q-view-follows::before{
+	content: 'link';
+}
+.qa-q-view-closed::before{
+	content: 'lock';
 }
 .qa-part-form,
 .qa-part-form-2 form,
@@ -674,6 +707,7 @@ select{
 
 .qa-sidepanel, .qa-main{
 	padding: 0 10px;
+	transition: .5s;
 }
 
 @media(min-width: 768px){
@@ -707,10 +741,10 @@ select{
 }
 @media(min-width: 1440px){
 	.qa-nav-main{
-		display: block;
+		transform: translateX(0);
 	}
 	.menu-active .qa-nav-main{
-		display: none;
+		transform: translateX(-300px);
 	}
 	.qa-nav-sub-list{
 		margin-left: 300px;
@@ -847,7 +881,7 @@ select{
 	list-style: none;
 	display: flex;
 	margin-top: 14px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	overflow: hidden;
 	overflow-x: auto;
 }
@@ -856,9 +890,9 @@ select{
 	background-color: var(--secondary);
 	border-radius: 20px;
 	width: min-content;
-	padding: 6px 0;
+	padding: 4px 0;
 	margin-right: 8px;
-	height: 32px;
+	height: 28px;
 	min-width: max-content;
 }
 .qa-tag-link{
@@ -873,7 +907,7 @@ select{
 .qa-tag-link.qa-tag-favorited::before{
 	font-family: "Material Icons";
 	position: relative;
-	margin-left: -20px;
+	margin-left: -25px;
 	font-size: 18px;
 	content: "star";
 	display: inline-block;
@@ -1039,7 +1073,9 @@ select{
 .qa-form-light-button-answer,
 .qa-form-light-button-follow,
 .qa-form-tall-button-send,
-.qa-form-tall-button-close{
+.qa-form-tall-button-close,
+.qa-form-light-button-reshow,
+.qa-form-light-button-clearflags{
 	margin-top: 10px;
 	background-color: var(--primary-dark);
 	color: var(--on-primary);
@@ -1111,6 +1147,7 @@ select{
 	opacity: 0;
 	width: 30px;
 	height: 30px;
+	cursor: pointer;
 }
 .qa-a-selection i{
 	margin-top: 5px;
@@ -1690,4 +1727,119 @@ select{
 .qam-q-extra-menu.active .qam-q-extra-menu-toggle::before {
 	opacity: 1;
 	transform: translateX(-50%) translateY(-50%) scale(1);
+}
+
+
+/* post meta */
+.qa-q-view-who-pad,
+.qa-q-item-who-pad,
+.qa-a-item-who-pad,
+.qa-c-item-who-pad{
+	display: none;
+}
+.qa-user-link span{
+	color: var(--link);
+}
+.qa-q-view-where-pad,.qa-q-item-where-pad{
+	visibility: hidden;
+}
+.qa-q-view-where-pad::before,
+.qa-q-item-where-pad::before{
+	visibility: visible;
+	font-family: "Material Icons";
+	position: absolute;
+    margin-left: -5px;
+	content: "arrow_right";
+	font-size: 24px;
+}
+.qa-q-item-what::before,
+.qa-q-view-what::before,
+.qa-a-item-what::before,
+.qa-c-item-what::before{
+	content: "\A";
+	display: block;
+}
+.qa-q-item-what, .qa-q-view-what, .qa-a-item-what, .qa-c-item-what,
+.qa-q-item-when, .qa-q-view-when, .qa-a-item-when, .qa-c-item-when{
+	font-size: .85em;
+	opacity: .75;
+	color: var(--on-surface);
+	letter-spacing: .02px;
+}
+.qam-what-2 {
+	position: absolute;
+	top: 40px;
+	right: -2px;
+}
+.qa-c-list-item .qam-what-2,
+.qa-a-list-item .qam-what-2{
+    top: 45px;
+    right: 8px;
+}
+.qam-what-2 .qa-q-item-what::before,
+.qam-what-2 .qa-q-view-what::before,
+.qam-what-2 .qa-a-item-what::before,
+.qam-what-2 .qa-c-item-what::before{
+	content: "";
+	display: unset;
+}
+.qam-what-2 i{
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 3;
+	cursor: pointer;
+}
+.qam-what-2-body {
+	position: absolute;
+	top: -9px;
+	right: -2px;
+	padding: 1px 7px;
+	padding-right: 26px;
+	width: max-content;
+	background-color: var(--secondary);
+	color: var(--on-secondary);
+	border-radius: 20px;
+	transform: scale(.02);
+    transform-origin: 100% 50%;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .3s cubic-bezier(.175,.885,.22,1.105),transform .3s cubic-bezier(.175,.885,.22,1.105);
+}
+.qam-what-2.active .qam-what-2-body {
+	transform: scale(1);
+    pointer-events: auto;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* flags */
+.qa-q-view-flags span,
+.qa-a-item-flags span,
+.qa-c-item-flags span{
+	color: var(--error);
+	padding-left: 24px;
+}
+.qa-q-view-flags-pad,
+.qa-a-item-flags-pad,
+.qa-c-item-flags-pad{
+	visibility: hidden;
+}
+.qa-q-view-flags-pad::before,
+.qa-a-item-flags-pad::before,
+.qa-c-item-flags-pad::before{
+    font-family: "Material Icons";
+	position: absolute;
+	font-size: 20px;
+    margin-left: -56px;
+	content: "flag";
+	visibility: visible;
+}
+
+/* hidden */
+.qa-q-view-hidden,
+.qa-a-list-item-hidden,
+.qa-c-item-hidden{
+	opacity: .4;
 }
