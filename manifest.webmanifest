@@ -6,12 +6,26 @@
     {
       "src": "/images/icons-192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icons-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
       "src": "/images/icons-512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icons-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "start_url": "/",
@@ -24,13 +38,23 @@
       "name": "My Updates",
       "short_name": "Updates",
       "url": "/updates",
-      "icons": [{ "src": "/images/updates.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "/images/updates.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "Ask a Question",
       "short_name": "Ask",
       "url": "/ask",
-      "icons": [{ "src": "/images/ask.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "/images/ask.png",
+          "sizes": "192x192"
+        }
+      ]
     }
-  ]  
+  ]
 }
