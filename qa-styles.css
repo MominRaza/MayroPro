@@ -1,39 +1,48 @@
 /*
 	Theme Version: 2.0
-    Theme Date: 2020-10-11
-    Theme Author: Momin Raza
-    Theme Author URI: https://mominraza.github.io
+  Theme Date: 2020-10-16
+  Theme Author: Momin Raza
+  Theme Author URI: https://mominraza.github.io
 */
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 
 /* color variables 
-	you can change primary-rgb, primary-dark, primary-light, on-primary,
-	secondary, secondary-dark, secondary-light, on-secondary colors only.
-	find them from here https://material.io/resources/color
+	change colors inside :root.
+  find them from here https://material.io/resources/color
 */
 :root {
   color-scheme: light dark;
-  --primary-900: #311b92;
-  --primary-light-900: #6746c3;
-  --primary-dark-900: #000063;
+  --primary-700: #512da8;
+  --primary-700-rgb: 81, 45, 168; /* convert --primary-700 to rgb */
+  --primary-light-700: #8559da;
+  --primary-dark-700: #140078; /* also change manifest.webmanifest theme_color */
+  --primary-200: #b39ddb;
+
+  --secondary-200: #ffab91;
+  --secondary-dark-200: #c97b63;
+  --secondary-light-200: #ffddc1;
+  --secondary-100: #ffccbc;
+
+  --on-primary-700: #ffffff; /* only black or white */
+  --on-secondary-200: #000000; /* only black or white */
 }
+
 body {
-  --primary-rgb: 49, 27, 146;
-  --primary: var(--primary-900);
-  /* primary dark used in manifest file as theme_color */
-  --primary-dark: var(--primary-dark-900);
-  --primary-light: var(--primary-light-900);
-  --secondary: #ffab91;
-  --secondary-dark: #c97b63;
-  --secondary-light: #ffddc1;
+  --primary-rgb: var(--primary-700-rgb);
+  --primary: var(--primary-700);
+  --primary-dark: var(--primary-dark-700);
+  --primary-light: var(--primary-light-700);
+  --secondary: var(--secondary-200);
+  --secondary-dark: var(--secondary-dark-200);
+  --secondary-light: var(--secondary-light-200);
 
   --background: #eeeeee;
   --surface: #ffffff;
   --error: #b00020;
 
-  --on-primary: #ffffff;
-  --on-secondary: #000000;
+  --on-primary: var(--on-primary-700);
+  --on-secondary: var(--on-secondary-200);
   --on-background: #000000;
   --on-surface: #000000;
   --on-error: #ffffff;
@@ -60,8 +69,8 @@ body.dark-theme {
   --surface-solid: #1e1e1e;
   --error: #cf6679;
 
-  --on-primary: #b39ddb;
-  --on-secondary: #ffab91;
+  --on-primary: var(--primary-200);
+  --on-secondary: var(--secondary-100);
   --on-background: #ffffff;
   --on-surface: rgb(255, 255, 255, 0.87);
   --on-error: #ffffff;
@@ -95,8 +104,8 @@ body.dark-theme li {
     --surface-solid: #1e1e1e;
     --error: #cf6679;
 
-    --on-primary: #b39ddb;
-    --on-secondary: #ffab91;
+    --on-primary: var(--primary-200);
+    --on-secondary: var(--secondary-100);
     --on-background: #ffffff;
     --on-surface: rgb(255, 255, 255, 0.87);
     --on-error: #ffffff;
@@ -116,21 +125,21 @@ body.dark-theme li {
   }
 
   body.light-theme {
-    --primary-rgb: 49, 27, 146;
-    --primary: var(--primary-900);
-    --primary-dark: var(--primary-dark-900);
-    --primary-light: var(--primary-light-900);
-    --secondary: #ffab91;
-    --secondary-dark: #c97b63;
-    --secondary-light: #ffddc1;
+    --primary-rgb: var(--primary-700-rgb);
+    --primary: var(--primary-700);
+    --primary-dark: var(--primary-dark-700);
+    --primary-light: var(--primary-light-700);
+    --secondary: var(--secondary-200);
+    --secondary-dark: var(--secondary-dark-200);
+    --secondary-light: var(--secondary-light-200);
 
     --background: #eeeeee;
     --surface: #ffffff;
     --surface-solid: unset;
     --error: #b00020;
 
-    --on-primary: #ffffff;
-    --on-secondary: #000000;
+    --on-primary: var(--on-primary-700);
+    --on-secondary: var(--on-secondary-200);
     --on-background: #000000;
     --on-surface: #000000;
     --on-error: #ffffff;
@@ -198,11 +207,16 @@ select {
 }
 
 /* header */
+.qa-header {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
 .qa-header-clear {
   height: 56px;
 }
 .qa-logo {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -218,7 +232,7 @@ select {
   color: var(--on-primary);
 }
 #menu-toggle {
-  position: fixed;
+  position: absolute;
   top: 27px;
   left: 10px;
   color: var(--on-primary);
@@ -227,7 +241,7 @@ select {
   z-index: 4;
 }
 #search-toggle {
-  position: fixed;
+  position: absolute;
   top: 27px;
   right: 56px;
   color: var(--on-primary);
@@ -236,7 +250,7 @@ select {
   cursor: pointer;
 }
 #user-toggle {
-  position: fixed;
+  position: absolute;
   top: 10px;
   right: 10px;
   color: var(--on-primary);
@@ -330,7 +344,7 @@ select {
   background-color: rgba(var(--primary-rgb), 0.12);
 }
 .qa-search {
-  position: fixed;
+  position: absolute;
   top: 1px;
   left: 0;
   width: 100%;
@@ -367,6 +381,7 @@ select {
   font-size: 30px;
   color: var(--on-primary);
 }
+/* media query for Search field on laptop */
 @media (min-width: 1024px) {
   .qa-search {
     left: unset;
@@ -392,7 +407,7 @@ select {
   /* width: 0px; */
   transform: translateX(-300px);
   z-index: 5;
-  position: fixed;
+  position: absolute;
   top: 56px;
   left: 0;
   width: 300px;
@@ -405,8 +420,23 @@ select {
   transition: 0.5s;
 }
 #qa-nav-main .qa-logo {
-  display: none;
+  transform: translateX(-300px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 299px;
+  height: 56px;
+  padding-top: 13px;
+  background-color: var(--surface-solid, var(--surface));
+  box-shadow: unset;
+  z-index: 6;
+  transition: 0.5s;
 }
+#qa-nav-main .qa-logo .qa-logo-link {
+  color: var(--on-surface);
+  margin-left: 16px;
+}
+/* media query for app drawer in mobile and tablet */
 @media (max-width: 1023px) {
   .qa-nav-main {
     top: 0;
@@ -425,20 +455,7 @@ select {
     left: 0;
   }
   .menu-active #qa-nav-main .qa-logo {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 299px;
-    height: 56px;
-    padding-top: 13px;
-    background-color: var(--surface-solid, var(--surface));
-    box-shadow: unset;
-    z-index: 6;
-  }
-  .menu-active #qa-nav-main .qa-logo .qa-logo-link {
-    color: var(--on-surface);
-    margin-left: 16px;
+    transform: translateX(0);
   }
 }
 .menu-active .qa-nav-main {
@@ -550,7 +567,7 @@ select {
   height: 42px;
 }
 .qa-nav-sub-list {
-  position: fixed;
+  position: absolute;
   top: 56px;
   left: 0;
   width: 100%;
@@ -561,6 +578,7 @@ select {
   list-style: none;
   box-shadow: var(--appbar-shadow);
   z-index: 4;
+  transition: 0.5s;
 }
 .qa-nav-sub-list::-webkit-scrollbar,
 .qa-q-item-tag-list::-webkit-scrollbar,
@@ -656,18 +674,20 @@ select {
   margin: 0 8px 20px;
 }
 .qa-part-form-plugin-options .qa-form-tall-table {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 .qam-admin-plugins .qa-part-form {
   background-color: unset;
   box-shadow: unset;
   padding: unset;
 }
+/* add gap between main and sidepanel in mobile */
 @media (max-width: 768px) {
   .qa-main {
     margin-bottom: 40px;
   }
 }
+/* user page single column if menu active */
 @media (min-width: 1024px) {
   .qa-part-form-profile {
     width: calc(60% - 10px);
@@ -698,7 +718,8 @@ select {
     margin: 10px 0;
   }
 }
-@media (min-width: 1440px) {
+/* in laptop menu active indicate menu closed */
+@media (min-width: 1280px) {
   .menu-active .qa-part-form-profile {
     width: calc(60% - 10px);
     margin-right: 10px;
@@ -740,13 +761,20 @@ select {
   font-weight: 500;
 }
 /* qa-main */
-
+.qam-main-sidepanel {
+  transition: 0.5s;
+}
 .qa-sidepanel,
 .qa-main {
   padding: 0 10px;
+}
+.qa-widgets-full {
   transition: 0.5s;
 }
-
+.qa-widgets-full-top {
+  margin-left: 0 !important;
+}
+/* two column for main and sidepanel in tablet */
 @media (min-width: 768px) {
   .qam-main-sidepanel {
     display: flex;
@@ -760,6 +788,7 @@ select {
     width: 300px;
   }
 }
+/* three column for small laptop on menu active */
 @media (min-width: 1024px) {
   .qa-nav-main {
     z-index: 4;
@@ -776,7 +805,8 @@ select {
     margin-left: 300px;
   }
 }
-@media (min-width: 1440px) {
+/* three column for laptop by default */
+@media (min-width: 1280px) {
   .qa-nav-main {
     transform: translateX(0);
   }
@@ -938,13 +968,9 @@ select {
   color: var(--on-secondary);
   font-size: 0.9em;
 }
-.qa-tag-link.qa-tag-favorited {
-  margin-left: 20px;
-}
 .qa-tag-link.qa-tag-favorited::before {
   font-family: "Material Icons";
   position: relative;
-  margin-left: -25px;
   font-size: 18px;
   content: "star";
   display: inline-block;
@@ -1008,6 +1034,7 @@ select {
 .qa-footer {
   margin-top: 20px;
   padding: 10px;
+  transition: 0.5s;
 }
 @media (max-width: 768px) {
   .qa-footer {
@@ -1142,7 +1169,8 @@ select {
 .qa-form-wide-button-hideall,
 .qa-form-light-button-comment,
 .qa-form-light-button-close,
-.qa-form-light-button-flag {
+.qa-form-light-button-flag,
+.qa-form-tall-button-1 {
   margin-top: 10px;
   background-color: var(--secondary);
   color: var(--on-secondary);
@@ -1344,11 +1372,15 @@ select {
   content: "expand_less";
 }
 
-/* tags */
+/* tags page */
 .qa-top-tags-table tbody {
   display: grid;
   grid-template-columns: repeat(2, calc(50% - 5px));
   column-gap: 10px;
+}
+.qa-top-tags-table .qa-tag-link {
+  display: inline-block;
+  padding: 0 0 0 5px;
 }
 @media (min-width: 1024px) {
   .qa-top-tags-table tbody {
@@ -1369,17 +1401,17 @@ select {
 .qa-top-tags-table tr {
   margin: 5px 0;
   background-color: var(--surface);
-  padding: 10px;
+  padding: 10px 5px;
   border-radius: 4px;
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   display: flex;
 }
 .qa-top-tags-count {
-  margin: -10px 0 -10px -10px;
-  padding: 10px 0 10px 10px;
+  margin: -10px 0 -10px -5px;
+  padding: 10px 5px 10px 10px;
   border-radius: 4px 0 0 4px;
-  min-width: 50px;
+  min-width: max-content;
   background-color: var(--primary-light);
   color: var(--on-primary);
 }
@@ -1395,6 +1427,7 @@ select {
   display: flex;
   width: 100%;
   overflow: hidden;
+  position: relative;
 }
 .qa-top-users-label {
   width: 100%;
@@ -1409,7 +1442,7 @@ select {
   position: absolute;
   margin-top: -48px;
   text-align: center;
-  width: calc(100% / 3 - 30px / 3);
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 5px 0 20px 0;
   font-size: 1.25em;
@@ -1427,7 +1460,7 @@ select {
 }
 .qa-top-users-score {
   position: absolute;
-  width: calc(100% / 3 - 30px / 3);
+  width: 100%;
   text-align: center;
   margin-top: 100px;
   color: white;
@@ -1445,41 +1478,21 @@ select {
   .qa-top-users-table tbody {
     grid-template-columns: repeat(4, calc(100% / 4 - 15px / 4));
   }
-  .qa-top-users-table .qa-user-link,
-  .qa-top-users-score {
-    width: calc(100% / 4 - 35px / 4);
-  }
 }
 @media (min-width: 768px) {
   .qa-top-users-table tbody {
     grid-template-columns: repeat(3, calc(100% / 3 - 10px / 3));
-  }
-  .qa-top-users-table .qa-user-link,
-  .qa-top-users-score {
-    width: calc(100% / 3 - 330px / 3);
   }
 }
 @media (min-width: 1024px) {
   .qa-top-users-table tbody {
     grid-template-columns: repeat(4, calc(100% / 4 - 15px / 4));
   }
-  .qa-top-users-table .qa-user-link,
-  .qa-top-users-score {
-    width: calc(100% / 4 - 335px / 4);
-  }
   .menu-active .qa-top-users-table tbody {
     grid-template-columns: repeat(3, calc(100% / 3 - 10px / 3));
   }
-  .menu-active .qa-top-users-table .qa-user-link,
-  .menu-active .qa-top-users-score {
-    width: calc(100% / 3 - 630px / 3);
-  }
 }
 @media (min-width: 1300px) {
-  .qa-top-users-table .qa-user-link,
-  .qa-top-users-score {
-    width: calc(1000px / 4 - 35px / 4);
-  }
   .qa-top-users-table tr,
   .qa-avatar-link span {
     height: 180px;
@@ -1489,25 +1502,13 @@ select {
   }
 }
 @media (min-width: 1440px) {
-  .qa-top-users-table .qa-user-link,
-  .qa-top-users-score {
-    width: calc(100% / 4 - 735px / 4);
-  }
   .menu-active .qa-top-users-table tbody {
     grid-template-columns: repeat(5, calc(100% / 5 - 20px / 5));
-  }
-  .menu-active .qa-top-users-table .qa-user-link,
-  .menu-active .qa-top-users-score {
-    width: calc(1000px / 5 - 40px / 5);
   }
 }
 @media (min-width: 1700px) {
   .qa-top-users-table tbody {
     grid-template-columns: repeat(5, calc(100% / 5 - 20px / 5));
-  }
-  .qa-top-users-table .qa-user-link,
-  .qa-top-users-score {
-    width: calc(1000px / 5 - 40px / 5);
   }
 }
 .qa-ranking-users-level tr {
@@ -1666,11 +1667,15 @@ select {
 }
 
 /* login register */
+.qam-user-account .qa-main {
+  width: 100%;
+}
 .qam-login-register .qa-main {
   max-width: 400px;
   min-height: 75vh;
   margin: 10px auto;
 }
+.qam-user-account .qa-sidepanel,
 .qam-login-register .qa-sidepanel {
   display: none;
 }
@@ -1922,7 +1927,9 @@ select {
 }
 
 /* tag cloud */
-.qa-widget-side div[style="font-size: 10px;"] a {
+.qa-widget-side div[style="font-size: 10px;"] a,
+#tag_hints .qa-tag-link,
+#tag_search_hints .qa-tag-link {
   display: inline-block;
   background-color: var(--secondary);
   color: var(--on-secondary);

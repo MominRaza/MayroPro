@@ -1,11 +1,7 @@
-const x = window.matchMedia('(max-width: 1023px)');
 function toggleMenu() {
-    var menu = document.getElementById('menu-toggle');
-    if (x.matches) { // If media query matches
-        menu.innerText = menu.innerText == 'menu' ? 'close' : 'menu';
-    }
     document.body.classList.toggle('menu-active');
 }
+const x = window.matchMedia('(max-width: 1023px)');
 function toggleSearch() {
     var search = document.getElementById('search-toggle');
     search.classList.toggle('active');

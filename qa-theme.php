@@ -97,6 +97,10 @@ class qa_html_theme extends qa_html_theme_base
 		$this->widgets('full', 'high');
 
 		switch ( $this->template ) {
+			case 'user' :
+			case 'account' :
+				$this->output('<div class="qam-main-sidepanel qam-user-account">');
+			break;
 			case 'user-wall' :
             case 'messages' :
 			case 'message' :
