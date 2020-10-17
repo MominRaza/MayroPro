@@ -5,7 +5,7 @@
   Theme Author URI: https://mominraza.github.io
 */
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
 /* color variables 
 	change colors inside :root.
@@ -275,15 +275,12 @@ select {
 #search-toggle.active {
   left: 10px;
 }
-.qa-nav-user,
-.qa-search {
-  display: none;
-}
 .qa-nav-user {
   position: fixed;
+  visibility: hidden;
   top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.3);
   background-color: var(--surface-solid, var(--surface));
   border-radius: 4px;
   box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2),
@@ -293,6 +290,7 @@ select {
   max-width: 240px;
   z-index: 4;
   padding: 10px 0;
+  transition: transform 0.25s;
 }
 #qa-nav-user.active #qa-nav-user-clear {
   z-index: 5;
@@ -304,7 +302,9 @@ select {
   left: 0;
 }
 #qa-nav-user.active .qa-nav-user {
-  display: block;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
   z-index: 6;
 }
 .qa-nav-user .qa-logged-in {
@@ -344,16 +344,21 @@ select {
   background-color: rgba(var(--primary-rgb), 0.12);
 }
 .qa-search {
+  visibility: hidden;
   position: absolute;
+  transform: scale(0.4);
+  transform-origin: right;
   top: 1px;
   left: 0;
   width: 100%;
   background-color: var(--primary);
   height: 55px;
   z-index: 4;
+  transition: 0.25s transform ease;
 }
 #qa-search.active .qa-search {
-  display: block;
+  visibility: visible;
+  transform: scale(1);
 }
 .qa-search-field,
 .qa-search-button {
@@ -403,10 +408,10 @@ select {
   }
 }
 .qa-nav-main {
-  /* display: none; */
-  /* width: 0px; */
   transform: translateX(-300px);
-  z-index: 5;
+  will-change: visibility;
+  visibility: hidden;
+  z-index: 6;
   position: absolute;
   top: 56px;
   left: 0;
@@ -417,10 +422,13 @@ select {
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   overflow: hidden;
   overflow-y: auto;
-  transition: 0.5s;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0s linear 0.25s;
 }
 #qa-nav-main .qa-logo {
   transform: translateX(-300px);
+  will-change: visibility;
+  visibility: hidden;
   position: absolute;
   top: 0;
   left: 0;
@@ -429,8 +437,9 @@ select {
   padding-top: 13px;
   background-color: var(--surface-solid, var(--surface));
   box-shadow: unset;
-  z-index: 6;
-  transition: 0.5s;
+  z-index: 7;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0s linear 0.25s;
 }
 #qa-nav-main .qa-logo .qa-logo-link {
   color: var(--on-surface);
@@ -446,7 +455,7 @@ select {
     padding-top: 56px;
   }
   .menu-active #qa-nav-main-clear {
-    z-index: 4;
+    z-index: 5;
     background-color: rgba(0, 0, 0, 0.32);
     position: fixed;
     height: 100vh;
@@ -456,12 +465,16 @@ select {
   }
   .menu-active #qa-nav-main .qa-logo {
     transform: translateX(0);
+    visibility: visible;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 0s linear 0s;
   }
 }
 .menu-active .qa-nav-main {
-  /* display: block; */
-  /* width: 300px; */
   transform: translateX(0);
+  visibility: visible;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0s linear 0s;
 }
 
 .qa-nav-main-list {
@@ -578,7 +591,7 @@ select {
   list-style: none;
   box-shadow: var(--appbar-shadow);
   z-index: 4;
-  transition: 0.5s;
+  transition: 0.25s;
 }
 .qa-nav-sub-list::-webkit-scrollbar,
 .qa-q-item-tag-list::-webkit-scrollbar,
@@ -762,14 +775,14 @@ select {
 }
 /* qa-main */
 .qam-main-sidepanel {
-  transition: 0.5s;
+  transition: 0.25s;
 }
 .qa-sidepanel,
 .qa-main {
   padding: 0 10px;
 }
 .qa-widgets-full {
-  transition: 0.5s;
+  transition: 0.25s;
 }
 .qa-widgets-full-top {
   margin-left: 0 !important;
@@ -809,6 +822,9 @@ select {
 @media (min-width: 1280px) {
   .qa-nav-main {
     transform: translateX(0);
+    visibility: visible;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 0s linear 0s;
   }
   .menu-active .qa-nav-main {
     transform: translateX(-300px);
@@ -1034,7 +1050,7 @@ select {
 .qa-footer {
   margin-top: 20px;
   padding: 10px;
-  transition: 0.5s;
+  transition: 0.25s;
 }
 @media (max-width: 768px) {
   .qa-footer {
