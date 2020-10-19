@@ -201,6 +201,10 @@ input[type="submit"] {
   padding: 5px 10px;
   font-size: 1.2em;
   border-radius: 4px;
+  cursor: pointer;
+}
+button {
+  cursor: pointer;
 }
 select {
   margin-top: 10px;
@@ -312,18 +316,6 @@ select {
   font-weight: 500;
   letter-spacing: 0.0125em;
   padding: 10px 24px;
-}
-.qam-logged-in-points {
-  padding: 10px;
-  padding-left: 64px;
-}
-.qam-logged-in-points::before {
-  font-family: "Material Icons";
-  font-size: 24px;
-  position: absolute;
-  margin-left: -41px;
-  margin-top: -3px;
-  content: "payments";
 }
 .qa-nav-user-list {
   list-style: none;
@@ -562,7 +554,19 @@ select {
   content: "login";
 }
 .qa-nav-user-register .qa-nav-user-link::before {
+  font-family: "Material Icons Outlined";
   content: "person_add";
+}
+.qa-nav-user-messages .qa-nav-user-link::before {
+  font-family: "Material Icons Outlined";
+  content: "mail";
+}
+.qa-nav-user-points .qa-nav-user-link::before {
+  font-family: "Material Icons Outlined";
+  content: "payments";
+}
+.qa-nav-user-favorites .qa-nav-user-link::before {
+  content: "star_outline";
 }
 
 .qa-favorite-image {
@@ -1370,12 +1374,18 @@ select {
   margin-left: 20px;
   margin-right: auto;
 }
+.qa-browse-cat-link.qa-browse-cat-favorited {
+  margin-left: 40px;
+}
 .qa-browse-cat-link::before {
   font-family: "Material Icons";
   font-size: 24px;
   position: absolute;
   margin-left: -26px;
   margin-top: -3px;
+}
+.qa-browse-cat-link.qa-browse-cat-favorited::before {
+  margin-left: -46px;
 }
 .qa-browse-cat-nolink {
   margin-right: auto;
@@ -1387,7 +1397,20 @@ select {
 .qa-browse-cat-open .qa-browse-cat-link::before {
   content: "expand_less";
 }
-
+.qa-browse-cat-favorited,
+.qa-nav-cat-favorited {
+  margin-left: 20px;
+  position: relative;
+}
+.qa-browse-cat-favorited::after,
+.qa-nav-cat-favorited::after {
+  font-family: "Material Icons";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  margin-left: -22px;
+  content: "star";
+}
 /* tags page */
 .qa-top-tags-table tbody {
   display: grid;

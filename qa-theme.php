@@ -76,11 +76,30 @@ class qa_html_theme extends qa_html_theme_base
 		parent::logged_in();
 		if (qa_is_logged_in()) {
 			$userpoints = qa_get_logged_in_points();
+			$username = qa_get_logged_in_handle();
 			$pointshtml = $userpoints == 1
 				? qa_lang_html_sub('main/1_point', '1', '1')
 				: qa_html(qa_format_number($userpoints))
 			;
-			$this->output('<div class="qam-logged-in-points">' . $pointshtml . '</div>');
+			$this->output('<ul class="qa-nav-user-list">');
+				if ( qa_opt( 'allow_private_messages' ) ) {
+					$this->output(
+						'<li class="qa-nav-user-item qa-nav-user-messages">',
+							'<a href="'.qa_path_html( "messages" ).'" class="qa-nav-user-link">Private Messages</a>',
+						'</li>'
+					);
+				}
+				$this->output(
+					'<li class="qa-nav-user-item qa-nav-user-points">',
+						'<a href="'.qa_path_html( "user/".$username ).'" class="qa-nav-user-link">'. $pointshtml .' Points</a>', 
+					'</li>'
+				);
+				$this->output(
+					'<li class="qa-nav-user-item qa-nav-user-favorites">',
+						'<a href="'.qa_path_html( "favorites" ).'" class="qa-nav-user-link">My Favorites</a>',
+					'</li>'
+				);
+			$this->output('</ul>');
 		}
 	}
 
