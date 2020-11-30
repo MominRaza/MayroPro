@@ -109,22 +109,30 @@ class qa_html_theme extends qa_html_theme_base
 			;
 			$this->output('<ul class="qa-nav-user-list">');
 				if ( qa_opt( 'allow_private_messages' ) ) {
-					$this->output(
-						'<li class="qa-nav-user-item qa-nav-user-messages">',
-							'<a href="'.qa_path_html( "messages" ).'" class="qa-nav-user-link">Private Messages</a>',
-						'</li>'
-					);
+					$this->output('<li class="qa-nav-user-item qa-nav-user-messages">');
+					if($this->template == 'messages'){
+						$this->output('<a href="'.qa_path_html( "messages" ).'" class="qa-nav-user-link qa-nav-user-selected">Private Messages</a>');
+					}else{
+						$this->output('<a href="'.qa_path_html( "messages" ).'" class="qa-nav-user-link">Private Messages</a>');
+					}
+					$this->output('</li>');
 				}
-				$this->output(
-					'<li class="qa-nav-user-item qa-nav-user-points">',
-						'<a href="'.qa_path_html( "user/".$username ).'" class="qa-nav-user-link">'. $pointshtml .' Points</a>', 
-					'</li>'
-				);
-				$this->output(
-					'<li class="qa-nav-user-item qa-nav-user-favorites">',
-						'<a href="'.qa_path_html( "favorites" ).'" class="qa-nav-user-link">My Favorites</a>',
-					'</li>'
-				);
+
+				$this->output('<li class="qa-nav-user-item qa-nav-user-points">');
+				if($this->template == 'user' && qa_request_part(1) == $username){
+					$this->output('<a href="'.qa_path_html( "user/".$username ).'" class="qa-nav-user-link qa-nav-user-selected">'. $pointshtml .' Points</a>');
+				}else{
+					$this->output('<a href="'.qa_path_html( "user/".$username ).'" class="qa-nav-user-link">'. $pointshtml .' Points</a>');
+				}
+				$this->output('</li>');
+
+				$this->output('<li class="qa-nav-user-item qa-nav-user-favorites">');
+				if($this->template == 'favorites'){
+					$this->output('<a href="'.qa_path_html( "favorites" ).'" class="qa-nav-user-link qa-nav-user-selected">My Favorites</a>');
+				}else{
+					$this->output('<a href="'.qa_path_html( "favorites" ).'" class="qa-nav-user-link">My Favorites</a>');
+				}
+				$this->output('</li>');
 			$this->output('</ul>');
 		}
 	}
@@ -579,24 +587,21 @@ class qa_html_theme extends qa_html_theme_base
 	public function a_selection($post)
 	{
 		$this->output('<div class="qa-a-selection">');
-
 		if (isset($post['select_tags'])){
 			$this->post_hover_button($post, 'select_tags', '', 'qa-a-select');
 			$this->output('<i class="material-icons select">done</i>');
 		}
-		elseif (isset($post['unselect_tags'])){
+		elseif (isset($post['unselect_tags']))
 			$this->post_hover_button($post, 'unselect_tags', '', 'qa-a-unselect');
-			// $this->output('<i class="material-icons unselect">close</i>');
-		}
 		elseif ($post['selected'])
 			$this->output('<div class="qa-a-selected">&nbsp;</div>');
-
-		if (isset($post['select_text']))
+		if (isset($post['select_text'])){
 			$this->output('<i class="material-icons selected">done_all</i>');
-
+			$this->output('<div class="qa-a-selected-text">' . @$post['select_text'] . '</div>');
+		}
 		$this->output('</div>');
 	}
-	
+
 	// changed post_avatar_meta and message_content order
 	public function message_item($message)
 	{

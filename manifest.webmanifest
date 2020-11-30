@@ -1,7 +1,7 @@
 {
-  "short_name": "Mayro",
-  "name": "Mayro: Google Material Design Theme",
-  "description": "Google Material Design Theme for Question2Answer (Q2A).",
+  "short_name": "JN QnA",
+  "name": "Jee Neet QnA",
+  "description": "Ask Questions And Get Solutions",
   "icons": [
     {
       "src": "/images/icons-192.png",

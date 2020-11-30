@@ -85,7 +85,11 @@ body.dark-theme img {
   filter: brightness(0.8) contrast(1.2);
 }
 body.dark-theme p,
-body.dark-theme li {
+body.dark-theme .qa-post-content span,
+body.dark-theme li,
+body.dark-theme strong,
+body.dark-theme sup,
+body.dark-theme sub {
   color: rgba(255, 255, 255, 0.6);
 }
 
@@ -120,7 +124,11 @@ body.dark-theme li {
     filter: brightness(0.8) contrast(1.2);
   }
   p,
-  li {
+  .qa-post-content span,
+  li,
+  strong,
+  sup,
+  sub {
     color: rgba(255, 255, 255, 0.6);
   }
 
@@ -155,7 +163,11 @@ body.dark-theme li {
     filter: unset;
   }
   body.light-theme p,
-  body.light-theme li {
+  body.light-theme .qa-post-content span,
+  body.light-theme li,
+  body.light-theme strong,
+  body.light-theme sup,
+  body.light-theme sub {
     color: unset;
   }
 }
@@ -209,7 +221,9 @@ button {
 select {
   margin-top: 10px;
 }
-
+select option{
+  background-color: var(--surface-solid);
+}
 /* header */
 .qa-header {
   position: sticky;
@@ -282,9 +296,9 @@ select {
 .qa-nav-user {
   position: fixed;
   visibility: hidden;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.3);
+  top: 40px;
+  right: 40px;
+  transform: scale(0.2);
   background-color: var(--surface-solid, var(--surface));
   border-radius: 4px;
   box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2),
@@ -295,6 +309,7 @@ select {
   z-index: 4;
   padding: 10px 0;
   transition: transform 0.25s;
+  transform-origin: 100% 0;
 }
 #qa-nav-user.active #qa-nav-user-clear {
   z-index: 5;
@@ -306,9 +321,12 @@ select {
   left: 0;
 }
 #qa-nav-user.active .qa-nav-user {
+  top: 40%;
+  right: 50%;
   visibility: visible;
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transform: translate(50%, -50%) scale(1);
+  transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1), top 0.3s,
+    right 0.3s;
   z-index: 6;
 }
 .qa-nav-user .qa-logged-in {
@@ -641,7 +659,9 @@ select {
 .qa-suggest-next,
 .qa-part-custom,
 .qa-part-form-activity,
-.qa-part-message-list,
+.qam-user-account .qa-part-message-list,
+.qam-user-wall-message .qa-message-list-form .qa-form-tall-table,
+.qa-part-form-message .qa-form-tall-table,
 .qa-part-form-profile,
 .qa-part-form-password,
 .qa-q-view-follows,
@@ -680,7 +700,9 @@ select {
 }
 .qa-part-form,
 .qa-part-form-2 form,
-.qam-admin-plugins .qa-form-tall-table {
+.qam-admin-plugins .qa-form-tall-table,
+.qa-part-form-q-edit,
+.qa-part-a-form .qa-a-form {
   margin: 10px 0;
   background-color: var(--surface);
   padding: 4px 16px 16px 16px;
@@ -959,8 +981,16 @@ select {
   height: auto;
 }
 .qa-q-item-when,
+.qa-q-view-when,
+.qa-a-item-when,
+.qa-c-item-when,
 .qa-q-item-where-data,
-.qa-q-item-who-data {
+.qa-q-view-where-data,
+.qa-q-item-who-data,
+.qa-q-view-who-data,
+.qa-a-item-who-data,
+.qa-c-item-who-data,
+.qa-message-who-data {
   font-weight: 500;
 }
 /* tags */
@@ -1141,6 +1171,9 @@ select {
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
+.qa-form-wide-ok span {
+  color: var(--on-primary);
+}
 .qa-form-tall-data {
   padding-top: 10px;
 }
@@ -1187,6 +1220,7 @@ select {
 .qa-form-light-button-answer,
 .qa-form-light-button-follow,
 .qa-form-tall-button-send,
+.qa-form-light-button-reply,
 .qa-form-tall-button-close,
 .qa-form-light-button-reshow,
 .qa-form-light-button-clearflags {
@@ -1265,6 +1299,15 @@ select {
   width: 30px;
   height: 30px;
   cursor: pointer;
+}
+.qa-a-selection input.qa-a-unselect-button{
+  width: 40px;
+}
+.qa-a-selected-text {
+  display: inline-block;
+  position: relative;
+  top: -7px;
+  color: var(--selected);
 }
 .qa-a-selection i {
   margin-top: 5px;
@@ -1596,9 +1639,38 @@ select {
   margin-top: 20px;
   margin-bottom: 10px;
 }
+.qa-part-q-list h2,
+.qa-part-ranking-users h2,
+.qa-part-ranking-tags h2,
+.qa-part-nav-list-categories h2 {
+  margin-left: 60px;
+}
+.qa-part-q-list h2::before,
+.qa-part-ranking-users h2::before,
+.qa-part-ranking-tags h2::before,
+.qa-part-nav-list-categories h2::before {
+  font-family: "Material Icons";
+  font-size: 24px;
+  position: absolute;
+  margin-left: -46px;
+  margin-top: 4px;
+  font-weight: normal;
+}
+.qa-part-q-list h2::before {
+  content: "chat";
+}
+.qa-part-ranking-users h2::before {
+  content: "groups";
+}
+.qa-part-ranking-tags h2::before {
+  content: "local_offer";
+}
+.qa-part-nav-list-categories h2::before {
+  content: "category";
+}
 .qa-c-form h2,
 .qa-a-form h2 {
-  padding-top: 76px;
+  padding-top: 20px;
   margin-bottom: 10px;
 }
 .qa-part-form-activity h2,
@@ -1866,7 +1938,8 @@ select {
 .qa-q-view-who-pad,
 .qa-q-item-who-pad,
 .qa-a-item-who-pad,
-.qa-c-item-who-pad {
+.qa-c-item-who-pad,
+.qa-message-who-pad {
   display: none;
 }
 .qa-user-link span {
@@ -1892,6 +1965,9 @@ select {
   content: "\A";
   display: block;
 }
+.qa-message-what {
+  display: block;
+}
 .qa-q-item-what,
 .qa-q-view-what,
 .qa-a-item-what,
@@ -1899,7 +1975,8 @@ select {
 .qa-q-item-when,
 .qa-q-view-when,
 .qa-a-item-when,
-.qa-c-item-when {
+.qa-c-item-when,
+.qa-message-when {
   font-size: 0.85em;
   opacity: 0.75;
   color: var(--on-surface);
