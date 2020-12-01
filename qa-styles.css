@@ -1,6 +1,6 @@
 /*
-	Theme Version: 2.4
-  Theme Date: 2020-11-07
+	Theme Version: 2.5
+  Theme Date: 2020-12-01
   Theme Author: Momin Raza
   Theme Author URI: https://mominraza.github.io
 */
@@ -906,6 +906,7 @@ select option{
 
 /* questions list */
 .qa-q-list-item {
+  position: relative;
   margin: 10px 0;
   background-color: var(--surface);
   padding: 16px 16px 0 16px;

@@ -202,7 +202,16 @@ class qa_html_theme extends qa_html_theme_base
 		$this->output('<i id="search-toggle"  onclick="toggleSearch()" class="material-icons">search</i>');
 
 		$this->nav_user_search();
-		$this->output($this->ask_button());
+		switch ( $this->template ) {
+			case 'admin' :
+			case 'login' :
+			case 'register' :
+			case 'forgot' :
+			case 'ask' :
+			break;
+			default:
+				$this->output($this->ask_button());
+		}
 		$this->nav_main_sub();
 		$this->header_clear();
 
