@@ -1,6 +1,6 @@
 /*
-	Theme Version: 2.5
-  Theme Date: 2020-12-01
+	Theme Version: 2.6
+  Theme Date: 2020-12-05
   Theme Author: Momin Raza
   Theme Author URI: https://mominraza.github.io
 */
@@ -82,15 +82,18 @@ body.dark-theme {
   --fab-shadow: 0 transparent;
 }
 body.dark-theme img {
-  filter: brightness(0.8) contrast(1.2);
+  filter: brightness(0.9) contrast(1.2);
 }
-body.dark-theme p,
+/* body.dark-theme p,
 body.dark-theme .qa-post-content span,
 body.dark-theme li,
 body.dark-theme strong,
 body.dark-theme sup,
 body.dark-theme sub {
   color: rgba(255, 255, 255, 0.6);
+} */
+body.dark-theme .qa-post-content{
+  opacity: .75;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -121,15 +124,18 @@ body.dark-theme sub {
     --fab-shadow: 0 transparent;
   }
   img {
-    filter: brightness(0.8) contrast(1.2);
+    filter: brightness(0.9) contrast(1.2);
   }
-  p,
+  /* p,
   .qa-post-content span,
   li,
   strong,
   sup,
   sub {
     color: rgba(255, 255, 255, 0.6);
+  } */
+  .qa-post-content{
+    opacity: .75;
   }
 
   body.light-theme {
@@ -162,13 +168,16 @@ body.dark-theme sub {
   body.light-theme img {
     filter: unset;
   }
-  body.light-theme p,
+  /* body.light-theme p,
   body.light-theme .qa-post-content span,
   body.light-theme li,
   body.light-theme strong,
   body.light-theme sup,
   body.light-theme sub {
     color: unset;
+  } */
+  body.light-theme .qa-post-content{
+    opacity: unset;
   }
 }
 
@@ -260,7 +269,7 @@ select option{
 }
 #search-toggle {
   position: absolute;
-  top: 27px;
+  top: 28px;
   right: 56px;
   color: var(--on-primary);
   font-size: 30px;
@@ -292,6 +301,7 @@ select option{
 }
 #search-toggle.active {
   left: 10px;
+  color: var(--selected);
 }
 .qa-nav-user {
   position: fixed;
@@ -372,49 +382,60 @@ select option{
 }
 .qa-search-field,
 .qa-search-button {
-  padding: 10px !important;
   margin-top: 10px;
   border: none;
 }
 .qa-search-field {
   margin-top: 5px;
-  margin-left: 45px;
-  width: calc(100% - 99px) !important;
+  margin-left: 5px;
+  width: calc(100% - 10px) !important;
   background-color: unset;
   font-size: 20px;
-  color: var(--on-primary);
+  color: var(--on-surface);
+  padding: 10px 46px !important;
 }
 .qa-search-field::placeholder {
   color: #9e9e9e;
 }
 .qa-search-button {
+  position: fixed;
+  top: 11px;
+  right: 10px;
   width: 30px;
   background-color: unset;
   color: var(--on-primary);
 }
 .qa-search-button i {
   font-size: 30px;
-  color: var(--on-primary);
+  color: var(--selected);
 }
 /* media query for Search field on laptop */
 @media (min-width: 1024px) {
   .qa-search {
-    left: unset;
-    right: 56px;
-    width: 600px;
+    visibility: visible;
+    transform: scale(1);
+  }
+  .qa-search {
+    left: 310px;
+    right: 310px;
+    width: auto;
+    max-width: 1000px;
+    margin: 0 auto;
   }
   .qa-search-field {
-    width: calc(100% - 44px) !important;
+    width: 100% !important;
     background-color: var(--surface);
     margin-left: 0;
-    padding-bottom: 7px !important;
+    padding: 10px 46px 10px 10px !important;
     color: var(--on-surface);
   }
-  #search-toggle.active {
-    left: unset;
-    top: 28px;
-    right: 105px;
-    color: #9e9e9e;
+  #search-toggle {
+    display: none;
+  }
+}
+@media (min-width: 1280px) {
+  .qa-search {
+    right: 410px;
   }
 }
 .qa-nav-main {
@@ -1327,8 +1348,8 @@ select option{
 /* post content */
 .qa-q-view-content,
 .qa-a-item-content {
-  line-height: 1.4em;
-  font-size: 1.1em;
+  line-height: 1.25em;
+  font-size: 1.07em;
 }
 .qa-post-content p,
 .qa-part-custom p {

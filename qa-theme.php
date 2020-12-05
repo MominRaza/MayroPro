@@ -33,6 +33,7 @@ class qa_html_theme extends qa_html_theme_base
 	public function head_metas()
 	{
 		$this->output('<meta name="viewport" content="width=device-width, initial-scale=1"/>');
+		$this->output('<meta name="theme-color" content="#512da8">');
 		$this->output(
 			'<!-- generics -->',
 			'<link rel="icon" href="/images/favicon-32.png" sizes="32x32">',
