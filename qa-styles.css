@@ -352,6 +352,7 @@ select option{
   padding: 0;
 }
 .qa-nav-user-link {
+  position: relative;
   display: block;
   padding: 10px 0 10px 64px;
   color: var(--on-surface);
@@ -606,6 +607,10 @@ select option{
 }
 .qa-nav-user-favorites .qa-nav-user-link::before {
   content: "star_outline";
+}
+.qa-nav-user-settings .qa-nav-user-link::before {
+  font-family: "Material Icons Outlined";
+  content: "settings";
 }
 
 .qa-favorite-image {
@@ -1151,10 +1156,30 @@ select option{
     border-left: 1px solid var(--on-surface);
   }
 }
-.theme-toggle {
-  cursor: pointer;
-  /* font-size: 24px !important; */
-  top: 7px !important;
+#theme-toggle {
+  display: none;
+}
+#theme-toggle1 .material-icons {
+  position: absolute;
+  left: 0px;
+  top: 0;
+  padding: 19px 26px 19px 190px;
+}
+
+@media (min-width: 1024px) {
+  #theme-toggle {
+    display: block;
+    position: absolute;
+    top: 28px;
+    right: 60px;
+    color: var(--on-primary);
+    font-size: 30px;
+    z-index: 5;
+    cursor: pointer;
+  }
+  #theme-toggle1 {
+    display: none;
+  }
 }
 
 /* form */

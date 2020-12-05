@@ -136,6 +136,22 @@ class qa_html_theme extends qa_html_theme_base
 				$this->output('</li>');
 			$this->output('</ul>');
 		}
+		$themeIcon = 'brightness_auto';
+		$themeTitle = 'System default';
+		if (!empty($_COOKIE['theme'])) {
+			if ($_COOKIE['theme'] == 'dark') {
+				$themeIcon = 'brightness_4';
+				$themeTitle = 'Dark';
+			} else if ($_COOKIE['theme'] == 'light') {
+				$themeIcon = 'brightness_high';
+				$themeTitle = 'Light';
+			}
+		}
+		$this->output('<ul class="qa-nav-user-list" id="theme-toggle1">');
+		$this->output('<li class="qa-nav-user-item qa-nav-user-settings">');
+		$this->output('<div class="qa-nav-user-link">Theme <i class="material-icons" onclick="toggleTheme(this)" title="'.$themeTitle.'">'.$themeIcon.'</i></div>');
+		$this->output('</li>');
+		$this->output('</ul>');
 	}
 
 	public function body_content()
@@ -201,6 +217,19 @@ class qa_html_theme extends qa_html_theme_base
 
 		$this->output('<i id="menu-toggle" onclick="toggleMenu()" class="material-icons">menu</i>');
 		$this->output('<i id="search-toggle"  onclick="toggleSearch()" class="material-icons">search</i>');
+
+		$themeIcon = 'brightness_auto';
+		$themeTitle = 'System default';
+		if (!empty($_COOKIE['theme'])) {
+			if ($_COOKIE['theme'] == 'dark') {
+				$themeIcon = 'brightness_4';
+				$themeTitle = 'Dark';
+			} else if ($_COOKIE['theme'] == 'light') {
+				$themeIcon = 'brightness_high';
+				$themeTitle = 'Light';
+			}
+		}
+		$this->output('<i id="theme-toggle" class="material-icons" onclick="toggleTheme(this)" title="'.$themeTitle.'">'.$themeIcon.'</i>');
 
 		$this->nav_user_search();
 		switch ( $this->template ) {
@@ -706,23 +735,6 @@ class qa_html_theme extends qa_html_theme_base
 	 */
 	public function attribution()
 	{
-		$themeIcon = 'brightness_auto';
-		$themeTitle = 'System default';
-		if (!empty($_COOKIE['theme'])) {
-			if ($_COOKIE['theme'] == 'dark') {
-				$themeIcon = 'brightness_4';
-				$themeTitle = 'Dark';
-			} else if ($_COOKIE['theme'] == 'light') {
-				$themeIcon = 'brightness_high';
-				$themeTitle = 'Light';
-			}
-		}
-		$this->output(
-			'<div class="qa-attribution">',
-				'Theme:',
-				'<i class="material-icons theme-toggle" onclick="toggleTheme(this)" title="'.$themeTitle.'">'.$themeIcon.'</i>',
-			'</div>'
-		);
 		$this->output(
 			'<div class="qa-attribution">',
 			'Mayro by <a href="https://mominraza.github.io">Momin Raza</a>',
