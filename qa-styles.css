@@ -1419,7 +1419,7 @@ select option{
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
 .qa-error a {
-  color: var(--primary-light);
+  color: var(--primary-light-700);
 }
 
 /* user */
