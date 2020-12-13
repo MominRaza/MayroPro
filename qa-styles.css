@@ -50,14 +50,17 @@ body {
   --link: #005c98;
   --selected: var(--primary);
 
-  --appbar-shadow: 0 2px 2px gray;
+  --appbar-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 5px 5px 0px rgba(0, 0, 0, 0.14),
+    0px 10px 10px 0px rgba(0, 0, 0, 0.12);
   --fab-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
-    0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+    0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 18px 0px rgba(0, 0, 0, 0.12);
 }
 
 body.dark-theme {
   --primary-rgb: 255, 255, 255;
-  --primary: #2f2f2f;
+  --primary: #35363a;
   --primary-dark: rgba(255, 255, 255, 0.14);
   --primary-light: rgba(255, 255, 255, 0.1);
   --secondary: #2c2c2c;
@@ -99,7 +102,7 @@ body.dark-theme .qa-post-content{
 @media (prefers-color-scheme: dark) {
   body {
     --primary-rgb: 255, 255, 255;
-    --primary: #2f2f2f;
+    --primary: #35363a;
     --primary-dark: rgba(255, 255, 255, 0.14);
     --primary-light: rgba(255, 255, 255, 0.1);
     --secondary: #2c2c2c;
@@ -161,9 +164,12 @@ body.dark-theme .qa-post-content{
     --link: #005c98;
     --selected: var(--primary);
 
-    --appbar-shadow: 0 2px 2px gray;
+    --appbar-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.2),
+      0px 5px 5px 0px rgba(0, 0, 0, 0.14),
+      0px 10px 10px 0px rgba(0, 0, 0, 0.12);
     --fab-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
-      0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+      0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+      0px 1px 18px 0px rgba(0, 0, 0, 0.12);
   }
   body.light-theme img {
     filter: unset;
@@ -420,7 +426,7 @@ select option{
     left: 310px;
     right: 310px;
     width: auto;
-    max-width: 1000px;
+    max-width: 980px;
     margin: 0 auto;
   }
   .qa-search-field {
@@ -436,18 +442,19 @@ select option{
 }
 @media (min-width: 1280px) {
   .qa-search {
-    right: 410px;
+    left: 340px;
+    right: 480px;
   }
 }
 .qa-nav-main {
-  transform: translateX(-300px);
+  transform: translateX(-264px);
   will-change: visibility;
   visibility: hidden;
   z-index: 6;
   position: absolute;
   top: 56px;
   left: 0;
-  width: 300px;
+  width: 264px;
   height: 100vh;
   background-color: var(--surface-solid, var(--surface));
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
@@ -458,13 +465,13 @@ select option{
     visibility 0s linear 0.25s;
 }
 #qa-nav-main .qa-logo {
-  transform: translateX(-300px);
+  transform: translateX(-264px);
   will-change: visibility;
   visibility: hidden;
   position: absolute;
   top: 0;
   left: 0;
-  width: 299px;
+  width: 264px;
   height: 56px;
   padding-top: 13px;
   background-color: var(--surface-solid, var(--surface));
@@ -860,15 +867,15 @@ select option{
     z-index: 4;
   }
   .menu-active .qa-nav-sub-list {
-    margin-left: 300px;
-    width: calc(100% - 300px);
+    margin-left: 264px;
+    width: calc(100% - 264px);
   }
   .menu-active .qam-main-sidepanel {
-    margin-left: 300px;
+    margin-left: 264px;
   }
   .menu-active .qa-footer,
   .menu-active .qa-widgets-full {
-    margin-left: 300px;
+    margin-left: 264px;
   }
 }
 /* three column for laptop by default */
@@ -880,25 +887,25 @@ select option{
       visibility 0s linear 0s;
   }
   .menu-active .qa-nav-main {
-    transform: translateX(-300px);
+    transform: translateX(-264px);
   }
   .qa-nav-sub-list {
-    margin-left: 300px;
-    width: calc(100% - 300px);
+    margin-left: 264px;
+    width: calc(100% - 264px);
   }
   .menu-active .qa-nav-sub-list {
     margin-left: 0;
     width: 100%;
   }
   .qam-main-sidepanel {
-    margin-left: 300px;
+    margin-left: 264px;
   }
   .menu-active .qam-main-sidepanel {
     margin-left: 0;
   }
   .qa-footer,
   .qa-widgets-full {
-    margin-left: 300px;
+    margin-left: 264px;
   }
   .menu-active .qa-footer,
   .menu-active .qa-widgets-full {
@@ -1161,7 +1168,7 @@ select option{
 }
 #theme-toggle1 .material-icons {
   position: absolute;
-  left: 0px;
+  left: 0;
   top: 0;
   padding: 19px 26px 19px 190px;
 }
@@ -1685,11 +1692,6 @@ select option{
 .qa-part-nav-list-categories h2 {
   margin-top: 20px;
   margin-bottom: 10px;
-}
-.qa-part-q-list h2,
-.qa-part-ranking-users h2,
-.qa-part-ranking-tags h2,
-.qa-part-nav-list-categories h2 {
   margin-left: 60px;
 }
 .qa-part-q-list h2::before,

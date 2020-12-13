@@ -4,32 +4,6 @@ class qa_html_theme extends qa_html_theme_base
 {
 	private $nav_bar_avatar_size = 52;
 
-	public function head()
-	{
-		$this->output('<head>');
-		$this->output("
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src='https://www.googletagmanager.com/gtag/js?id=G-3S4SWVG886'></script>
-		<script>
-		    window.dataLayer = window.dataLayer || [];
-		    function gtag(){dataLayer.push(arguments);}
-		    gtag('js', new Date());
-		
-		    gtag('config', 'G-3S4SWVG886');
-		</script>
-		");
-		$this->output('<meta charset="' . $this->content['charset'] . '"/>');
-		$this->head_title();
-		$this->head_metas();
-		$this->head_css();
-		$this->head_links();
-		$this->head_lines();
-		$this->head_script();
-		$this->head_custom();
-
-		$this->output('</head>');
-	}
-
 	public function head_metas()
 	{
 		$this->output('<meta name="viewport" content="width=device-width, initial-scale=1"/>');
@@ -64,6 +38,8 @@ class qa_html_theme extends qa_html_theme_base
 
 	public function head_css()
 	{
+		if ($this->isRTL)
+			$this->content['css_src'][] = $this->rooturl . 'qa-styles-rtl.css?' . QA_VERSION;
 		$this->content['css_src'][] = $this->rooturl . 'icons/material-icons.css';
 		$this->output('<link rel="manifest" href="'. $this->rooturl .'manifest.webmanifest">');
 		parent::head_css();
