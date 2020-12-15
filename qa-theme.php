@@ -9,29 +9,7 @@ class qa_html_theme extends qa_html_theme_base
 		$this->output('<meta name="viewport" content="width=device-width, initial-scale=1"/>');
 		$this->output('<meta name="theme-color" content="#512da8">');
 		$this->output(
-			'<!-- generics -->',
 			'<link rel="icon" href="/images/favicon-32.png" sizes="32x32">',
-			'<link rel="icon" href="/images/favicon-57.png" sizes="57x57">',
-			'<link rel="icon" href="/images/favicon-76.png" sizes="76x76">',
-			'<link rel="icon" href="/images/favicon-96.png" sizes="96x96">',
-			'<link rel="icon" href="/images/favicon-128.png" sizes="128x128">',
-			'<link rel="icon" href="/images/favicon-192.png" sizes="192x192">',
-			'<link rel="icon" href="/images/favicon-228.png" sizes="228x228">',
-			
-			'<!-- Android -->',
-			'<link rel="shortcut icon" sizes="196x196" href=“/images/favicon-196.png">',
-			
-			'<!-- iOS -->',
-			'<link rel="apple-touch-icon" href="/images/favicon-120.png" sizes="120x120">',
-			'<link rel="apple-touch-icon" href="path/to/favicon-152.png" sizes="152x152">',
-			'<link rel="apple-touch-icon" href="path/to/favicon-180.png" sizes="180x180">',
-			
-			'<!-- Windows 8 IE 10-->',
-			'<meta name="msapplication-TileColor" content="#FFFFFF">',
-			'<meta name="msapplication-TileImage" content="/images/favicon-144.png">',
-			
-			'<!— Windows 8.1 + IE11 and above —>',
-			'<meta name="msapplication-config" content="/images/browserconfig.xml" />'
 		);
 		parent::head_metas();
 	}
