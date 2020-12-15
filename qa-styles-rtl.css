@@ -152,6 +152,9 @@ input[type="radio"] {
     }
 }
 @media (min-width: 1280px) {
+    .qa-nav-main {
+        transform: translateX(0);
+    }
     .menu-active .qa-nav-main {
         transform: translateX(264px);
     }
@@ -335,7 +338,7 @@ input[type="radio"] {
 }
 .qa-browse-cat-favorited,
 .qa-nav-cat-favorited {
-  margin-left: 0;
+  margin-left: auto;
   margin-right: 20px;
 }
 .qa-browse-cat-favorited::after,
@@ -381,6 +384,10 @@ input[type="radio"] {
 .qa-related-qs .qa-related-q-list,
 .qa-ask-similar .qa-q-title-list {
   margin-right: 0;
+}
+.qam-rest-buttons {
+    margin-left: 0;
+    margin-right: auto;
 }
 .qam-q-extra-menu {
     right: unset;
@@ -443,3 +450,14 @@ input[type="radio"] {
     margin-left: 0;
     margin-right: -56px;
 }
+
+/* Style for QNumbering Plugin RTL*/
+/* .qa-question-list-count {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: var(--primary);
+    color: var(--on-primary);
+    padding: 5px 7px;
+    border-radius: 4px 0px 4px 0px;
+} */

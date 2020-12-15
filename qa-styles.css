@@ -2121,3 +2121,14 @@ select option{
   padding: 2px 8px;
   border-radius: 12px;
 }
+
+/* Style for QNumbering Plugin LTR*/
+/* .qa-question-list-count {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: var(--primary);
+    color: var(--on-primary);
+    padding: 5px 7px;
+    border-radius: 0px 4px 0px 4px;
+} */
