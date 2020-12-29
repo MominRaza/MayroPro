@@ -1,6 +1,6 @@
 /*
-	Theme Version: 2.6
-  Theme Date: 2020-12-05
+	Theme Version: 2.0
+  Theme Date: 2020-12-29
   Theme Author: Momin Raza
   Theme Author URI: https://mominraza.github.io
 */
@@ -580,9 +580,6 @@ select option{
 .qa-nav-main-admin .qa-nav-main-link::before {
   content: "admin_panel_settings";
 }
-.qa-nav-main-custom-3 .qa-nav-main-link::before {
-  content: "admin_panel_settings";
-}
 
 .qa-nav-user-link::before {
   font-family: "Material Icons";
@@ -616,8 +613,7 @@ select option{
   content: "star_outline";
 }
 .qa-nav-user-settings .qa-nav-user-link::before {
-  font-family: "Material Icons Outlined";
-  content: "settings";
+  content: "brightness_medium";
 }
 
 .qa-favorite-image {

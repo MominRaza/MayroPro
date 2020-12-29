@@ -20,7 +20,7 @@ function toggleUser() {
 function toggleTheme(themeToggle) {
     if (document.body.classList.contains('light-theme')) {
         document.body.classList.replace('light-theme', 'dark-theme');
-        themeToggle.innerText = 'brightness_4';
+        themeToggle.innerText = 'dark_mode';
         themeToggle.title = 'Dark';
         document.cookie = "theme=dark; max-age=2592000; path=/;";
     } else if (document.body.classList.contains('dark-theme')) {
@@ -30,7 +30,7 @@ function toggleTheme(themeToggle) {
         document.cookie = "theme=; max-age=0; path=/;";
     } else {
         document.body.classList.add('light-theme');
-        themeToggle.innerText = 'brightness_high';
+        themeToggle.innerText = 'light_mode';
         themeToggle.title = 'Light';
         document.cookie = "theme=light; max-age=2592000; path=/;";
     }

@@ -94,10 +94,10 @@ class qa_html_theme extends qa_html_theme_base
 		$themeTitle = 'System default';
 		if (!empty($_COOKIE['theme'])) {
 			if ($_COOKIE['theme'] == 'dark') {
-				$themeIcon = 'brightness_4';
+				$themeIcon = 'dark_mode';
 				$themeTitle = 'Dark';
 			} else if ($_COOKIE['theme'] == 'light') {
-				$themeIcon = 'brightness_high';
+				$themeIcon = 'light_mode';
 				$themeTitle = 'Light';
 			}
 		}
@@ -176,10 +176,10 @@ class qa_html_theme extends qa_html_theme_base
 		$themeTitle = 'System default';
 		if (!empty($_COOKIE['theme'])) {
 			if ($_COOKIE['theme'] == 'dark') {
-				$themeIcon = 'brightness_4';
+				$themeIcon = 'dark_mode';
 				$themeTitle = 'Dark';
 			} else if ($_COOKIE['theme'] == 'light') {
-				$themeIcon = 'brightness_high';
+				$themeIcon = 'light_mode';
 				$themeTitle = 'Light';
 			}
 		}
