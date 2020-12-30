@@ -688,8 +688,11 @@ select option{
 .qa-suggest-next,
 .qa-part-custom,
 .qa-part-form-activity,
-.qam-user-account .qa-part-message-list,
-.qam-user-wall-message .qa-message-list-form .qa-form-tall-table,
+.qa-template-user .qa-part-message-list,
+.qa-template-account .qa-part-message-list,
+.qa-template-user-wall .qa-message-list-form .qa-form-tall-table,
+.qa-template-messages .qa-message-list-form .qa-form-tall-table,
+.qa-template-message .qa-message-list-form .qa-form-tall-table,
 .qa-part-form-message .qa-form-tall-table,
 .qa-part-form-profile,
 .qa-part-form-password,
@@ -781,7 +784,9 @@ select option{
     float: unset;
     margin: 10px 0;
   }
-  .qam-user-wall-message .qa-part-message-list {
+  .qa-template-user-wall .qa-part-message-list,
+  .qa-template-messages .qa-part-message-list,
+  .qa-template-message .qa-part-message-list {
     width: unset;
     float: unset;
     margin: 10px 0;
@@ -804,7 +809,9 @@ select option{
     float: right;
     margin-top: 0;
   }
-  .menu-active .qam-user-wall-message .qa-part-message-list {
+  .qa-template-user-wall.menu-active .qa-part-message-list,
+  .qa-template-messages.menu-active .qa-part-message-list,
+  .qa-template-message.menu-active .qa-part-message-list {
     width: unset;
     float: unset;
     margin: 10px 0;
@@ -968,7 +975,9 @@ select option{
   min-height: 60px;
   padding-left: 60px;
 }
-.qam-q-a-a .qam-q-post-meta {
+.qa-template-user-questions .qam-q-post-meta,
+.qa-template-user-answers .qam-q-post-meta,
+.qa-template-user-activity .qam-q-post-meta {
   min-height: 30px;
   padding-left: 0;
 }
@@ -1080,8 +1089,8 @@ select option{
 .qa-view-count {
   padding: 10px;
 }
-.qam-q-a-a.a .qa-a-count,
-.qam-q-a-a.a .qa-view-count {
+.qa-template-user-activity .qa-a-count,
+.qa-template-user-activity .qa-view-count {
   padding-left: 0;
   padding-right: 20px;
 }
@@ -1842,16 +1851,22 @@ select option{
 }
 
 /* login register */
-.qam-user-account .qa-main {
+.qa-template-user .qa-main,
+.qa-template-account .qa-main {
   width: 100%;
 }
-.qam-login-register .qa-main {
+.qa-template-login .qa-main,
+.qa-template-register .qa-main,
+.qa-template-forgot .qa-main {
   max-width: 400px;
   min-height: 75vh;
   margin: 10px auto;
 }
-.qam-user-account .qa-sidepanel,
-.qam-login-register .qa-sidepanel {
+.qa-template-user .qa-sidepanel,
+.qa-template-account .qa-sidepanel,
+.qa-template-login .qa-sidepanel,
+.qa-template-register .qa-sidepanel,
+.qa-template-forgot .qa-sidepanel {
   display: none;
 }
 

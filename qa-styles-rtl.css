@@ -203,7 +203,9 @@ input[type="radio"] {
     padding-left: 0;
     padding-right: 60px;
 }
-.qam-q-a-a .qam-q-post-meta {
+.qa-template-user-questions .qam-q-post-meta,
+.qa-template-user-answers .qam-q-post-meta,
+.qa-template-user-activity .qam-q-post-meta {
     padding-right: 0;
 }
 .qa-q-item-avatar-meta .qa-avatar-link,
@@ -234,8 +236,8 @@ input[type="radio"] {
     padding-right: 0;
     padding-left: 10px;
 }
-.qam-q-a-a.a .qa-a-count,
-.qam-q-a-a.a .qa-view-count {
+.qa-template-user-activity .qa-a-count,
+.qa-template-user-activity .qa-view-count {
   padding-left: 20px;
   padding-right: 0;
 }

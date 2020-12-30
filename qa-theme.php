@@ -40,15 +40,24 @@ class qa_html_theme extends qa_html_theme_base
 
 	public function body_tags()
 	{
-		$themeClass = '';
-		if (!empty($_COOKIE['theme'])) {
-			if ($_COOKIE['theme'] == 'dark') {
-				$themeClass = 'dark-theme';
-			} else if ($_COOKIE['theme'] == 'light') {
-				$themeClass = 'light-theme';
+		$class = 'qa-template-' . qa_html($this->template);
+		$class .= empty($this->theme) ? '' : ' qa-theme-' . qa_html($this->theme);
+
+		if (isset($this->content['categoryids'])) {
+			foreach ($this->content['categoryids'] as $categoryid) {
+				$class .= ' qa-category-' . qa_html($categoryid);
 			}
 		}
-		$this->output('class="'.$themeClass.'"');
+
+		if (!empty($_COOKIE['theme'])) {
+			if ($_COOKIE['theme'] == 'dark') {
+				$class .= ' dark-theme';
+			} else if ($_COOKIE['theme'] == 'light') {
+				$class .= ' light-theme';
+			}
+		}
+
+		$this->output('class="' . $class . ' qa-body-js-off"');
 	}
 
 	// Adding point count for logged in user
@@ -121,15 +130,6 @@ class qa_html_theme extends qa_html_theme_base
 		$this->widgets('full', 'high');
 
 		switch ( $this->template ) {
-			case 'user' :
-			case 'account' :
-				$this->output('<div class="qam-main-sidepanel qam-user-account">');
-			break;
-			case 'user-wall' :
-            case 'messages' :
-			case 'message' :
-				$this->output('<div class="qam-main-sidepanel qam-user-wall-message">');
-			break;
 			case 'admin' :
 				$type = qa_request_part( 1 );
 				switch ( $type ) {
@@ -140,11 +140,6 @@ class qa_html_theme extends qa_html_theme_base
 						$this->output('<div class="qam-main-sidepanel">');
 						break;
 				}
-			break;
-			case 'login' :
-			case 'register' :
-			case 'forgot' :
-				$this->output('<div class="qam-main-sidepanel qam-login-register">');
 			break;
 			default:
 				$this->output('<div class="qam-main-sidepanel">');
@@ -267,9 +262,15 @@ class qa_html_theme extends qa_html_theme_base
 
 	private function ask_button()
 	{
+		$params = null;
+		if (isset($this->content['categoryids'])) {
+			foreach ($this->content['categoryids'] as $categoryid) {
+				$params = array('cat' => qa_html($categoryid));
+			}
+		}
 		return
 			'<div class="qam-ask">' .
-			'<a href="' . qa_path('ask', null, qa_path_to_root()) . '" class="qam-ask-link">' .
+			'<a href="' . qa_path('ask', $params, qa_path_to_root()) . '" class="qam-ask-link">' .
 			'<i class="material-icons">edit</i>'.
 			qa_lang_html('main/nav_ask') .
 			'</a>' .
@@ -278,18 +279,8 @@ class qa_html_theme extends qa_html_theme_base
 
 	public function q_list_item($q_item)
 	{
-		switch ( $this->template ) {
-			case 'user-questions' :
-            case 'user-answers' :
-				$this->output('<div class="qam-q-a-a qa-q-list-item' . rtrim(' ' . @$q_item['classes']) . '" ' . @$q_item['tags'] . '>');
-			break;
-            case 'user-activity' :
-				$this->output('<div class="qam-q-a-a a qa-q-list-item' . rtrim(' ' . @$q_item['classes']) . '" ' . @$q_item['tags'] . '>');
-			break;
-			default:
-				$this->output('<div class="qa-q-list-item' . rtrim(' ' . @$q_item['classes']) . '" ' . @$q_item['tags'] . '>');
-		}
-
+		$this->output('<div class="qa-q-list-item' . rtrim(' ' . @$q_item['classes']) . '" ' . @$q_item['tags'] . '>');
+		
 		$this->q_item_main($q_item);
 		$this->q_item_stats($q_item);
 		$this->q_item_clear();
