@@ -452,3 +452,13 @@ input[type="radio"] {
     margin-left: 0;
     margin-right: -56px;
 }
+
+/* feed */
+.qa-feed-link{
+    margin-left: 0;
+    margin-right: 36px;
+}
+.qa-feed-link::before {
+    margin-left: 0;
+    margin-right: -36px;
+}

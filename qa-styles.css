@@ -49,6 +49,7 @@ body {
 
   --link: #005c98;
   --selected: var(--primary);
+  --on-selected: white;
 
   --appbar-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.2),
     0px 5px 5px 0px rgba(0, 0, 0, 0.14),
@@ -80,6 +81,7 @@ body.dark-theme {
 
   --link: #7dafcf;
   --selected: var(--on-primary);
+  --on-selected: black;
 
   --appbar-shadow: 0 transparent;
   --fab-shadow: 0 transparent;
@@ -122,6 +124,7 @@ body.dark-theme .qa-post-content{
 
     --link: #7dafcf;
     --selected: var(--on-primary);
+    --on-selected: black;
 
     --appbar-shadow: 0 transparent;
     --fab-shadow: 0 transparent;
@@ -163,6 +166,7 @@ body.dark-theme .qa-post-content{
 
     --link: #005c98;
     --selected: var(--primary);
+    --on-selected: white;
 
     --appbar-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.2),
       0px 5px 5px 0px rgba(0, 0, 0, 0.14),
@@ -225,10 +229,11 @@ input[type="radio"] {
   margin-right: 10px;
 }
 input[type="submit"] {
-  padding: 5px 10px;
+  padding: 7px 16px;
   font-size: 1.2em;
   border-radius: 4px;
   cursor: pointer;
+  text-transform: capitalize;
 }
 button {
   cursor: pointer;
@@ -557,7 +562,7 @@ select option{
   content: "question_answer";
 }
 .qa-nav-main-questions .qa-nav-main-link::before {
-  content: "chat";
+  content: "live_help";
 }
 .qa-nav-main-hot .qa-nav-main-link::before {
   content: "local_fire_department";
@@ -575,7 +580,7 @@ select option{
   content: "groups";
 }
 .qa-nav-main-ask .qa-nav-main-link::before {
-  content: "live_help";
+  content: "edit";
 }
 .qa-nav-main-admin .qa-nav-main-link::before {
   content: "admin_panel_settings";
@@ -685,6 +690,7 @@ select option{
 /* sidepanel */
 .qa-sidebar,
 .qa-widget-side,
+.qa-feed,
 .qa-suggest-next,
 .qa-part-custom,
 .qa-part-form-activity,
@@ -1284,32 +1290,32 @@ select option{
 .qa-form-light-button-reshow,
 .qa-form-light-button-clearflags {
   margin-top: 10px;
-  background-color: var(--primary-dark);
-  color: var(--on-primary);
+  background-color: var(--selected);
+  color: var(--on-selected);
 }
 .qa-form-tall-button-reset,
 .qa-form-wide-button-reset,
 .qa-form-tall-button-addpage,
 .qa-form-tall-button-addlink,
 .qa-form-wide-button-showdefaults,
-.qa-form-basic-button,
+[class*="qa-form-basic-button-re"],
 .qa-form-tall-button-add,
 .qa-form-tall-button-cancel,
 .qa-form-wide-button-block,
 .qa-form-wide-button-hideall,
 .qa-form-light-button-comment,
-.qa-form-light-button-close,
-.qa-form-light-button-flag,
 .qa-form-tall-button-1 {
   margin-top: 10px;
-  background-color: var(--secondary);
-  color: var(--on-secondary);
+  background-color: transparent;
+  border: 1px solid var(--selected);
+  color: var(--selected);
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
 }
 .qa-form-wide-button-delete_expired,
 .qa-form-wide-button-delete_all,
 .qa-form-wide-button-delete,
 .qa-form-light-button-delete,
-.qa-form-light-button-hide,
 .qa-form-basic-button-delete_hidden {
   margin-top: 10px;
   background-color: var(--error);
@@ -1342,7 +1348,7 @@ select option{
   flex-wrap: wrap;
 }
 .qam-stats-buttons .qa-voting {
-  margin-top: 8px;
+  margin-top: 10px;
   margin-right: 10px;
 }
 .qam-stats-buttons .qa-view-count {
@@ -1816,7 +1822,7 @@ select option{
 }
 .qa-vote-buttons i {
   margin: 5px;
-  margin-top: 12px;
+  margin-top: 14px;
   color: gray;
 }
 .qa-vote-buttons i.enabled {
@@ -2131,4 +2137,19 @@ select option{
   margin: 1px 0;
   padding: 2px 8px;
   border-radius: 12px;
+}
+
+/* feed */
+.qa-feed-link{
+  margin-left: 36px;
+  margin-bottom: 6px;
+  display: block;
+}
+.qa-feed-link::before {
+  font-family: "Material Icons";
+  font-size: 24px;
+  position: absolute;
+  margin-left: -36px;
+  margin-top: -3px;
+  content: "rss_feed";
 }
