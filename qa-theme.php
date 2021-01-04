@@ -305,7 +305,6 @@ class qa_html_theme extends qa_html_theme_base
 		$this->output('<div class="qa-q-item-stats">');
 
 		$this->voting($q_item);
-		$this->view_count($q_item);
 		$this->a_count($q_item);
 
 		$this->output('</div>');
@@ -350,6 +349,7 @@ class qa_html_theme extends qa_html_theme_base
 			}
 		}
 
+		$this->view_count($post);
 		$this->post_meta_flags($post, $class);
 
 		if (!empty($post['what_2'])) {
@@ -422,7 +422,6 @@ class qa_html_theme extends qa_html_theme_base
 				$this->form_hidden_elements(@$q_view['voting_form_hidden']);
 				$this->output('</form>');
 			}
-			$this->view_count($q_view);
 			if (isset($q_view['main_form_tags'])) {
 				$this->output('<form ' . $q_view['main_form_tags'] . ' class="qam-rest-buttons">'); // form for buttons on question
 			}

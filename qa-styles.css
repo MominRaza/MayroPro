@@ -1035,8 +1035,16 @@ select option{
 .qa-q-view-who-data,
 .qa-a-item-who-data,
 .qa-c-item-who-data,
-.qa-message-who-data {
+.qa-message-who-data,
+.qa-view-count {
   font-weight: 500;
+}
+.qa-view-count::before {
+  position: relative;
+  top: -2px;
+  content: ".";
+  font-size: 18px;
+  font-weight: bold;
 }
 /* tags */
 .qa-q-item-tag-list,
@@ -1077,9 +1085,8 @@ select option{
 .qa-q-item-stats {
   width: calc(100% + 20px);
   display: flex;
-  text-transform: uppercase;
   color: var(--link);
-  min-height: 40px;
+  min-height: 10px;
   margin: 0;
   /* padding: 8px; */
   border-top: 1px solid transparent;
@@ -1091,12 +1098,10 @@ select option{
 .qa-q-list-vote-disabled .qa-voting {
   display: none;
 }
-.qa-a-count,
-.qa-view-count {
+.qa-a-count {
   padding: 10px;
 }
-.qa-template-user-activity .qa-a-count,
-.qa-template-user-activity .qa-view-count {
+.qa-template-user-activity .qa-a-count {
   padding-left: 0;
   padding-right: 20px;
 }
@@ -1350,12 +1355,6 @@ select option{
 .qam-stats-buttons .qa-voting {
   margin-top: 10px;
   margin-right: 10px;
-}
-.qam-stats-buttons .qa-view-count {
-  padding: 16px;
-  padding-left: 2px;
-  text-transform: uppercase;
-  color: var(--link);
 }
 .qa-a-selection input {
   position: absolute;
@@ -2055,7 +2054,8 @@ select option{
 .qa-q-view-when,
 .qa-a-item-when,
 .qa-c-item-when,
-.qa-message-when {
+.qa-message-when,
+.qa-view-count {
   font-size: 0.85em;
   opacity: 0.75;
   color: var(--on-surface);
@@ -2115,22 +2115,18 @@ select option{
 .qa-a-item-flags span,
 .qa-c-item-flags span {
   color: var(--error);
-  padding-left: 24px;
+  font-size: 0.85em;
+  opacity: 0.75;
+  letter-spacing: 0.02px;
 }
-.qa-q-view-flags-pad,
-.qa-a-item-flags-pad,
-.qa-c-item-flags-pad {
-  visibility: hidden;
-}
-.qa-q-view-flags-pad::before,
-.qa-a-item-flags-pad::before,
-.qa-c-item-flags-pad::before {
-  font-family: "Material Icons";
-  position: absolute;
-  font-size: 20px;
-  margin-left: -56px;
-  content: "flag";
-  visibility: visible;
+.qa-q-view-flags::before,
+.qa-a-item-flags::before,
+.qa-c-item-flags::before {
+    position: relative;
+    top: -2px;
+    content: ".";
+    font-size: 18px;
+    font-weight: bold;
 }
 
 /* hidden */
