@@ -270,10 +270,10 @@ class qa_html_theme extends qa_html_theme_base
 		}
 		return
 			'<div class="qam-ask">' .
-			'<a href="' . qa_path('ask', $params, qa_path_to_root()) . '" class="qam-ask-link">' .
-			'<i class="material-icons">edit</i>'.
-			qa_lang_html('main/nav_ask') .
-			'</a>' .
+				'<a href="' . qa_path('ask', $params, qa_path_to_root()) . '" class="qam-ask-link">' .
+					'<i class="material-icons">edit</i>'.
+					qa_lang_html('main/nav_ask') .
+				'</a>' .
 			'</div>';
 	}
 
