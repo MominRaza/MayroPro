@@ -26,12 +26,13 @@ class qa_html_theme extends qa_html_theme_base
 	public function head_script()
 	{
 		$jsUrl = $this->rooturl . 'js/main.js?' . QA_VERSION;
-		$this->content['script'][] = '<script src="' . $jsUrl . '"></script>';
+		$this->content['script'][] = '<script src="' . $jsUrl . '" async></script>';
 
 		switch ( $this->template ) {
 			case 'qa' :
 			case 'custom' :
-				$this->content['script'][] = '<script src="'. $this->rooturl .'js/app.js"></script>';
+				$jsAppUrl = $this->rooturl . 'js/app.js?' . QA_VERSION;
+				$this->content['script'][] = '<script src="' . $jsAppUrl . '" async></script>';
 			break;
 		}
 
