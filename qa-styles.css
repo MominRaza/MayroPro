@@ -4,9 +4,7 @@
   Theme Author: Momin Raza
   Theme Author URI: https://mominraza.github.io
 */
-
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
-
 /* color variables 
 	change colors inside :root only.
   find them from here https://material.io/resources/color
@@ -18,16 +16,13 @@
   --primary-light-700: #8559da;
   --primary-dark-700: #140078; /* also change manifest.webmanifest theme_color */
   --primary-200: #b39ddb;
-
   --secondary-200: #ffab91;
   --secondary-dark-200: #c97b63;
   --secondary-light-200: #ffddc1;
   --secondary-100: #ffccbc;
-
   --on-primary-700: #ffffff; /* only black or white */
   --on-secondary-200: #000000; /* only black or white */
 }
-
 body {
   --primary-rgb: var(--primary-700-rgb);
   --primary: var(--primary-700);
@@ -36,29 +31,22 @@ body {
   --secondary: var(--secondary-200);
   --secondary-dark: var(--secondary-dark-200);
   --secondary-light: var(--secondary-light-200);
-
   --background: #eeeeee;
   --surface: #ffffff;
   --error: #b00020;
-
   --on-primary: var(--on-primary-700);
   --on-secondary: var(--on-secondary-200);
   --on-background: #000000;
   --on-surface: #000000;
   --on-error: #ffffff;
-
   --link: #005c98;
   --selected: var(--primary);
   --on-selected: white;
-
   --appbar-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.2),
-    0px 5px 5px 0px rgba(0, 0, 0, 0.14),
-    0px 10px 10px 0px rgba(0, 0, 0, 0.12);
+    0px 5px 5px 0px rgba(0, 0, 0, 0.14), 0px 10px 10px 0px rgba(0, 0, 0, 0.12);
   --fab-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
-    0px 6px 10px 0px rgba(0, 0, 0, 0.14),
-    0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+    0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
 }
-
 body.dark-theme {
   --primary-rgb: 255, 255, 255;
   --primary: #35363a;
@@ -67,40 +55,27 @@ body.dark-theme {
   --secondary: #2c2c2c;
   --secondary-dark: rgba(255, 255, 255, 0.13);
   --secondary-light: rgba(255, 255, 255, 0.09);
-
   --background: #121212;
   --surface: rgba(255, 255, 255, 0.05);
   --surface-solid: #1e1e1e;
   --error: #cf6679;
-
   --on-primary: var(--primary-200);
   --on-secondary: var(--secondary-100);
   --on-background: #ffffff;
   --on-surface: rgb(255, 255, 255, 0.87);
   --on-error: #ffffff;
-
   --link: #7dafcf;
   --selected: var(--on-primary);
   --on-selected: black;
-
   --appbar-shadow: 0 transparent;
   --fab-shadow: 0 transparent;
 }
 body.dark-theme img {
   filter: brightness(0.9) contrast(1.2);
 }
-/* body.dark-theme p,
-body.dark-theme .qa-post-content span,
-body.dark-theme li,
-body.dark-theme strong,
-body.dark-theme sup,
-body.dark-theme sub {
-  color: rgba(255, 255, 255, 0.6);
-} */
-body.dark-theme .qa-post-content{
-  opacity: .75;
+body.dark-theme .qa-post-content {
+  opacity: 0.75;
 }
-
 @media (prefers-color-scheme: dark) {
   body {
     --primary-rgb: 255, 255, 255;
@@ -110,40 +85,27 @@ body.dark-theme .qa-post-content{
     --secondary: #2c2c2c;
     --secondary-dark: rgba(255, 255, 255, 0.13);
     --secondary-light: rgba(255, 255, 255, 0.09);
-
     --background: #121212;
     --surface: rgba(255, 255, 255, 0.05);
     --surface-solid: #1e1e1e;
     --error: #cf6679;
-
     --on-primary: var(--primary-200);
     --on-secondary: var(--secondary-100);
     --on-background: #ffffff;
     --on-surface: rgb(255, 255, 255, 0.87);
     --on-error: #ffffff;
-
     --link: #7dafcf;
     --selected: var(--on-primary);
     --on-selected: black;
-
     --appbar-shadow: 0 transparent;
     --fab-shadow: 0 transparent;
   }
   img {
     filter: brightness(0.9) contrast(1.2);
   }
-  /* p,
-  .qa-post-content span,
-  li,
-  strong,
-  sup,
-  sub {
-    color: rgba(255, 255, 255, 0.6);
-  } */
-  .qa-post-content{
-    opacity: .75;
+  .qa-post-content {
+    opacity: 0.75;
   }
-
   body.light-theme {
     --primary-rgb: var(--primary-700-rgb);
     --primary: var(--primary-700);
@@ -152,45 +114,30 @@ body.dark-theme .qa-post-content{
     --secondary: var(--secondary-200);
     --secondary-dark: var(--secondary-dark-200);
     --secondary-light: var(--secondary-light-200);
-
     --background: #eeeeee;
     --surface: #ffffff;
     --surface-solid: unset;
     --error: #b00020;
-
     --on-primary: var(--on-primary-700);
     --on-secondary: var(--on-secondary-200);
     --on-background: #000000;
     --on-surface: #000000;
     --on-error: #ffffff;
-
     --link: #005c98;
     --selected: var(--primary);
     --on-selected: white;
-
     --appbar-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.2),
-      0px 5px 5px 0px rgba(0, 0, 0, 0.14),
-      0px 10px 10px 0px rgba(0, 0, 0, 0.12);
+      0px 5px 5px 0px rgba(0, 0, 0, 0.14), 0px 10px 10px 0px rgba(0, 0, 0, 0.12);
     --fab-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
-      0px 6px 10px 0px rgba(0, 0, 0, 0.14),
-      0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+      0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
   }
   body.light-theme img {
     filter: unset;
   }
-  /* body.light-theme p,
-  body.light-theme .qa-post-content span,
-  body.light-theme li,
-  body.light-theme strong,
-  body.light-theme sup,
-  body.light-theme sub {
-    color: unset;
-  } */
-  body.light-theme .qa-post-content{
+  body.light-theme .qa-post-content {
     opacity: unset;
   }
 }
-
 body {
   font-family: "Roboto", sans-serif;
   background-color: var(--background);
@@ -241,7 +188,7 @@ button {
 select {
   margin-top: 10px;
 }
-select option{
+select option {
   background-color: var(--surface-solid);
 }
 /* header */
@@ -520,14 +467,12 @@ select option{
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
     visibility 0s linear 0s;
 }
-
 .qa-nav-main-list {
   margin-top: 10px;
   list-style: none;
   width: 100%;
 }
 .qa-nav-main-item {
-  /* margin: 0; */
   width: 100%;
 }
 .qa-nav-main-link {
@@ -543,7 +488,6 @@ select option{
 .qa-nav-main-link:hover {
   background-color: rgba(var(--primary-rgb), 0.12);
 }
-
 .qa-nav-main-link::before {
   font-family: "Material Icons";
   font-size: 24px;
@@ -585,7 +529,6 @@ select option{
 .qa-nav-main-admin .qa-nav-main-link::before {
   content: "admin_panel_settings";
 }
-
 .qa-nav-user-link::before {
   font-family: "Material Icons";
   font-size: 24px;
@@ -620,7 +563,6 @@ select option{
 .qa-nav-user-settings .qa-nav-user-link::before {
   content: "brightness_medium";
 }
-
 .qa-favorite-image {
   padding: 6px;
 }
@@ -629,7 +571,6 @@ select option{
   color: var(--link);
   position: absolute;
   margin-left: -7px;
-  /* margin-top: 2px; */
   content: "star_border";
   font-size: 18px;
 }
@@ -655,25 +596,6 @@ select option{
 .qa-nav-main::-webkit-scrollbar {
   display: none;
 }
-
-/* no need of scrollbar becouse of touch screens, precision touchpad and mouse. */
-
-/* @media(min-width:768px){
-	.qa-nav-sub-list::-webkit-scrollbar,
-	.qa-q-item-tag-list::-webkit-scrollbar{
-		display: block;
-		height: 3px;
-	}
-	.qa-nav-main::-webkit-scrollbar{
-		display: block;
-		width: 3px;
-	}
-	.qa-nav-sub-list::-webkit-scrollbar-thumb,
-	.qa-q-item-tag-list::-webkit-scrollbar-thumb,
-	.qa-nav-main::-webkit-scrollbar-thumb{
-		background-color: var(--secondary-light);
-	}
-} */
 .qa-nav-sub-item {
   min-width: max-content;
   padding: 10px 0 13px 0;
@@ -686,7 +608,6 @@ select option{
 .qa-nav-sub-link.qa-nav-sub-selected {
   border-bottom: 3px solid var(--on-primary);
 }
-
 /* sidepanel */
 .qa-sidebar,
 .qa-widget-side,
@@ -927,7 +848,6 @@ select option{
     width: 400px;
   }
 }
-
 .qa-main-heading {
   display: flex;
   flex-direction: row-reverse;
@@ -945,7 +865,6 @@ select option{
   margin-top: 20px;
   margin-bottom: 10px;
 }
-
 /* questions list */
 .qa-q-list-item {
   position: relative;
@@ -1020,7 +939,6 @@ select option{
   overflow: hidden;
   transform: translateX(-50%);
 }
-
 .qa-avatar-image {
   width: 100%;
   height: auto;
@@ -1088,7 +1006,6 @@ select option{
   color: var(--link);
   min-height: 10px;
   margin: 0;
-  /* padding: 8px; */
   border-top: 1px solid transparent;
 }
 .qa-voting {
@@ -1118,13 +1035,11 @@ select option{
   color: var(--selected);
   position: absolute;
   margin-left: 5px;
-  /* margin-top: 1.5px; */
   font-size: 18px;
 }
 .qa-suggest-next {
   margin-bottom: 20px;
 }
-
 /* fab */
 .qam-ask {
   z-index: 4;
@@ -1146,7 +1061,6 @@ select option{
   margin-right: 8px;
   color: var(--on-secondary);
 }
-
 /* footer */
 .qa-footer {
   margin-top: 20px;
@@ -1188,7 +1102,6 @@ select option{
   top: 0;
   padding: 19px 26px 19px 190px;
 }
-
 @media (min-width: 1024px) {
   #theme-toggle {
     display: block;
@@ -1204,7 +1117,6 @@ select option{
     display: none;
   }
 }
-
 /* form */
 .qa-form-tall-table,
 .qa-top-tags-table,
@@ -1253,15 +1165,12 @@ select option{
 .qa-form-tall-buttons {
   padding-top: 10px;
 }
-
 .qa-form-tall-error {
   color: var(--error);
 }
-
 .qa-form-tall-data ul {
   margin-left: 20px;
 }
-
 .qa-form-tall-button,
 .qa-form-wide-button,
 .qa-form-basic-button,
@@ -1329,9 +1238,7 @@ select option{
 .qa-form-basic-button {
   margin-top: 20px;
 }
-
 /* question view */
-
 .qa-part-q-view,
 .qa-a-list-item,
 .qa-message-item,
@@ -1347,7 +1254,6 @@ select option{
   border: 3px solid var(--selected);
   border-top-width: 8px;
 }
-
 .qam-stats-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -1364,7 +1270,7 @@ select option{
   height: 30px;
   cursor: pointer;
 }
-.qa-a-selection input.qa-a-unselect-button{
+.qa-a-selection input.qa-a-unselect-button {
   width: 40px;
 }
 .qa-a-selected-text {
@@ -1417,7 +1323,6 @@ select option{
   padding-left: 20px;
   border-left: 5px solid var(--primary-light);
 }
-
 /* related question */
 .qa-c-item-link {
   display: block;
@@ -1438,19 +1343,16 @@ select option{
 .qa-error a {
   color: var(--primary-light-700);
 }
-
 /* user */
 .qa-form-wide-label {
   font-weight: bold;
   display: block;
   margin-right: 10px;
 }
-
 .qa-form-tall-image {
   text-align: center;
   min-height: 200px;
 }
-
 /* category */
 .qa-category-link.qa-cat-favorited {
   margin-left: 20px;
@@ -1462,7 +1364,6 @@ select option{
   content: "star";
   font-size: 18px;
 }
-
 .qa-browse-cat-list,
 .qa-nav-cat-list {
   list-style: none;
@@ -1579,7 +1480,6 @@ select option{
   background-color: var(--primary-light);
   color: var(--on-primary);
 }
-
 /* user-list */
 .qa-top-users-table tbody {
   display: grid;
@@ -1694,7 +1594,6 @@ select option{
   margin-top: 38px;
   line-height: 0.9em;
 }
-
 /* favorites */
 .qa-part-q-list h2,
 .qa-part-ranking-users h2,
@@ -1761,7 +1660,6 @@ select option{
 .qa-waiting {
   display: none !important;
 }
-
 /* pagination */
 .qa-page-links {
   margin: 10px 0;
@@ -1809,10 +1707,8 @@ select option{
   background-color: var(--secondary);
   color: var(--on-secondary);
 }
-
 /* votes */
 .qa-vote-buttons input {
-  /* border: 0; */
   position: absolute;
   z-index: 1;
   opacity: 0;
@@ -1833,9 +1729,6 @@ select option{
 .qa-vote-buttons i.voted_down {
   color: var(--error);
 }
-/* .qa-downvote-count{
-	margin-left: 10px;
-} */
 .qa-upvote-count-pad,
 .qa-downvote-count-pad {
   display: none;
@@ -1854,7 +1747,6 @@ select option{
 .qa-downvote-count.selected {
   color: var(--error);
 }
-
 /* login register */
 .qa-template-user .qa-main,
 .qa-template-account .qa-main {
@@ -1874,7 +1766,6 @@ select option{
 .qa-template-forgot .qa-sidepanel {
   display: none;
 }
-
 /* widgets */
 .qa-ask-box input {
   width: 100% !important;
@@ -1882,7 +1773,6 @@ select option{
 .qa-related-qs .qa-related-q-list,
 .qa-ask-similar .qa-q-title-list {
   margin-left: 0;
-  /* margin-top: 10px; */
   list-style: none;
 }
 .qa-related-qs .qa-related-q-item,
@@ -1895,7 +1785,6 @@ select option{
 .qa-ask-similar .qa-q-title-item:last-child {
   border-bottom: none;
 }
-
 /* extra menu */
 .qam-rest-buttons {
   margin-left: auto;
@@ -1918,7 +1807,6 @@ select option{
   position: relative;
 }
 .qam-q-extra-menu {
-  /* float: right; */
   display: inline-block;
   position: absolute;
   top: 19px;
@@ -2011,7 +1899,6 @@ select option{
 .qam-q-extra-menu.active .qam-q-extra-menu-toggle::after {
   visibility: visible;
 }
-
 /* post meta */
 .qa-q-view-who-pad,
 .qa-q-item-who-pad,
@@ -2109,7 +1996,6 @@ select option{
   visibility: visible;
   opacity: 1;
 }
-
 /* flags */
 .qa-q-view-flags span,
 .qa-a-item-flags span,
@@ -2122,20 +2008,18 @@ select option{
 .qa-q-view-flags::before,
 .qa-a-item-flags::before,
 .qa-c-item-flags::before {
-    position: relative;
-    top: -2px;
-    content: ".";
-    font-size: 18px;
-    font-weight: bold;
+  position: relative;
+  top: -2px;
+  content: ".";
+  font-size: 18px;
+  font-weight: bold;
 }
-
 /* hidden */
 .qa-q-view-hidden,
 .qa-a-list-item-hidden,
 .qa-c-item-hidden {
   opacity: 0.4;
 }
-
 /* tag cloud */
 .qa-widget-side div[style="font-size: 10px;"] a,
 #tag_hints .qa-tag-link,
@@ -2147,9 +2031,8 @@ select option{
   padding: 2px 8px;
   border-radius: 12px;
 }
-
 /* feed */
-.qa-feed-link{
+.qa-feed-link {
   margin-left: 36px;
   margin-bottom: 6px;
   display: block;
