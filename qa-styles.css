@@ -1795,6 +1795,7 @@ select option {
 .qam-stats-buttons .qa-form-light-button-flag,
 .qam-stats-buttons .qa-form-light-button-follow,
 .qam-stats-buttons .qa-form-light-button-unflag,
+.qam-stats-buttons .qa-form-light-button-clearflags,
 .qam-stats-buttons .qa-form-light-button-retagcat,
 .qam-stats-buttons .qa-form-light-button-reopen,
 .qam-stats-buttons .qa-form-light-button-reshow,
