@@ -914,11 +914,11 @@ select option {
   font-weight: 400;
   letter-spacing: 0.03125em;
 }
-.qa-q-item-avatar-meta .qa-avatar-link,
-.qa-q-view-avatar-meta .qa-avatar-link,
-.qa-a-item-avatar-meta .qa-avatar-link,
-.qa-message-avatar-meta .qa-avatar-link,
-.qa-c-item-avatar-meta .qa-avatar-link {
+.qa-q-item-avatar,
+.qa-q-view-avatar,
+.qa-a-item-avatar,
+.qa-message-avatar,
+.qa-c-item-avatar {
   position: absolute;
   height: 40px;
   width: 40px;
@@ -926,7 +926,7 @@ select option {
   border-radius: 50%;
   overflow: hidden;
 }
-.qa-q-view-avatar-meta .qa-avatar-link {
+.qa-q-view-avatar {
   height: 50px;
   width: 50px;
   margin-left: -60px;
@@ -938,6 +938,7 @@ select option {
   border-radius: 50%;
   overflow: hidden;
   transform: translateX(-50%);
+  display: unset;
 }
 .qa-avatar-image {
   width: 100%;
@@ -1323,6 +1324,10 @@ select option {
   padding-left: 20px;
   border-left: 5px solid var(--primary-light);
 }
+.qa-template-admin .qa-q-item-content img {
+  max-width: 100%;
+  height: auto !important;
+}
 /* related question */
 .qa-c-item-link {
   display: block;
@@ -1496,11 +1501,12 @@ select option {
 .qa-top-users-label {
   width: 100%;
 }
-.qa-avatar-link span {
-  display: block !important;
-  padding: 0 !important;
-  width: 100%;
+.qa-avatar-link {
+  display: block;
   height: 120px;
+}
+.qa-avatar-link span {
+  width: 100%;
 }
 .qa-top-users-table .qa-user-link {
   position: absolute;
@@ -1532,7 +1538,7 @@ select option {
 }
 @media (max-width: 400px) {
   .qa-top-users-table tr,
-  .qa-avatar-link span {
+  .qa-avatar-link {
     height: 100px;
   }
   .qa-top-users-score {
@@ -1559,7 +1565,7 @@ select option {
 }
 @media (min-width: 1300px) {
   .qa-top-users-table tr,
-  .qa-avatar-link span {
+  .qa-avatar-link {
     height: 180px;
   }
   .qa-top-users-score {
@@ -1793,13 +1799,13 @@ select option {
 .qam-stats-buttons .qa-form-light-button-close,
 .qam-stats-buttons .qa-form-light-button-hide,
 .qam-stats-buttons .qa-form-light-button-flag,
-.qam-stats-buttons .qa-form-light-button-follow,
 .qam-stats-buttons .qa-form-light-button-unflag,
 .qam-stats-buttons .qa-form-light-button-clearflags,
 .qam-stats-buttons .qa-form-light-button-retagcat,
 .qam-stats-buttons .qa-form-light-button-reopen,
 .qam-stats-buttons .qa-form-light-button-reshow,
-.qam-stats-buttons .qa-form-light-button-delete {
+.qam-stats-buttons .qa-form-light-button-delete,
+.qam-stats-buttons .qa-form-light-button-claim {
   display: none;
 }
 .qa-q-view-main,
@@ -1819,7 +1825,8 @@ select option {
   right: 29px;
 }
 .qam-q-extra-menu .qa-form-light-button-answer,
-.qam-q-extra-menu .qa-form-light-button-comment {
+.qam-q-extra-menu .qa-form-light-button-comment,
+.qam-q-extra-menu .qa-form-light-button-follow {
   display: none;
 }
 .qam-q-extra-menu .qa-q-view-buttons,
