@@ -1487,11 +1487,13 @@ select option {
 }
 /* user-list */
 .qa-top-users-table tbody {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, calc(100% / 3 - 10px / 3));
   gap: 5px;
 }
 .qa-top-users-table tr {
+  width: 100%;
   position: relative;
   aspect-ratio: 1 / 1;
 }
