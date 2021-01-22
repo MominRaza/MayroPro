@@ -686,7 +686,7 @@ class qa_html_theme extends qa_html_theme_base
 	{
 		$this->output(
 			'<div class="qa-attribution">',
-			'<a href="https://mominraza.github.io/Mayro">Mayro Pro</a> by <a href="https://mominraza.github.io">Momin Raza</a>',
+			'<a href="https://mominraza.github.io/Mayro/">Mayro Pro</a> by <a href="https://mominraza.github.io">Momin Raza</a>',
 			'</div>'
 		);
 		parent::attribution();

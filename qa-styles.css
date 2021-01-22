@@ -1492,29 +1492,26 @@ select option {
   gap: 5px;
 }
 .qa-top-users-table tr {
-  height: 120px;
-  display: flex;
-  width: 100%;
-  overflow: hidden;
   position: relative;
-}
-.qa-top-users-label {
-  width: 100%;
+  aspect-ratio: 1 / 1;
 }
 .qa-avatar-link {
   display: block;
-  height: 120px;
 }
-.qa-avatar-link span {
-  width: 100%;
+.qa-top-users-label img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 .qa-top-users-table .qa-user-link {
   position: absolute;
-  margin-top: -48px;
+  bottom: 0;
   text-align: center;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 5px 0 20px 0;
+  padding: 5px 0 30px 0;
   font-size: 1.25em;
   color: white;
   overflow: hidden;
@@ -1532,18 +1529,8 @@ select option {
 .qa-top-users-score {
   position: absolute;
   width: 100%;
+  bottom: 5px;
   text-align: center;
-  margin-top: 100px;
-  color: white;
-}
-@media (max-width: 400px) {
-  .qa-top-users-table tr,
-  .qa-avatar-link {
-    height: 100px;
-  }
-  .qa-top-users-score {
-    margin-top: 80px;
-  }
 }
 @media (min-width: 515px) {
   .qa-top-users-table tbody {
@@ -1563,15 +1550,6 @@ select option {
     grid-template-columns: repeat(3, calc(100% / 3 - 10px / 3));
   }
 }
-@media (min-width: 1300px) {
-  .qa-top-users-table tr,
-  .qa-avatar-link {
-    height: 180px;
-  }
-  .qa-top-users-score {
-    margin-top: 160px;
-  }
-}
 @media (min-width: 1440px) {
   .menu-active .qa-top-users-table tbody {
     grid-template-columns: repeat(5, calc(100% / 5 - 20px / 5));
@@ -1583,22 +1561,7 @@ select option {
   }
 }
 .qa-ranking-users-level tr {
-  height: unset;
-}
-.qa-ranking-users-level .qa-user-link {
-  margin-top: 0;
-  position: relative;
-  width: 100% !important;
-  text-align: center;
-  display: block;
-  color: var(--link);
-  background-color: var(--surface);
-  padding: 10px 0 40px 0;
-}
-.qa-ranking-users-level .qa-top-users-score {
-  color: var(--on-surface);
-  margin-top: 38px;
-  line-height: 0.9em;
+  aspect-ratio: 2 / 1;
 }
 /* favorites */
 .qa-part-q-list h2,
