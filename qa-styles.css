@@ -73,9 +73,6 @@ body.dark-theme {
 body.dark-theme img {
   filter: brightness(0.9) contrast(1.2);
 }
-body.dark-theme .qa-post-content {
-  opacity: 0.75;
-}
 @media (prefers-color-scheme: dark) {
   body {
     --primary-rgb: 255, 255, 255;
@@ -102,9 +99,6 @@ body.dark-theme .qa-post-content {
   }
   img {
     filter: brightness(0.9) contrast(1.2);
-  }
-  .qa-post-content {
-    opacity: 0.75;
   }
   body.light-theme {
     --primary-rgb: var(--primary-700-rgb);
@@ -133,9 +127,6 @@ body.dark-theme .qa-post-content {
   }
   body.light-theme img {
     filter: unset;
-  }
-  body.light-theme .qa-post-content {
-    opacity: unset;
   }
 }
 body {
@@ -1496,6 +1487,7 @@ select option {
   width: 100%;
   position: relative;
   aspect-ratio: 1 / 1;
+  overflow: hidden;
 }
 .qa-avatar-link {
   display: block;
@@ -1513,10 +1505,10 @@ select option {
   text-align: center;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 5px 0 30px 0;
+  padding: 5px 0 20px 0;
   font-size: 1.25em;
   color: white;
-  overflow: hidden;
+  line-height: 20px;
 }
 .qa-user-link.qa-user-favorited {
   padding-left: 20px;
@@ -1531,8 +1523,10 @@ select option {
 .qa-top-users-score {
   position: absolute;
   width: 100%;
-  bottom: 5px;
+  bottom: 2px;
   text-align: center;
+  color: white;
+  white-space: nowrap;
 }
 @media (min-width: 515px) {
   .qa-top-users-table tbody {
