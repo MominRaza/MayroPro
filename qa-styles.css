@@ -530,6 +530,10 @@ select option {
 .qa-nav-main-about-us .qa-nav-main-link::before {
   content: "person_search";
 }
+#qa-cke-prev img {
+  max-width: 100%;
+  height: auto !important;
+}
 /* end: only only for jeeneetqna */
 .qa-nav-user-link::before {
   font-family: "Material Icons";
@@ -1499,6 +1503,7 @@ select option {
   position: relative;
   aspect-ratio: 1 / 1;
   overflow: hidden;
+  padding-top: 75%;
 }
 .qa-avatar-link {
   display: block;
