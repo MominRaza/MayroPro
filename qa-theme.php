@@ -360,7 +360,7 @@ class qa_html_theme extends qa_html_theme_base
 		if (!empty($post['what_2'])) {
 			$this->output($separator);
 			$this->output('<div class="qam-what-2" onclick="toggleExtra(this)">');
-				$this->output('<i class="material-icons-outlined md-18">info</i>');
+				$this->output('<i class="material-icons md-18">error_outline</i>');
 				$this->output('<div class="qam-what-2-body">');
 				foreach ($order as $element) {
 					switch ($element) {
