@@ -11,10 +11,10 @@
 */
 :root {
   color-scheme: light dark;
-  --primary-700: #512da8;
+  --primary-700: #512da8; /* also change manifest.webmanifest theme_color */
   --primary-700-rgb: 81, 45, 168; /* convert --primary-700 to rgb */
   --primary-light-700: #8559da;
-  --primary-dark-700: #140078; /* also change manifest.webmanifest theme_color */
+  --primary-dark-700: #140078;
   --primary-200: #b39ddb;
   --secondary-200: #ffab91;
   --secondary-dark-200: #c97b63;
@@ -359,36 +359,6 @@ select option {
   font-size: 30px;
   color: var(--selected);
 }
-/* media query for Search field on laptop */
-@media (min-width: 1024px) {
-  .qa-search {
-    visibility: visible;
-    transform: scale(1);
-  }
-  .qa-search {
-    left: 310px;
-    right: 310px;
-    width: auto;
-    max-width: 980px;
-    margin: 0 auto;
-  }
-  .qa-search-field {
-    width: 100% !important;
-    background-color: var(--surface);
-    margin-left: 0;
-    padding: 10px 46px 10px 10px !important;
-    color: var(--on-surface);
-  }
-  #search-toggle {
-    display: none;
-  }
-}
-@media (min-width: 1280px) {
-  .qa-search {
-    left: 340px;
-    right: 480px;
-  }
-}
 .qa-nav-main {
   transform: translateX(-264px);
   will-change: visibility;
@@ -426,31 +396,6 @@ select option {
 #qa-nav-main .qa-logo .qa-logo-link {
   color: var(--on-surface);
   margin-left: 16px;
-}
-/* media query for app drawer in mobile and tablet */
-@media (max-width: 1023px) {
-  .qa-nav-main {
-    top: 0;
-    box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2),
-      0px 24px 38px 3px rgba(0, 0, 0, 0.14),
-      0px 9px 46px 8px rgba(0, 0, 0, 0.12);
-    padding-top: 56px;
-  }
-  .menu-active #qa-nav-main-clear {
-    z-index: 5;
-    background-color: rgba(0, 0, 0, 0.32);
-    position: fixed;
-    height: 100vh;
-    width: 100%;
-    top: 0;
-    left: 0;
-  }
-  .menu-active #qa-nav-main .qa-logo {
-    transform: translateX(0);
-    visibility: visible;
-    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-      visibility 0s linear 0s;
-  }
 }
 .menu-active .qa-nav-main {
   transform: translateX(0);
@@ -662,7 +607,7 @@ select option {
 }
 .qa-part-form,
 .qa-part-form-2 form,
-.qam-admin-plugins .qa-form-tall-table,
+[class^="qa-part-form-plugin-"],
 .qa-part-form-q-edit,
 .qa-part-a-form .qa-a-form {
   margin: 10px 0;
@@ -674,78 +619,12 @@ select option {
 }
 .qa-part-form-plugin-options {
   margin: 0 8px 20px;
-}
-.qa-part-form-plugin-options .qa-form-tall-table {
   background-color: rgba(255, 255, 255, 0.15);
 }
 .qam-admin-plugins .qa-part-form {
   background-color: unset;
   box-shadow: unset;
   padding: unset;
-}
-/* add gap between main and sidepanel in mobile */
-@media (max-width: 768px) {
-  .qa-main {
-    margin-bottom: 40px;
-  }
-}
-/* user page single column if menu active */
-@media (min-width: 1024px) {
-  .qa-part-form-profile {
-    width: calc(60% - 10px);
-    margin-right: 10px;
-    float: left;
-  }
-  .qa-part-form-activity,
-  .qa-part-form-password {
-    width: 40%;
-    float: right;
-  }
-  .qa-part-message-list {
-    width: 40%;
-    float: right;
-    margin-top: 0;
-  }
-  .menu-active .qa-part-form-profile,
-  .menu-active .qa-part-form-activity,
-  .menu-active .qa-part-form-password,
-  .menu-active .qa-part-message-list {
-    width: unset;
-    float: unset;
-    margin: 10px 0;
-  }
-  .qa-template-user-wall .qa-part-message-list,
-  .qa-template-messages .qa-part-message-list,
-  .qa-template-message .qa-part-message-list {
-    width: unset;
-    float: unset;
-    margin: 10px 0;
-  }
-}
-/* in laptop menu active indicate menu closed */
-@media (min-width: 1280px) {
-  .menu-active .qa-part-form-profile {
-    width: calc(60% - 10px);
-    margin-right: 10px;
-    float: left;
-  }
-  .menu-active .qa-part-form-activity,
-  .menu-active .qa-part-form-password {
-    width: 40%;
-    float: right;
-  }
-  .menu-active .qa-part-message-list {
-    width: 40%;
-    float: right;
-    margin-top: 0;
-  }
-  .qa-template-user-wall.menu-active .qa-part-message-list,
-  .qa-template-messages.menu-active .qa-part-message-list,
-  .qa-template-message.menu-active .qa-part-message-list {
-    width: unset;
-    float: unset;
-    margin: 10px 0;
-  }
 }
 .qa-sidebar,
 .qa-suggest-next {
@@ -780,77 +659,6 @@ select option {
 .qa-widgets-full-top {
   margin-left: 0 !important;
 }
-/* two column for main and sidepanel in tablet */
-@media (min-width: 768px) {
-  .qam-main-sidepanel {
-    display: flex;
-    justify-content: center;
-  }
-  .qa-main {
-    width: calc(100% - 300px);
-    max-width: 1000px;
-  }
-  .qa-sidepanel {
-    width: 300px;
-  }
-}
-/* three column for small laptop on menu active */
-@media (min-width: 1024px) {
-  .qa-nav-main {
-    z-index: 4;
-  }
-  .menu-active .qa-nav-sub-list {
-    margin-left: 264px;
-    width: calc(100% - 264px);
-  }
-  .menu-active .qam-main-sidepanel {
-    margin-left: 264px;
-  }
-  .menu-active .qa-footer,
-  .menu-active .qa-widgets-full {
-    margin-left: 264px;
-  }
-}
-/* three column for laptop by default */
-@media (min-width: 1280px) {
-  .qa-nav-main {
-    transform: translateX(0);
-    visibility: visible;
-    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-      visibility 0s linear 0s;
-  }
-  .menu-active .qa-nav-main {
-    transform: translateX(-264px);
-  }
-  .qa-nav-sub-list {
-    margin-left: 264px;
-    width: calc(100% - 264px);
-  }
-  .menu-active .qa-nav-sub-list {
-    margin-left: 0;
-    width: 100%;
-  }
-  .qam-main-sidepanel {
-    margin-left: 264px;
-  }
-  .menu-active .qam-main-sidepanel {
-    margin-left: 0;
-  }
-  .qa-footer,
-  .qa-widgets-full {
-    margin-left: 264px;
-  }
-  .menu-active .qa-footer,
-  .menu-active .qa-widgets-full {
-    margin-left: 0;
-  }
-  .qa-main {
-    width: calc(100% - 400px);
-  }
-  .qa-sidepanel {
-    width: 400px;
-  }
-}
 .qa-main-heading {
   display: flex;
   flex-direction: row-reverse;
@@ -871,7 +679,7 @@ select option {
 /* questions list */
 .qa-q-list-item {
   position: relative;
-  margin: 10px 0;
+  margin: 8px 0;
   background-color: var(--surface);
   padding: 16px 16px 0 16px;
   border-radius: 4px;
@@ -1005,7 +813,6 @@ select option {
   vertical-align: bottom;
 }
 .qa-q-item-stats {
-  width: calc(100% + 20px);
   display: flex;
   color: var(--link);
   min-height: 10px;
@@ -1071,11 +878,6 @@ select option {
   padding: 10px;
   transition: 0.25s;
 }
-@media (max-width: 768px) {
-  .qa-footer {
-    padding-bottom: 0;
-  }
-}
 .qa-nav-footer-list {
   display: flex;
   list-style: none;
@@ -1088,15 +890,6 @@ select option {
   margin-right: 10px;
   margin-bottom: 10px;
 }
-@media (min-width: 768px) {
-  .qa-attribution {
-    float: left;
-  }
-  .qa-attribution:nth-child(3) {
-    padding-left: 10px;
-    border-left: 1px solid var(--on-surface);
-  }
-}
 #theme-toggle {
   display: none;
 }
@@ -1105,21 +898,6 @@ select option {
   left: 0;
   top: 0;
   padding: 19px 26px 19px 190px;
-}
-@media (min-width: 1024px) {
-  #theme-toggle {
-    display: block;
-    position: absolute;
-    top: 28px;
-    right: 60px;
-    color: var(--on-primary);
-    font-size: 30px;
-    z-index: 5;
-    cursor: pointer;
-  }
-  #theme-toggle1 {
-    display: none;
-  }
 }
 /* form */
 .qa-form-tall-table,
@@ -1247,7 +1025,7 @@ select option {
 .qa-a-list-item,
 .qa-message-item,
 .qa-c-list-item {
-  margin: 10px 0;
+  margin: 8px 0;
   background-color: var(--surface);
   padding: 16px 16px 8px 16px;
   border-radius: 4px;
@@ -1455,22 +1233,6 @@ select option {
   display: inline-block;
   padding: 0 0 0 5px;
 }
-@media (min-width: 1024px) {
-  .qa-top-tags-table tbody {
-    grid-template-columns: repeat(3, calc(33.3% - 7px));
-  }
-  .menu-active .qa-top-tags-table tbody {
-    grid-template-columns: repeat(2, calc(50% - 5px));
-  }
-}
-@media (min-width: 1440px) {
-  .qa-top-tags-table tbody {
-    grid-template-columns: repeat(3, calc(33.3% - 6.6px));
-  }
-  .menu-active .qa-top-tags-table tbody {
-    grid-template-columns: repeat(4, calc(25% - 7.5px));
-  }
-}
 .qa-top-tags-table tr {
   margin: 5px 0;
   background-color: var(--surface);
@@ -1540,34 +1302,6 @@ select option {
   text-align: center;
   color: white;
   white-space: nowrap;
-}
-@media (min-width: 515px) {
-  .qa-top-users-table tbody {
-    grid-template-columns: repeat(4, calc(100% / 4 - 15px / 4));
-  }
-}
-@media (min-width: 768px) {
-  .qa-top-users-table tbody {
-    grid-template-columns: repeat(3, calc(100% / 3 - 10px / 3));
-  }
-}
-@media (min-width: 1024px) {
-  .qa-top-users-table tbody {
-    grid-template-columns: repeat(4, calc(100% / 4 - 15px / 4));
-  }
-  .menu-active .qa-top-users-table tbody {
-    grid-template-columns: repeat(3, calc(100% / 3 - 10px / 3));
-  }
-}
-@media (min-width: 1440px) {
-  .menu-active .qa-top-users-table tbody {
-    grid-template-columns: repeat(5, calc(100% / 5 - 20px / 5));
-  }
-}
-@media (min-width: 1700px) {
-  .qa-top-users-table tbody {
-    grid-template-columns: repeat(5, calc(100% / 5 - 20px / 5));
-  }
 }
 .qa-ranking-users-level tr {
   aspect-ratio: 2 / 1;
@@ -2025,4 +1759,266 @@ select option {
   margin-left: -36px;
   margin-top: -3px;
   content: "rss_feed";
+}
+@media (min-width: 515px) {
+  .qa-top-users-table tbody {
+    grid-template-columns: repeat(4, calc(100% / 4 - 15px / 4));
+  }
+}
+@media (max-width: 767px) {
+  .qa-main {
+    margin-bottom: 40px;
+    padding: 0;
+  }
+  .qa-footer {
+    padding-bottom: 0;
+  }
+  .qa-q-list-item,
+  .qa-part-q-view,
+  .qa-a-list-item,
+  .qa-page-links,
+  .qa-part-form-profile,
+  .qa-part-form-activity,
+  .qa-part-message-list,
+  .qa-part-form-password,
+  .qa-template-user-wall .qa-message-item,
+  .qa-part-form,
+  .qa-part-form-2 form,
+  [class^="qa-part-form-plugin-"]:not(.qa-part-form-plugin-options) {
+    border-radius: unset !important;
+    box-shadow: unset !important;
+  }
+  .qa-main-heading,
+  .qa-widget-main h2,
+  .qa-part-form-2 h2,
+  .qa-suggest-next,
+  .qam-admin-plugins .qa-part-form,
+  .qa-top-tags-table,
+  .qa-browse-cat-list-1 {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+@media (min-width: 768px) {
+  .qam-main-sidepanel {
+    display: flex;
+    justify-content: center;
+  }
+  .qa-main {
+    width: calc(100% - 300px);
+    max-width: 1000px;
+  }
+  .qa-sidepanel {
+    width: 300px;
+  }
+  .qa-attribution {
+    float: left;
+  }
+  .qa-attribution:nth-child(3) {
+    padding-left: 10px;
+    border-left: 1px solid var(--on-surface);
+  }
+  .qa-top-users-table tbody {
+    grid-template-columns: repeat(3, calc(100% / 3 - 10px / 3));
+  }
+}
+@media (max-width: 1023px) {
+  .qa-nav-main {
+    top: 0;
+    box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2),
+      0px 24px 38px 3px rgba(0, 0, 0, 0.14),
+      0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+    padding-top: 56px;
+  }
+  .menu-active #qa-nav-main-clear {
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.32);
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  .menu-active #qa-nav-main .qa-logo {
+    transform: translateX(0);
+    visibility: visible;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 0s linear 0s;
+  }
+}
+@media (min-width: 1024px) {
+  .qa-search {
+    visibility: visible;
+    transform: scale(1);
+  }
+  .qa-search {
+    left: 310px;
+    right: 310px;
+    width: auto;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  .qa-search-field {
+    width: 100% !important;
+    background-color: var(--surface);
+    margin-left: 0;
+    padding: 10px 46px 10px 10px !important;
+    color: var(--on-surface);
+  }
+  #search-toggle {
+    display: none;
+  }
+  .qa-part-form-profile {
+    width: calc(60% - 10px);
+    margin-right: 10px;
+    float: left;
+  }
+  .qa-part-form-activity,
+  .qa-part-form-password {
+    width: 40%;
+    float: right;
+  }
+  .qa-part-message-list {
+    width: 40%;
+    float: right;
+    margin-top: 0;
+  }
+  .menu-active .qa-part-form-profile,
+  .menu-active .qa-part-form-activity,
+  .menu-active .qa-part-form-password,
+  .menu-active .qa-part-message-list {
+    width: unset;
+    float: unset;
+    margin: 10px 0;
+  }
+  .qa-template-user-wall .qa-part-message-list,
+  .qa-template-messages .qa-part-message-list,
+  .qa-template-message .qa-part-message-list {
+    width: unset;
+    float: unset;
+    margin: 10px 0;
+  }
+  .qa-nav-main {
+    z-index: 4;
+  }
+  .menu-active .qa-nav-sub-list {
+    margin-left: 264px;
+    width: calc(100% - 264px);
+  }
+  .menu-active .qam-main-sidepanel {
+    margin-left: 264px;
+  }
+  .menu-active .qa-footer,
+  .menu-active .qa-widgets-full {
+    margin-left: 264px;
+  }
+  #theme-toggle {
+    display: block;
+    position: absolute;
+    top: 28px;
+    right: 60px;
+    color: var(--on-primary);
+    font-size: 30px;
+    z-index: 5;
+    cursor: pointer;
+  }
+  #theme-toggle1 {
+    display: none;
+  }
+  .qa-top-tags-table tbody {
+    grid-template-columns: repeat(3, calc(33.3% - 7px));
+  }
+  .menu-active .qa-top-tags-table tbody {
+    grid-template-columns: repeat(2, calc(50% - 5px));
+  }
+  .qa-top-users-table tbody {
+    grid-template-columns: repeat(4, calc(100% / 4 - 15px / 4));
+  }
+  .menu-active .qa-top-users-table tbody {
+    grid-template-columns: repeat(3, calc(100% / 3 - 10px / 3));
+  }
+}
+@media (min-width: 1280px) {
+  .qa-search {
+    left: 340px;
+    right: 480px;
+  }
+  .menu-active .qa-part-form-profile {
+    width: calc(60% - 10px);
+    margin-right: 10px;
+    float: left;
+  }
+  .menu-active .qa-part-form-activity,
+  .menu-active .qa-part-form-password {
+    width: 40%;
+    float: right;
+  }
+  .menu-active .qa-part-message-list {
+    width: 40%;
+    float: right;
+    margin-top: 0;
+  }
+  .qa-template-user-wall.menu-active .qa-part-message-list,
+  .qa-template-messages.menu-active .qa-part-message-list,
+  .qa-template-message.menu-active .qa-part-message-list {
+    width: unset;
+    float: unset;
+    margin: 10px 0;
+  }
+  .qa-nav-main {
+    transform: translateX(0);
+    visibility: visible;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 0s linear 0s;
+  }
+  .menu-active .qa-nav-main {
+    transform: translateX(-264px);
+  }
+  .qa-nav-sub-list {
+    margin-left: 264px;
+    width: calc(100% - 264px);
+  }
+  .menu-active .qa-nav-sub-list {
+    margin-left: 0;
+    width: 100%;
+  }
+  .qam-main-sidepanel {
+    margin-left: 264px;
+  }
+  .menu-active .qam-main-sidepanel {
+    margin-left: 0;
+  }
+  .qa-footer,
+  .qa-widgets-full {
+    margin-left: 264px;
+  }
+  .menu-active .qa-footer,
+  .menu-active .qa-widgets-full {
+    margin-left: 0;
+  }
+  .qa-main {
+    width: calc(100% - 400px);
+  }
+  .qa-sidepanel {
+    width: 400px;
+  }
+}
+@media (min-width: 1440px) {
+  .qa-top-tags-table tbody {
+    grid-template-columns: repeat(3, calc(33.3% - 6.6px));
+  }
+  .menu-active .qa-top-tags-table tbody {
+    grid-template-columns: repeat(4, calc(25% - 7.5px));
+  }
+  .menu-active .qa-top-users-table tbody {
+    grid-template-columns: repeat(5, calc(100% / 5 - 20px / 5));
+  }
+}
+@media (min-width: 1700px) {
+  .qa-top-tags-table tbody {
+    grid-template-columns: repeat(4, calc(25% - 7.5px));
+  }
+  .qa-top-users-table tbody {
+    grid-template-columns: repeat(5, calc(100% / 5 - 20px / 5));
+  }
 }

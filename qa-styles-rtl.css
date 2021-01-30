@@ -49,18 +49,6 @@ input[type="radio"] {
   right: unset;
   left: 10px;
 }
-@media (min-width: 1024px) {
-  .qa-search-field {
-    margin-right: 0;
-    padding: 10px 10px 10px 46px !important;
-  }
-}
-@media (min-width: 1280px) {
-  .qa-search {
-    left: 480px;
-    right: 340px;
-  }
-}
 .qa-nav-main {
   transform: translateX(264px);
   left: unset;
@@ -105,82 +93,8 @@ input[type="radio"] {
   left: unset;
   right: 12px;
 }
-@media (min-width: 1024px) {
-  .qa-part-form-profile {
-    margin-right: 0;
-    margin-left: 10px;
-    float: right;
-  }
-  .qa-part-form-activity,
-  .qa-part-form-password {
-    float: left;
-  }
-  .qa-part-message-list {
-    float: left;
-  }
-}
-@media (min-width: 1280px) {
-  .menu-active .qa-part-form-profile {
-    margin-right: 0;
-    margin-left: 10px;
-    float: right;
-  }
-  .menu-active .qa-part-form-activity,
-  .menu-active .qa-part-form-password {
-    float: left;
-  }
-  .menu-active .qa-part-message-list {
-    float: left;
-  }
-}
 .qa-widgets-full-top {
   margin-right: 0 !important;
-}
-@media (min-width: 1024px) {
-  .menu-active .qa-nav-sub-list {
-    margin-left: 0;
-    margin-right: 264px;
-  }
-  .menu-active .qam-main-sidepanel {
-    margin-left: 0;
-    margin-right: 264px;
-  }
-  .menu-active .qa-footer,
-  .menu-active .qa-widgets-full {
-    margin-left: 0;
-    margin-right: 264px;
-  }
-}
-@media (min-width: 1280px) {
-  .qa-nav-main {
-    transform: translateX(0);
-  }
-  .menu-active .qa-nav-main {
-    transform: translateX(264px);
-  }
-  .qa-nav-sub-list {
-    margin-left: 0;
-    margin-right: 264px;
-  }
-  .menu-active .qa-nav-sub-list {
-    margin-right: 0;
-  }
-  .qam-main-sidepanel {
-    margin-left: 0;
-    margin-right: 264px;
-  }
-  .menu-active .qam-main-sidepanel {
-    margin-right: 0;
-  }
-  .qa-footer,
-  .qa-widgets-full {
-    margin-left: 0;
-    margin-right: 264px;
-  }
-  .menu-active .qa-footer,
-  .menu-active .qa-widgets-full {
-    margin-right: 0;
-  }
 }
 .qa-main-heading h1 {
   margin-right: 0;
@@ -261,27 +175,10 @@ input[type="radio"] {
   margin-right: 0;
   margin-left: 10px;
 }
-@media (min-width: 768px) {
-  .qa-attribution {
-    float: right;
-  }
-  .qa-attribution:nth-child(3) {
-    padding-left: 0;
-    padding-right: 10px;
-    border-left: 0;
-    border-right: 1px solid var(--on-surface);
-  }
-}
 #theme-toggle1 .material-icons {
   left: unset;
   right: 0;
   padding: 19px 190px 19px 26px;
-}
-@media (min-width: 1024px) {
-  #theme-toggle {
-    right: unset;
-    left: 60px;
-  }
 }
 .qa-form-tall-data ul {
   margin-left: 0;
@@ -459,4 +356,98 @@ input[type="radio"] {
 .qa-feed-link::before {
   margin-left: 0;
   margin-right: -36px;
+}
+
+@media (min-width: 768px) {
+  .qa-attribution {
+    float: right;
+  }
+  .qa-attribution:nth-child(3) {
+    padding-left: 0;
+    padding-right: 10px;
+    border-left: 0;
+    border-right: 1px solid var(--on-surface);
+  }
+}
+@media (min-width: 1024px) {
+  .qa-search-field {
+    margin-right: 0;
+    padding: 10px 10px 10px 46px !important;
+  }
+  .qa-part-form-profile {
+    margin-right: 0;
+    margin-left: 10px;
+    float: right;
+  }
+  .qa-part-form-activity,
+  .qa-part-form-password {
+    float: left;
+  }
+  .qa-part-message-list {
+    float: left;
+  }
+  .menu-active .qa-nav-sub-list {
+    margin-left: 0;
+    margin-right: 264px;
+  }
+  .menu-active .qam-main-sidepanel {
+    margin-left: 0;
+    margin-right: 264px;
+  }
+  .menu-active .qa-footer,
+  .menu-active .qa-widgets-full {
+    margin-left: 0;
+    margin-right: 264px;
+  }
+  #theme-toggle {
+    right: unset;
+    left: 60px;
+  }
+}
+@media (min-width: 1280px) {
+  .qa-search {
+    left: 480px;
+    right: 340px;
+  }
+  .menu-active .qa-part-form-profile {
+    margin-right: 0;
+    margin-left: 10px;
+    float: right;
+  }
+  .menu-active .qa-part-form-activity,
+  .menu-active .qa-part-form-password {
+    float: left;
+  }
+  .menu-active .qa-part-message-list {
+    float: left;
+  }
+  .qa-nav-main {
+    transform: translateX(0);
+  }
+  .menu-active .qa-nav-main {
+    transform: translateX(264px);
+  }
+  .qa-nav-sub-list {
+    margin-left: 0;
+    margin-right: 264px;
+  }
+  .menu-active .qa-nav-sub-list {
+    margin-right: 0;
+  }
+  .qam-main-sidepanel {
+    margin-left: 0;
+    margin-right: 264px;
+  }
+  .menu-active .qam-main-sidepanel {
+    margin-right: 0;
+  }
+  .qa-footer,
+  .qa-widgets-full {
+    margin-left: 0;
+    margin-right: 264px;
+  }
+  .menu-active .qa-footer,
+  .menu-active .qa-widgets-full {
+    margin-right: 0;
+  }
 }

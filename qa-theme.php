@@ -64,7 +64,6 @@ class qa_html_theme extends qa_html_theme_base
 		$this->output('class="' . $class . ' qa-body-js-off"');
 	}
 
-	// Adding point count for logged in user
 	public function logged_in()
 	{
 		parent::logged_in();
@@ -590,7 +589,6 @@ class qa_html_theme extends qa_html_theme_base
 		$this->output('</div>');
 	}
 
-	// changed post_avatar_meta and message_content order
 	public function message_item($message)
 	{
 		$this->output('<div class="qa-message-item" ' . @$message['tags'] . '>');

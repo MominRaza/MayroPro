@@ -32,7 +32,7 @@
   "background_color": "#EEEEEE",
   "display": "standalone",
   "scope": "/",
-  "theme_color": "#140078",
+  "theme_color": "#512da8",
   "shortcuts": [
     {
       "name": "My Updates",
