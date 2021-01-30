@@ -11,7 +11,7 @@
 */
 :root {
   color-scheme: light dark;
-  --primary-700: #512da8; /* also change manifest.webmanifest theme_color */
+  --primary-700: #512da8;
   --primary-700-rgb: 81, 45, 168; /* convert --primary-700 to rgb */
   --primary-light-700: #8559da;
   --primary-dark-700: #140078;
@@ -609,7 +609,7 @@ select option {
 .qa-part-form-2 form,
 [class^="qa-part-form-plugin-"],
 .qa-part-form-q-edit,
-.qa-part-a-form .qa-a-form {
+.qa-a-form {
   margin: 10px 0;
   background-color: var(--surface);
   padding: 4px 16px 16px 16px;
@@ -1784,9 +1784,15 @@ select option {
   .qa-template-user-wall .qa-message-item,
   .qa-part-form,
   .qa-part-form-2 form,
-  [class^="qa-part-form-plugin-"]:not(.qa-part-form-plugin-options) {
+  [class^="qa-part-form-plugin-"]:not(.qa-part-form-plugin-options),
+  .qa-a-form {
     border-radius: unset !important;
     box-shadow: unset !important;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .qa-q-list-item.qa-q-favorited {
+    padding-left: 7px;
   }
   .qa-main-heading,
   .qa-widget-main h2,
@@ -1794,7 +1800,8 @@ select option {
   .qa-suggest-next,
   .qam-admin-plugins .qa-part-form,
   .qa-top-tags-table,
-  .qa-browse-cat-list-1 {
+  .qa-browse-cat-list-1,
+  #a_list_title {
     margin-left: 10px;
     margin-right: 10px;
   }

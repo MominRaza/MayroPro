@@ -23,7 +23,6 @@ function toggleTheme(themeToggle) {
         themeToggle.innerText = 'dark_mode';
         themeToggle.title = 'Dark';
         document.cookie = "theme=dark; max-age=2592000; path=/;";
-        document.querySelector('meta[name="theme-color"]').setAttribute("content", "#35363a");
     } else if (document.body.classList.contains('dark-theme')) {
         document.body.classList.remove('dark-theme');
         themeToggle.innerText = 'brightness_auto';
@@ -34,8 +33,8 @@ function toggleTheme(themeToggle) {
         themeToggle.innerText = 'light_mode';
         themeToggle.title = 'Light';
         document.cookie = "theme=light; max-age=2592000; path=/;";
-        document.querySelector('meta[name="theme-color"]').setAttribute("content", "#512da8");
     }
+    toggleThemeJS();
 }
 function toggleExtra(e) {
     e.classList.toggle('active');
