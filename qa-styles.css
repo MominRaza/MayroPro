@@ -568,7 +568,7 @@ select option {
 .qa-template-user-wall .qa-message-list-form .qa-form-tall-table,
 .qa-template-messages .qa-message-list-form .qa-form-tall-table,
 .qa-template-message .qa-message-list-form .qa-form-tall-table,
-.qa-part-form-message .qa-form-tall-table,
+.qa-part-form-message,
 .qa-part-form-profile,
 .qa-part-form-password,
 .qa-q-view-follows,
@@ -1785,7 +1785,9 @@ select option {
   .qa-part-form,
   .qa-part-form-2 form,
   [class^="qa-part-form-plugin-"]:not(.qa-part-form-plugin-options),
-  .qa-a-form {
+  .qa-a-form,
+  .qa-part-custom,
+  .qa-part-form-message {
     border-radius: unset !important;
     box-shadow: unset !important;
     padding-left: 10px;
@@ -1801,7 +1803,10 @@ select option {
   .qam-admin-plugins .qa-part-form,
   .qa-top-tags-table,
   .qa-browse-cat-list-1,
-  #a_list_title {
+  #a_list_title,
+  .qa-main > .qa-error,
+  .qa-q-list > .qa-error,
+  .qa-a-list > .qa-error {
     margin-left: 10px;
     margin-right: 10px;
   }
