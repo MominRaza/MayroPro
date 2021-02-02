@@ -235,13 +235,18 @@ select option {
   height: 36px;
   overflow: hidden;
   border-radius: 50%;
-  border: 2px solid var(--on-primary);
   cursor: pointer;
   z-index: 4;
 }
 #user-toggle img {
   width: 100%;
   height: auto;
+}
+#user-toggle .login-person {
+  border: 2px solid var(--on-primary);
+  border-radius: 50%;
+  height: 36px;
+  width: 36px;
 }
 #user-toggle i {
   font-size: 36px;

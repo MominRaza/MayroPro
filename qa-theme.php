@@ -250,7 +250,7 @@ class qa_html_theme extends qa_html_theme_base
 		}
 		else {
 			// display login icon and label
-			$avatar = '<i class="material-icons">person</i>';
+			$avatar = '<div class="login-person"><i class="material-icons">person</i></div>';
 		}
 
 		// finally output avatar with div tag
