@@ -8,7 +8,6 @@ class qa_html_theme extends qa_html_theme_base
 	{
 		$this->output('<meta name="viewport" content="width=device-width, initial-scale=1"/>');
 		$this->output('<meta name="theme-color" content="#512da8">');
-		$this->output('<link rel="icon" href="/images/favicon-32.png" sizes="32x32">');
 
 		parent::head_metas();
 	}
@@ -17,9 +16,8 @@ class qa_html_theme extends qa_html_theme_base
 	{
 		if ($this->isRTL)
 			$this->content['css_src'][] = $this->rooturl . 'qa-styles-rtl.css?' . QA_VERSION;
-			
-		$this->output('<link rel="preload" href="'. $this->rooturl .'icons/material-icons.css" as="style" onload="this.onload=null;this.rel=`stylesheet`">');
-		$this->output('<noscript><link rel="stylesheet" href="'. $this->rooturl .'icons/material-icons.css"></noscript>');
+		
+		$this->content['css_src'][] = $this->rooturl . 'icons/material-icons.css';
 
 		$this->output('<link rel="manifest" href="'. $this->rooturl .'manifest.webmanifest">');
 
