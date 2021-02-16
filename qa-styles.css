@@ -886,10 +886,12 @@ select option {
 .qa-nav-footer-list {
   display: flex;
   list-style: none;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
 }
 .qa-nav-footer-item {
-  margin-right: 10px;
-  margin-bottom: 10px;
+  margin-right: 16px;
+  margin-bottom: 8px;
 }
 .qa-attribution {
   margin-right: 10px;
