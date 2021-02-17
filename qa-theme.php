@@ -85,7 +85,7 @@ class qa_html_theme extends qa_html_theme_base
 
 				$this->output('<li class="qa-nav-user-item qa-nav-user-points">');
 				if($this->template == 'user' && qa_request_part(1) == $username){
-					$this->output('<a href="'.qa_path_html( "user/".$username ).'" class="qa-nav-user-link qa-nav-user-selected">'. $pointshtml .' Points</a>');
+					$this->output('<a href="'.qa_path_html( "user/".$username ).'" class="qa-nav-user-link qa-nav-user-selected">'. qa_lang_html_sub('main/x_points', $pointshtml) .'</a>');
 				}else{
 					$this->output('<a href="'.qa_path_html( "user/".$username ).'" class="qa-nav-user-link">'. qa_lang_html_sub('main/x_points', $pointshtml) .'</a>');
 				}
