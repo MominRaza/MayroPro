@@ -1263,6 +1263,7 @@ select option {
   display: grid;
   grid-template-columns: repeat(3, calc(100% / 3 - 10px / 3));
   gap: 5px;
+  margin: 8px 0;
 }
 .qa-top-users-table tr {
   width: 100%;
