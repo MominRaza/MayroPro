@@ -4,7 +4,7 @@
   Theme Author: Momin Raza
   Theme Author URI: https://mominraza.github.io
 */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:wght@400;500;700&display=swap");
 /* color variables 
 	change colors inside :root only.
   find them from here https://material.io/resources/color
@@ -648,7 +648,7 @@ select option {
 .qa-activity-count-item span {
   display: block;
   font-size: 1.3em;
-  font-weight: 500;
+  font-weight: 700;
 }
 /* qa-main */
 .qam-main-sidepanel {
@@ -779,7 +779,7 @@ select option {
   top: -2px;
   content: ".";
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 700;
 }
 /* tags */
 .qa-q-item-tag-list,
@@ -1088,6 +1088,9 @@ select option {
   line-height: 1.25em;
   font-size: 1.07em;
 }
+.qa-post-content {
+  font-family: "Noto Serif", serif;
+}
 .qa-post-content p,
 .qa-part-custom p {
   padding: 5px 0;
@@ -1138,7 +1141,7 @@ select option {
 }
 /* user */
 .qa-form-wide-label {
-  font-weight: bold;
+  font-weight: 700;
   display: block;
   margin-right: 10px;
 }
@@ -1735,7 +1738,7 @@ select option {
   top: -2px;
   content: ".";
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 700;
 }
 /* hidden */
 .qa-q-view-hidden,

@@ -64,13 +64,12 @@ class qa_html_theme extends qa_html_theme_base
 
 	public function logged_in()
 	{
-		$this->output_split(qa_lang_html_sub_split('main/logged_in_x', QA_FINAL_EXTERNAL_USERS
-			? qa_get_logged_in_user_html(qa_get_logged_in_user_cache(), qa_path_to_root(), false)
-			: qa_get_one_user_html(qa_get_logged_in_handle(), false)
-		), 'qa-logged-in', 'div');
-
-		// parent::logged_in();
 		if (qa_is_logged_in()) {
+			$this->output_split(qa_lang_html_sub_split('main/logged_in_x', QA_FINAL_EXTERNAL_USERS
+				? qa_get_logged_in_user_html(qa_get_logged_in_user_cache(), qa_path_to_root(), false)
+				: qa_get_one_user_html(qa_get_logged_in_handle(), false)
+			), 'qa-logged-in', 'div');
+
 			$userpoints = qa_get_logged_in_points();
 			$username = qa_get_logged_in_handle();
 			$pointshtml = $userpoints == 1
