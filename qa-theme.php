@@ -64,7 +64,12 @@ class qa_html_theme extends qa_html_theme_base
 
 	public function logged_in()
 	{
-		parent::logged_in();
+		$this->output_split(qa_lang_html_sub_split('main/logged_in_x', QA_FINAL_EXTERNAL_USERS
+			? qa_get_logged_in_user_html(qa_get_logged_in_user_cache(), qa_path_to_root(), false)
+			: qa_get_one_user_html(qa_get_logged_in_handle(), false)
+		), 'qa-logged-in', 'div');
+
+		// parent::logged_in();
 		if (qa_is_logged_in()) {
 			$userpoints = qa_get_logged_in_points();
 			$username = qa_get_logged_in_handle();
@@ -180,6 +185,10 @@ class qa_html_theme extends qa_html_theme_base
 			}
 		}
 		$this->output('<i id="theme-toggle" class="material-icons" onclick="toggleTheme(this)" title="'.$themeTitle.'">'.$themeIcon.'</i>');
+
+		if (isset($this->content['loggedin']['suffix'])) {
+            $this->output($this->content['loggedin']['suffix']);
+        }
 
 		$this->nav_user_search();
 		switch ( $this->template ) {
