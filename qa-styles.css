@@ -742,6 +742,15 @@ select option {
   border-radius: 50%;
   overflow: hidden;
 }
+.qa-c-item-avatar {
+  height: 20px;
+  width: 20px;
+  margin-left: -30px;
+}
+.qa-c-list-item .qam-q-post-meta {
+  min-height: 30px;
+  padding-left: 30px;
+}
 .qa-q-view-avatar {
   height: 50px;
   width: 50px;
@@ -1027,6 +1036,11 @@ select option {
 .qa-form-basic-button {
   margin-top: 20px;
 }
+.qa-c-list-item .qa-form-light-button-comment {
+  margin-top: 2px;
+  font-size: 0.9em;
+  padding: 3px 10px !important;
+}
 /* question view */
 .qa-part-q-view,
 .qa-a-list-item,
@@ -1038,6 +1052,9 @@ select option {
   border-radius: 4px;
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+.qa-c-list-item {
+  padding: 12px 12px 6px 12px;
 }
 .qa-a-list-item-selected {
   border: 3px solid var(--selected);
@@ -1087,9 +1104,11 @@ select option {
 .qa-a-item-content {
   line-height: 1.25em;
   font-size: 1.07em;
-}
-.qa-post-content {
   font-family: "Noto Serif", serif;
+}
+.qa-c-item-content {
+  font-size: 0.85em;
+  margin-left: 30px;
 }
 .qa-post-content p,
 .qa-part-custom p {
@@ -1650,8 +1669,7 @@ select option {
 }
 .qa-q-item-what::before,
 .qa-q-view-what::before,
-.qa-a-item-what::before,
-.qa-c-item-what::before {
+.qa-a-item-what::before {
   content: "\A";
   display: block;
 }
@@ -1685,8 +1703,7 @@ select option {
 }
 .qam-what-2 .qa-q-item-what::before,
 .qam-what-2 .qa-q-view-what::before,
-.qam-what-2 .qa-a-item-what::before,
-.qam-what-2 .qa-c-item-what::before {
+.qam-what-2 .qa-a-item-what::before {
   content: "";
   display: unset;
 }
