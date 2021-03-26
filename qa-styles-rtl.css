@@ -161,11 +161,14 @@ input[type="radio"] {
 }
 .qam-ask {
   right: unset;
-  left: 15px;
+  left: 16px;
+}
+.qam-ask-link {
+  padding: 14px 14px 14px 20px;
 }
 .qam-ask .material-icons {
   margin-right: 0;
-  margin-left: 8px;
+  margin-left: 12px;
 }
 .qa-nav-footer-item {
   margin-right: 0;

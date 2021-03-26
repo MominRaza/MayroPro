@@ -1,13 +1,13 @@
 /*
   Theme Name: MayroPro
-	Theme Version: 3.4
+  Theme Version: 3.4
   Theme Date: 2021-03-03
   Theme Author: Momin Raza
   Theme Author URI: https://mominraza.github.io
 */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:wght@400;500;700&display=swap");
 /* color variables 
-	change colors inside :root only.
+  change colors inside :root only.
   find them from here https://material.io/resources/color
 */
 :root {
@@ -871,20 +871,21 @@ select option {
   z-index: 4;
   background-color: var(--secondary);
   color: var(--on-secondary);
-  border-radius: 20px;
-  padding: 10px 0;
+  border-radius: 24px;
+  padding: 14px 0;
   position: fixed;
-  bottom: 15px;
-  right: 15px;
+  bottom: 16px;
+  right: 16px;
   box-shadow: var(--fab-shadow);
 }
 .qam-ask-link {
-  padding: 10px 15px;
+  padding: 14px 20px 14px 14px;
   border-radius: 20px;
   color: var(--on-secondary);
+  text-transform: uppercase;
 }
 .qam-ask .material-icons {
-  margin-right: 8px;
+  margin-right: 12px;
   color: var(--on-secondary);
 }
 /* footer */
