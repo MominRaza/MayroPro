@@ -365,7 +365,7 @@ class qa_html_theme extends qa_html_theme_base
 		if (!empty($post['what_2'])) {
 			$this->output($separator);
 			$this->output('<div class="qam-what-2" onclick="toggleExtra(this)">');
-				$this->output('<i class="material-icons md-18">error_outline</i>');
+				$this->output('<i class="material-icons md-18">info_outline</i>');
 				$this->output('<div class="qam-what-2-body">');
 				foreach ($order as $element) {
 					switch ($element) {
@@ -607,6 +607,7 @@ class qa_html_theme extends qa_html_theme_base
 	public function voting_inner_html($post)
 	{
 		$this->vote_buttons($post);
+		$this->vote_count($post);
 		$this->vote_clear();
 	}
 
@@ -663,6 +664,12 @@ class qa_html_theme extends qa_html_theme_base
 		}
 
 		$this->output('</div>');
+	}
+
+	public function vote_count($post)
+	{
+		if(isset($post['vote_count_tags']))
+			$this->output('<i class="material-icons md-18 qam-vote-info"' . $post['vote_count_tags'] . '>info_outlined</i>');
 	}
 
 	public function favorite_button($tags, $class)

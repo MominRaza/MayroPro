@@ -1494,6 +1494,12 @@ select option {
 .qa-downvote-count.selected {
   color: var(--error);
 }
+.qam-vote-info {
+  margin-top: 17px;
+  margin-left: 12px;
+  margin-right: -24px;
+  cursor: help;
+}
 /* login register */
 .qa-template-user .qa-main,
 .qa-template-account .qa-main {
@@ -1718,7 +1724,6 @@ select option {
   right: 0;
   z-index: 1;
   cursor: pointer;
-  transform: rotate(180deg);
 }
 .qam-what-2-body {
   position: absolute;
