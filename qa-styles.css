@@ -6,6 +6,10 @@
   Theme Author URI: https://mominraza.github.io
 */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+.material-icons.md-18 {
+  font-size: 18px;
+}
 /* color variables 
   change colors inside :root only.
   find them from here https://material.io/resources/color
@@ -210,7 +214,7 @@ select option {
 }
 #menu-toggle {
   position: absolute;
-  top: 27px;
+  top: 13px;
   left: 10px;
   color: var(--on-primary);
   font-size: 30px;
@@ -219,7 +223,7 @@ select option {
 }
 #search-toggle {
   position: absolute;
-  top: 28px;
+  top: 14px;
   right: 60px;
   color: var(--on-primary);
   font-size: 30px;
@@ -355,7 +359,7 @@ select option {
 }
 .qa-search-button {
   position: fixed;
-  top: 11px;
+  top: 3px;
   right: 10px;
   width: 30px;
   background-color: unset;
@@ -708,8 +712,12 @@ select option {
 .qa-q-item-title a {
   color: var(--on-surface);
 }
+.qa-q-item-title a:visited,
+.qa-q-item-title a:visited p {
+  color: gray;
+}
 .qam-q-post-meta {
-  min-height: 60px;
+  min-height: 50px;
   padding-left: 50px;
   margin-right: 18px;
 }
@@ -796,6 +804,7 @@ select option {
 .qa-q-view-tag-list {
   list-style: none;
   display: flex;
+  margin-top: 10px;
   margin-bottom: 4px;
   overflow: hidden;
   overflow-x: auto;
@@ -840,12 +849,18 @@ select option {
 .qa-voting {
   display: flex;
   padding-right: 10px;
+  margin-right: auto;
+  align-items: center;
 }
 .qa-q-list-vote-disabled .qa-voting {
   display: none;
 }
 .qa-a-count {
   padding: 10px;
+  padding-right: 0;
+}
+.qa-a-count-selected {
+  padding-right: 22px;
 }
 .qa-template-user-activity .qa-a-count {
   padding-left: 0;
@@ -883,13 +898,15 @@ select option {
 }
 .qam-ask-link {
   padding: 14px 20px 14px 14px;
-  border-radius: 20px;
+  border-radius: 24px;
   color: var(--on-secondary);
   text-transform: uppercase;
 }
 .qam-ask .material-icons {
   margin-right: 12px;
   color: var(--on-secondary);
+  vertical-align: middle;
+  line-height: 14px;
 }
 /* footer */
 .qa-footer {
@@ -1083,16 +1100,15 @@ select option {
 }
 .qa-a-selection input.qa-a-unselect-button {
   width: 40px;
+  height: 40px;
 }
 .qa-a-selected-text {
   display: inline-block;
-  position: relative;
-  top: -7px;
   color: var(--selected);
 }
 .qa-a-selection i {
-  margin-top: 5px;
   font-size: 30px;
+  vertical-align: middle;
 }
 .qa-a-selection i.unselect {
   color: var(--error);
@@ -1464,8 +1480,8 @@ select option {
 }
 .qa-vote-buttons i {
   margin: 5px;
-  margin-top: 14px;
   color: gray;
+  vertical-align: middle;
 }
 .qa-vote-buttons i.enabled {
   color: var(--on-surface);
@@ -1495,9 +1511,7 @@ select option {
   color: var(--error);
 }
 .qam-vote-info {
-  margin-top: 17px;
   margin-left: 12px;
-  margin-right: -24px;
   cursor: help;
 }
 /* login register */
@@ -1979,7 +1993,7 @@ select option {
   #theme-toggle {
     display: block;
     position: absolute;
-    top: 28px;
+    top: 14px;
     right: 70px;
     color: var(--on-primary);
     font-size: 30px;

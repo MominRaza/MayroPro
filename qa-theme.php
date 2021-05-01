@@ -17,8 +17,6 @@ class qa_html_theme extends qa_html_theme_base
 		if ($this->isRTL)
 			$this->content['css_src'][] = $this->rooturl . 'qa-styles-rtl.css?' . QA_VERSION;
 		
-		$this->content['css_src'][] = $this->rooturl . 'icons/material-icons.css';
-
 		$this->output('<link rel="manifest" href="'. $this->rooturl .'manifest.webmanifest">');
 
 		parent::head_css();
@@ -622,13 +620,13 @@ class qa_html_theme extends qa_html_theme_base
 				$this->output_split($post['upvotes_view'], 'selected qa-upvote-count');
 
 				$this->post_disabled_button($post, 'vote_down_tags', '', 'qa-vote-second-button qa-vote-down');
-				$this->output('<i class="material-icons">thumb_down_alt</i>');
+				$this->output('<i class="material-icons">thumb_down_off_alt</i>');
 				$this->output_split($post['downvotes_view'], 'disabled qa-downvote-count');
 				break;
 
 			case 'voted_down':
 				$this->post_disabled_button($post, 'vote_up_tags', '', 'qa-vote-first-button qa-vote-up');
-				$this->output('<i class="material-icons">thumb_up_alt</i>');
+				$this->output('<i class="material-icons">thumb_up_off_alt</i>');
 				$this->output_split($post['upvotes_view'], 'disabled qa-upvote-count');
 
 				$this->post_hover_button($post, 'vote_down_tags', '&ndash;', 'qa-vote-one-button qa-voted-down');
@@ -638,27 +636,27 @@ class qa_html_theme extends qa_html_theme_base
 
 			case 'up_only':
 				$this->post_hover_button($post, 'vote_up_tags', '+', 'qa-vote-first-button qa-vote-up');
-				$this->output('<i class="material-icons up_only">thumb_up_alt</i>');
+				$this->output('<i class="material-icons up_only">thumb_up_off_alt</i>');
 				$this->output_split($post['upvotes_view'], 'enabled qa-upvote-count');
 				break;
 
 			case 'enabled':
 				$this->post_hover_button($post, 'vote_up_tags', '+', 'qa-vote-first-button qa-vote-up');
-				$this->output('<i class="material-icons enabled">thumb_up_alt</i>');
+				$this->output('<i class="material-icons enabled">thumb_up_off_alt</i>');
 				$this->output_split($post['upvotes_view'], 'enabled qa-upvote-count');
 
 				$this->post_hover_button($post, 'vote_down_tags', '&ndash;', 'qa-vote-second-button qa-vote-down');
-				$this->output('<i class="material-icons enabled">thumb_down_alt</i>');
+				$this->output('<i class="material-icons enabled">thumb_down_off_alt</i>');
 				$this->output_split($post['downvotes_view'], 'enabled qa-downvote-count');
 				break;
 
 			default:
 				$this->post_disabled_button($post, 'vote_up_tags', '', 'qa-vote-first-button qa-vote-up');
-				$this->output('<i class="material-icons">thumb_up_alt</i>');
+				$this->output('<i class="material-icons">thumb_up_off_alt</i>');
 				$this->output_split($post['upvotes_view'], 'disabled qa-upvote-count');
 
 				$this->post_disabled_button($post, 'vote_down_tags', '', 'qa-vote-second-button qa-vote-down');
-				$this->output('<i class="material-icons">thumb_down_alt</i>');
+				$this->output('<i class="material-icons">thumb_down_off_alt</i>');
 				$this->output_split($post['downvotes_view'], 'disabled qa-downvote-count');
 				break;
 		}
