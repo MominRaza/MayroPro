@@ -27,6 +27,14 @@
   --secondary-100: #ffccbc;
   --on-primary-700: #ffffff; /* only black or white */
   --on-secondary-200: #000000; /* only black or white */
+
+  /* variables for media query */
+  --padding-lr: 16px;
+}
+@media (max-width: 767px) {
+  :root {
+    --padding-lr: 10px;
+  }
 }
 body {
   --primary-rgb: var(--primary-700-rgb);
@@ -177,6 +185,11 @@ input[type="submit"] {
   border-radius: 4px;
   cursor: pointer;
   text-transform: capitalize;
+}
+input[type="file"] {
+  width: 100%;
+  margin: 5px 0;
+  font-size: 1.2em;
 }
 button {
   cursor: pointer;
@@ -585,7 +598,7 @@ select option {
 .qa-q-view-closed {
   margin: 10px 0;
   background-color: var(--surface);
-  padding: 16px 16px 8px 16px;
+  padding: 16px var(--padding-lr) 8px var(--padding-lr);
   border-radius: 4px;
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
@@ -622,7 +635,7 @@ select option {
 .qa-a-form {
   margin: 10px 0;
   background-color: var(--surface);
-  padding: 4px 16px 16px 16px;
+  padding: 4px var(--padding-lr) 16px var(--padding-lr);
   border-radius: 4px;
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
@@ -678,6 +691,8 @@ select option {
   width: 100%;
   font-size: 24px;
   margin-right: 10px;
+  line-height: 1.15;
+  font-weight: 500;
 }
 .qa-main-heading,
 #a_list_title,
@@ -685,13 +700,20 @@ select option {
 .qa-part-form-2 h2 {
   margin-top: 20px;
   margin-bottom: 10px;
+  line-height: 1.15;
+  font-weight: 500;
+}
+[class^="qa-widget-"] h2 {
+  line-height: 1.15;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
 /* questions list */
 .qa-q-list-item {
   position: relative;
   margin: 8px 0;
   background-color: var(--surface);
-  padding: 16px 16px 0 16px;
+  padding: 16px var(--padding-lr) 0 var(--padding-lr);
   border-radius: 4px;
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
@@ -935,7 +957,7 @@ select option {
   position: absolute;
   left: 0;
   top: 0;
-  padding: 19px 26px 19px 190px;
+  padding: 7px 26px 8px 190px;
 }
 /* form */
 .qa-form-tall-table,
@@ -945,38 +967,40 @@ select option {
   width: -webkit-fill-available;
   border-spacing: 0;
 }
-.qa-form-wide-table td {
-  padding: 10px 0 5px 0;
+.qa-part-form-profile .qa-form-wide-label {
+  min-width: max-content;
 }
-.qa-form-tall-label {
+.qa-form-tall-label,
+.qa-form-wide-label {
   padding-top: 20px;
 }
-.qa-form-tall-ok {
-  background-color: var(--primary-dark);
-  color: var(--on-primary);
-  margin-top: 10px;
-  display: block;
-  padding: 8px 16px;
-  border-radius: 4px;
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-}
-.qa-form-tall-ok span {
-  color: var(--on-primary);
-}
+.qa-form-tall-ok,
 .qa-form-wide-ok {
   background-color: var(--primary-dark);
   color: var(--on-primary);
   margin-top: 10px;
-  padding: 8px 16px !important;
+  padding: 8px 10px !important;
   border-radius: 4px;
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
+.qa-form-tall-ok {
+  display: block;
+}
+.qa-form-tall-ok::before,
+.qa-form-wide-ok::before {
+  content: "done";
+  font-family: "Material Icons";
+  font-size: 18px;
+  margin-right: 10px;
+  vertical-align: bottom;
+}
+.qa-form-tall-ok span,
 .qa-form-wide-ok span {
   color: var(--on-primary);
 }
-.qa-form-tall-data {
+.qa-form-tall-data,
+.qa-form-wide-data {
   padding-top: 10px;
 }
 .qa-form-tall-note {
@@ -990,6 +1014,13 @@ select option {
 }
 .qa-form-tall-data ul {
   margin-left: 20px;
+}
+.qa-form-tall-data ul li {
+  margin-top: 10px;
+}
+.qa-form-tall-data small,
+.qa-form-tall-static a {
+  line-height: 28px;
 }
 .qa-form-tall-button,
 .qa-form-wide-button,
@@ -1070,7 +1101,7 @@ select option {
 .qa-c-list-item {
   margin: 8px 0;
   background-color: var(--surface);
-  padding: 16px 16px 8px 16px;
+  padding: 16px var(--padding-lr) 8px var(--padding-lr);
   border-radius: 4px;
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
@@ -1176,6 +1207,13 @@ select option {
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
+.qa-error::before {
+  content: "error_outline";
+  font-family: "Material Icons";
+  font-size: 18px;
+  margin-right: 10px;
+  vertical-align: bottom;
+}
 .qa-error a {
   color: var(--primary-light-700);
 }
@@ -1188,6 +1226,43 @@ select option {
 .qa-form-tall-image {
   text-align: center;
   min-height: 200px;
+}
+.qa-part-form-profile .qa-form-wide-label::before {
+  font-family: "Material Icons";
+  font-size: 18px;
+  font-weight: normal;
+  vertical-align: middle;
+  padding-right: 8px;
+}
+#duration .qa-form-wide-label::before {
+  content: "date_range";
+}
+#level .qa-form-wide-label::before {
+  content: "assignment_ind";
+}
+#permits .qa-form-wide-label::before {
+  content: "admin_panel_settings";
+}
+#email .qa-form-wide-label::before {
+  content: "mail_outline";
+}
+#lastlogin .qa-form-wide-label::before {
+  content: "login";
+}
+#lastwrite .qa-form-wide-label::before {
+  content: "edit";
+}
+#userfield-1 .qa-form-wide-label::before {
+  content: "badge";
+}
+#userfield-2 .qa-form-wide-label::before {
+  content: "location_on";
+}
+#userfield-3 .qa-form-wide-label::before {
+  content: "link";
+}
+#userfield-4 .qa-form-wide-label::before {
+  content: "account_circle";
 }
 /* category */
 .qa-category-link.qa-cat-favorited {
@@ -1364,7 +1439,9 @@ select option {
 .qa-part-nav-list-categories h2 {
   margin-top: 20px;
   margin-bottom: 10px;
-  margin-left: 60px;
+  line-height: 1.15;
+  font-weight: 500;
+  font-size: 20px;
 }
 .qa-part-q-list h2::before,
 .qa-part-ranking-users h2::before,
@@ -1372,10 +1449,8 @@ select option {
 .qa-part-nav-list-categories h2::before {
   font-family: "Material Icons";
   font-size: 24px;
-  position: absolute;
-  margin-left: -46px;
-  margin-top: 4px;
-  font-weight: normal;
+  vertical-align: middle;
+  margin-right: 16px;
 }
 .qa-part-q-list h2::before {
   content: "chat";
@@ -1393,11 +1468,15 @@ select option {
 .qa-a-form h2 {
   padding-top: 20px;
   margin-bottom: 10px;
+  line-height: 1.15;
+  font-weight: 500;
 }
 .qa-part-form-activity h2,
 .qa-part-message-list h2,
 .qa-part-form-password h2 {
   margin-bottom: 10px;
+  line-height: 1.15;
+  font-weight: 500;
 }
 .qa-part-nav-list-categories .qa-browse-cat-item {
   background-color: var(--surface);
@@ -1834,47 +1913,16 @@ select option {
 @media (max-width: 767px) {
   .qa-main {
     margin-bottom: 40px;
-    padding: 0;
+  }
+  .qa-sidepanel,
+  .qa-main {
+    padding: 0 8px;
   }
   .qa-footer {
     padding-bottom: 0;
   }
-  .qa-q-list-item,
-  .qa-part-q-view,
-  .qa-a-list-item,
-  .qa-page-links,
-  .qa-part-form-profile,
-  .qa-part-form-activity,
-  .qa-part-message-list,
-  .qa-part-form-password,
-  .qa-template-user-wall .qa-message-item,
-  .qa-part-form,
-  .qa-part-form-2 form,
-  [class^="qa-part-form-plugin-"]:not(.qa-part-form-plugin-options),
-  .qa-a-form,
-  .qa-part-custom,
-  .qa-part-form-message {
-    border-radius: unset !important;
-    box-shadow: unset !important;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
   .qa-q-list-item.qa-q-favorited {
     padding-left: 7px;
-  }
-  .qa-main-heading,
-  .qa-widget-main h2,
-  .qa-part-form-2 h2,
-  .qa-suggest-next,
-  .qam-admin-plugins .qa-part-form,
-  .qa-top-tags-table,
-  .qa-browse-cat-list-1,
-  #a_list_title,
-  .qa-main > .qa-error,
-  .qa-q-list > .qa-error,
-  .qa-a-list > .qa-error {
-    margin-left: 10px;
-    margin-right: 10px;
   }
 }
 @media (min-width: 768px) {
