@@ -1712,7 +1712,7 @@ select option {
 }
 .qam-q-extra-menu-toggle {
   position: absolute;
-  top: -18px;
+  top: -20px;
   right: -25px;
   cursor: pointer;
 }
@@ -1725,7 +1725,7 @@ select option {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%) translateY(-50%) scale(0.2);
+  transform: translateX(-50%) translateY(-56%) scale(0.2);
   border-radius: 50px;
   opacity: 0;
 }
@@ -1741,7 +1741,7 @@ select option {
 }
 .qam-q-extra-menu.active .qam-q-extra-menu-toggle::before {
   opacity: 1;
-  transform: translateX(-50%) translateY(-50%) scale(1);
+  transform: translateX(-50%) translateY(-56%) scale(1);
 }
 .qam-q-extra-menu.active .qam-q-extra-menu-toggle::after {
   visibility: visible;
@@ -1812,7 +1812,7 @@ select option {
 }
 .qam-what-2 i {
   position: absolute;
-  top: 0;
+  top: -6px;
   right: 0;
   z-index: 1;
   cursor: pointer;
