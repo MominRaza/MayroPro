@@ -674,6 +674,7 @@ select option {
 .qa-sidepanel,
 .qa-main {
   padding: 0 10px;
+  min-height: 75vh;
 }
 .qa-widgets-full {
   transition: 0.25s;
@@ -1263,6 +1264,25 @@ select option {
 #userfield-4 .qa-form-wide-label::before {
   content: "account_circle";
 }
+#level .qa-form-wide-static a[href*="message"] {
+  margin-top: 10px;
+  background-color: var(--selected);
+  color: var(--on-selected);
+  padding: 7px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  display: block;
+  width: min-content;
+}
+#level .qa-form-wide-static a[href*="message"]::before {
+  content: "mail_outline";
+  font-family: "Material Icons";
+  font-size: 18px;
+  vertical-align: middle;
+  margin-left: -5px;
+  margin-right: 10px;
+}
 /* category */
 .qa-category-link.qa-cat-favorited {
   margin-left: 20px;
@@ -1594,21 +1614,22 @@ select option {
 }
 /* login register */
 .qa-template-user .qa-main,
-.qa-template-account .qa-main {
+.qa-template-account .qa-main,
+.qa-template-admin .qa-main {
   width: 100%;
 }
 .qa-template-login .qa-main,
 .qa-template-register .qa-main,
 .qa-template-forgot .qa-main {
   max-width: 400px;
-  min-height: 75vh;
   margin: 10px auto;
 }
 .qa-template-user .qa-sidepanel,
 .qa-template-account .qa-sidepanel,
 .qa-template-login .qa-sidepanel,
 .qa-template-register .qa-sidepanel,
-.qa-template-forgot .qa-sidepanel {
+.qa-template-forgot .qa-sidepanel,
+.qa-template-admin .qa-sidepanel {
   display: none;
 }
 /* widgets */
