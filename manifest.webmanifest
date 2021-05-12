@@ -30,7 +30,7 @@
   ],
   "start_url": "/",
   "background_color": "#EEEEEE",
-  "display": "minimal-ui",
+  "display": "standalone",
   "orientation": "portrait",
   "scope": "/",
   "theme_color": "#EEEEEE",
