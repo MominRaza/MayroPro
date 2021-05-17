@@ -1615,7 +1615,9 @@ select option {
 /* login register */
 .qa-template-user .qa-main,
 .qa-template-account .qa-main,
-.qa-template-admin .qa-main {
+.qa-template-admin .qa-main,
+.qa-template-ask .qa-main,
+.qa-template-feedback .qa-main {
   width: 100%;
 }
 .qa-template-login .qa-main,
@@ -1629,7 +1631,9 @@ select option {
 .qa-template-login .qa-sidepanel,
 .qa-template-register .qa-sidepanel,
 .qa-template-forgot .qa-sidepanel,
-.qa-template-admin .qa-sidepanel {
+.qa-template-admin .qa-sidepanel,
+.qa-template-ask .qa-sidepanel,
+.qa-template-feedback .qa-sidepanel {
   display: none;
 }
 /* widgets */
