@@ -272,6 +272,7 @@ select option {
 }
 #search-toggle.active {
   left: 10px;
+  right: unset;
   color: var(--selected);
 }
 .qa-nav-user {
