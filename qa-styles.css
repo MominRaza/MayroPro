@@ -29,6 +29,8 @@
 
   /* variables for media query */
   --padding-lr: 16px;
+  --border: 10px;
+  --btn-border: 20px;
 }
 @media (max-width: 767px) {
   :root {
@@ -181,7 +183,7 @@ input[type="radio"] {
 input[type="submit"] {
   padding: 7px 16px;
   font-size: 1.2em;
-  border-radius: 4px;
+  border-radius: var(--btn-border);
   cursor: pointer;
   text-transform: capitalize;
 }
@@ -282,7 +284,7 @@ select option {
   right: 40px;
   transform: scale(0.2);
   background-color: var(--surface-solid, var(--surface));
-  border-radius: 4px;
+  border-radius: 30px;
   box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2),
     0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
   max-height: 360px;
@@ -294,7 +296,7 @@ select option {
   transform-origin: 100% 0;
 }
 #qa-nav-user.active #qa-nav-user-clear {
-  z-index: 5;
+  z-index: 6;
   background-color: rgba(0, 0, 0, 0.32);
   position: fixed;
   height: 100vh;
@@ -309,7 +311,7 @@ select option {
   transform: translate(50%, -50%) scale(1);
   transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1), top 0.3s,
     right 0.3s;
-  z-index: 6;
+  z-index: 7;
 }
 .qa-nav-user .qa-logged-in {
   font-size: 1.25rem;
@@ -328,6 +330,8 @@ select option {
   display: block;
   padding: 10px 0 10px 64px;
   color: var(--on-surface);
+  border-radius: 20px;
+  margin: 4px;
 }
 .qa-nav-user-link.qa-nav-user-selected {
   background-color: rgba(var(--primary-rgb), 0.12);
@@ -366,6 +370,10 @@ select option {
   font-size: 20px;
   color: var(--on-surface);
   padding: 10px 46px !important;
+  border-radius: 20px !important;
+}
+.qa-search-field:focus {
+  outline: none;
 }
 .qa-search-field::placeholder {
   color: #9e9e9e;
@@ -386,12 +394,12 @@ select option {
   transform: translateX(-264px);
   will-change: visibility;
   visibility: hidden;
-  z-index: 6;
+  z-index: 7;
   position: absolute;
   top: 56px;
   left: 0;
   width: 264px;
-  height: 100vh;
+  height: calc(100vh - 56px);
   background-color: var(--surface-solid, var(--surface));
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
@@ -412,9 +420,10 @@ select option {
   padding-top: 13px;
   background-color: var(--surface-solid, var(--surface));
   box-shadow: unset;
-  z-index: 7;
+  z-index: 8;
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
     visibility 0s linear 0.25s;
+  border-radius: 0 30px 0 0;
 }
 #qa-nav-main .qa-logo .qa-logo-link {
   color: var(--on-surface);
@@ -436,9 +445,11 @@ select option {
 }
 .qa-nav-main-link {
   display: block;
-  padding: 15px 0 15px 60px;
-  width: 100%;
+  padding: 13px 0 13px 60px;
+  margin: 4px 0;
+  width: calc(100% - 4px);
   color: var(--on-surface);
+  border-radius: 0 25px 25px 0;
 }
 .qa-nav-main-link.qa-nav-main-selected {
   color: var(--selected);
@@ -599,7 +610,7 @@ select option {
   margin: 10px 0;
   background-color: var(--surface);
   padding: 16px var(--padding-lr) 8px var(--padding-lr);
-  border-radius: 4px;
+  border-radius: var(--border);
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
@@ -636,7 +647,7 @@ select option {
   margin: 10px 0;
   background-color: var(--surface);
   padding: 4px var(--padding-lr) 16px var(--padding-lr);
-  border-radius: 4px;
+  border-radius: var(--border);
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
@@ -715,13 +726,13 @@ select option {
   margin: 8px 0;
   background-color: var(--surface);
   padding: 16px var(--padding-lr) 0 var(--padding-lr);
-  border-radius: 4px;
+  border-radius: var(--border);
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
 .qa-q-list-item.qa-q-favorited {
   border-left: 3px solid var(--selected);
-  border-radius: 0 4px 4px 0;
+  border-radius: 0 var(--border) var(--border) 0;
   padding-left: 13px;
 }
 .qa-q-item-title {
@@ -981,7 +992,7 @@ select option {
   color: var(--on-primary);
   margin-top: 10px;
   padding: 8px 10px !important;
-  border-radius: 4px;
+  border-radius: var(--border);
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
@@ -1007,7 +1018,8 @@ select option {
 .qa-form-tall-note {
   margin-top: 5px;
 }
-.qa-form-tall-buttons {
+.qa-form-tall-buttons,
+.qa-form-wide-buttons {
   padding-top: 10px;
 }
 .qa-form-tall-error {
@@ -1028,7 +1040,7 @@ select option {
 .qa-form-basic-button,
 .qa-form-light-button {
   border: none;
-  border-radius: 2px;
+  border-radius: var(--btn-border);
   cursor: pointer;
 }
 .qa-form-tall-button-save,
@@ -1103,7 +1115,7 @@ select option {
   margin: 8px 0;
   background-color: var(--surface);
   padding: 16px var(--padding-lr) 8px var(--padding-lr);
-  border-radius: 4px;
+  border-radius: var(--border);
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
@@ -1204,7 +1216,7 @@ select option {
   color: var(--on-error);
   padding: 10px;
   margin: 10px 0;
-  border-radius: 4px;
+  border-radius: var(--border);
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
@@ -1270,7 +1282,7 @@ select option {
   background-color: var(--selected);
   color: var(--on-selected);
   padding: 7px 16px;
-  border-radius: 4px;
+  border-radius: var(--btn-border);
   cursor: pointer;
   white-space: nowrap;
   display: block;
@@ -1310,7 +1322,7 @@ select option {
   padding: 10px;
   margin: 5px 0;
   background-color: var(--surface);
-  border-radius: 4px;
+  border-radius: var(--border);
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   display: flex;
@@ -1382,7 +1394,7 @@ select option {
   margin: 5px 0;
   background-color: var(--surface);
   padding: 10px 5px;
-  border-radius: 4px;
+  border-radius: var(--border);
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   display: flex;
@@ -1390,7 +1402,7 @@ select option {
 .qa-top-tags-count {
   margin: -10px 0 -10px -5px;
   padding: 10px 5px 10px 10px;
-  border-radius: 4px 0 0 4px;
+  border-radius: var(--border) 0 0 var(--border);
   min-width: max-content;
   background-color: var(--primary-light);
   color: var(--on-primary);
@@ -1409,6 +1421,7 @@ select option {
   aspect-ratio: 1 / 1;
   overflow: hidden;
   padding-top: 75%;
+  border-radius: var(--border);
 }
 .qa-avatar-link {
   display: block;
@@ -1526,8 +1539,8 @@ select option {
 .qa-page-links {
   margin: 10px 0;
   background-color: var(--surface);
-  padding: 5px 8px;
-  border-radius: 4px;
+  padding: 8px var(--padding-lr);
+  border-radius: var(--border);
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
@@ -1541,17 +1554,21 @@ select option {
 }
 .qa-page-links-item {
   margin: 2px;
-  padding: 5px 0;
+  padding: 6px 0 2px 0;
 }
-.qa-page-prev,
-.qa-page-next,
 .qa-page-selected {
-  padding: 3px 6px;
-  border-radius: 2px;
+  padding: 6px 8px;
+  border-radius: var(--border);
+  background-color: var(--secondary);
+  color: var(--on-secondary);
+}
+.qa-page-ellipsis {
+  padding: 6px 4px;
 }
 .qa-page-link {
-  padding: 3px 5px;
-  border-radius: 2px;
+  padding: 6px 8px;
+  border-radius: var(--border);
+  color: var(--link);
 }
 .qa-page-links-item a:hover {
   background-color: var(--secondary-light);
@@ -1559,15 +1576,24 @@ select option {
 }
 .qa-page-prev,
 .qa-page-next {
+  visibility: hidden;
+  font-size: 1px;
+  letter-spacing: -1px;
+}
+.qa-page-prev::before,
+.qa-page-next::before {
+  font-size: 18px;
+  letter-spacing: initial;
+  font-family: "Material Icons";
+  visibility: visible;
+  content: "arrow_back_ios_new";
   background-color: var(--primary);
   color: var(--on-primary);
+  padding: 6px;
+  border-radius: var(--border);
 }
-.qa-page-link {
-  color: var(--link);
-}
-.qa-page-selected {
-  background-color: var(--secondary);
-  color: var(--on-secondary);
+.qa-page-next::before {
+  content: "arrow_forward_ios";
 }
 /* votes */
 .qa-vote-buttons input {
@@ -1713,7 +1739,7 @@ select option {
   pointer-events: none;
   visibility: hidden;
   opacity: 0;
-  border-radius: 4px;
+  border-radius: var(--border);
   z-index: 3;
 }
 .qam-q-extra-menu.active .qa-q-view-buttons,
@@ -1930,6 +1956,20 @@ select option {
   border: none;
 }
 /* media queries */
+@media (max-width: 360px) {
+  #menu-toggle {
+    left: 4px;
+  }
+  .qa-logo-link {
+    margin-left: 40px;
+  }
+  #user-toggle {
+    right: 4px;
+  }
+  #search-toggle {
+    right: 44px;
+  }
+}
 @media (min-width: 515px) {
   .qa-top-users-table tbody {
     grid-template-columns: repeat(4, calc(100% / 4 - 15px / 4));
@@ -1948,6 +1988,11 @@ select option {
   }
   .qa-q-list-item.qa-q-favorited {
     padding-left: 7px;
+  }
+  .qa-nav-main,
+  #qa-nav-main .qa-logo {
+    width: calc(100% - 56px);
+    max-width: 340px;
   }
 }
 @media (min-width: 768px) {
@@ -1980,9 +2025,11 @@ select option {
       0px 24px 38px 3px rgba(0, 0, 0, 0.14),
       0px 9px 46px 8px rgba(0, 0, 0, 0.12);
     padding-top: 56px;
+    height: 100vh;
+    border-radius: 0 30px 30px 0;
   }
   .menu-active #qa-nav-main-clear {
-    z-index: 5;
+    z-index: 6;
     background-color: rgba(0, 0, 0, 0.32);
     position: fixed;
     height: 100vh;
@@ -2013,7 +2060,7 @@ select option {
     width: 100% !important;
     background-color: var(--surface);
     margin-left: 0;
-    padding: 10px 46px 10px 10px !important;
+    padding: 10px 46px 10px 16px !important;
     color: var(--on-surface);
   }
   #search-toggle {
