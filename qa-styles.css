@@ -1257,7 +1257,7 @@ select option {
   content: "admin_panel_settings";
 }
 #email .qa-form-wide-label::before {
-  content: "mail_outline";
+  content: "alternate_email";
 }
 #lastlogin .qa-form-wide-label::before {
   content: "login";
@@ -1984,7 +1984,7 @@ select option {
     padding: 0 8px;
   }
   .qa-footer {
-    padding-bottom: 0;
+    padding-bottom: 70px;
   }
   .qa-q-list-item.qa-q-favorited {
     padding-left: 7px;
