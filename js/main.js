@@ -51,3 +51,8 @@ toggleThemeJS();
 window.matchMedia('(prefers-color-scheme: dark)').onchange = function () {
     toggleThemeJS();
 }
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register(qa_root + 'sw_offline.js');
+    })
+}

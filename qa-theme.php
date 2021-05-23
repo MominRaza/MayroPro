@@ -27,14 +27,6 @@ class qa_html_theme extends qa_html_theme_base
 		$jsUrl = $this->rooturl . 'js/main.js?' . QA_VERSION;
 		$this->content['script'][] = '<script src="' . $jsUrl . '" async></script>';
 
-		switch ( $this->template ) {
-			case 'qa' :
-			case 'custom' :
-				$jsAppUrl = $this->rooturl . 'js/app.js?' . QA_VERSION;
-				$this->content['script'][] = '<script src="' . $jsAppUrl . '" async></script>';
-			break;
-		}
-
 		parent::head_script();
 	}
 
