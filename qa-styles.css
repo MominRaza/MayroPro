@@ -31,6 +31,8 @@
   --padding-lr: 16px;
   --border: 10px;
   --btn-border: 20px;
+
+  scroll-padding-top: 60px;
 }
 @media (max-width: 767px) {
   :root {
