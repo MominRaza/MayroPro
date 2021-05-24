@@ -1011,9 +1011,11 @@ select option {
 .qa-form-wide-ok span {
   color: var(--on-primary);
 }
-.qa-form-tall-data,
-.qa-form-wide-data {
+.qa-form-tall-data {
   padding-top: 10px;
+}
+.qa-form-wide-data {
+  padding-top: 20px;
 }
 .qa-form-tall-note {
   margin-top: 5px;
@@ -1276,6 +1278,9 @@ select option {
 }
 #userfield-4 .qa-form-wide-label::before {
   content: "account_circle";
+}
+#userfield-5 .qa-form-wide-label::before {
+  content: "stars";
 }
 #level .qa-form-wide-static a[href*="message"] {
   margin-top: 10px;
@@ -1993,6 +1998,10 @@ select option {
   #qa-nav-main .qa-logo {
     width: calc(100% - 56px);
     max-width: 340px;
+  }
+  .qa-part-form-profile .qa-form-wide-data {
+    display: block;
+    padding: 10px 0;
   }
 }
 @media (min-width: 768px) {
