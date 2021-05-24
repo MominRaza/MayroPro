@@ -15,16 +15,21 @@ class qa_html_theme extends qa_html_theme_base
 	public function head_css()
 	{
 		if ($this->isRTL)
-			$this->content['css_src'][] = $this->rooturl . 'qa-styles-rtl.css?' . QA_VERSION;
+			$this->content['css_src'][] = $this->rooturl . 'qa-styles-rtl.min.css?' . QA_VERSION;
 		
 		$this->output('<link rel="manifest" href="'. $this->rooturl .'manifest.webmanifest">');
 
 		parent::head_css();
 	}
 
+	public function css_name()
+	{
+		return 'qa-styles.min.css?' . QA_VERSION;
+	}
+
 	public function head_script()
 	{
-		$jsUrl = $this->rooturl . 'js/main.js?' . QA_VERSION;
+		$jsUrl = $this->rooturl . 'js/main.min.js?' . QA_VERSION;
 		$this->content['script'][] = '<script src="' . $jsUrl . '" async></script>';
 
 		parent::head_script();
