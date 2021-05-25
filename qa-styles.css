@@ -29,8 +29,12 @@
 
   /* variables for media query */
   --padding-lr: 16px;
+
   --border: 10px;
   --btn-border: 20px;
+
+  --shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 
   scroll-padding-top: 60px;
 }
@@ -403,8 +407,7 @@ select option {
   width: 264px;
   height: calc(100vh - 56px);
   background-color: var(--surface-solid, var(--surface));
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow);
   overflow: hidden;
   overflow-y: auto;
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
@@ -613,8 +616,7 @@ select option {
   background-color: var(--surface);
   padding: 16px var(--padding-lr) 8px var(--padding-lr);
   border-radius: var(--border);
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow);
 }
 .qa-q-view-follows a,
 .qa-q-view-closed span {
@@ -650,8 +652,7 @@ select option {
   background-color: var(--surface);
   padding: 4px var(--padding-lr) 16px var(--padding-lr);
   border-radius: var(--border);
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow);
 }
 .qa-part-form-plugin-options {
   margin: 0 8px 20px;
@@ -729,8 +730,7 @@ select option {
   background-color: var(--surface);
   padding: 16px var(--padding-lr) 0 var(--padding-lr);
   border-radius: var(--border);
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow);
 }
 .qa-q-list-item.qa-q-favorited {
   border-left: 3px solid var(--selected);
@@ -995,8 +995,7 @@ select option {
   margin-top: 10px;
   padding: 8px 10px !important;
   border-radius: var(--border);
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow);
 }
 .qa-form-tall-ok {
   display: block;
@@ -1120,8 +1119,7 @@ select option {
   background-color: var(--surface);
   padding: 16px var(--padding-lr) 8px var(--padding-lr);
   border-radius: var(--border);
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow);
 }
 .qa-c-list-item {
   padding: 12px 12px 6px 12px;
@@ -1221,8 +1219,7 @@ select option {
   padding: 10px;
   margin: 10px 0;
   border-radius: var(--border);
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow);
 }
 .qa-error::before {
   content: "error_outline";
@@ -1330,8 +1327,7 @@ select option {
   margin: 5px 0;
   background-color: var(--surface);
   border-radius: var(--border);
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow);
   display: flex;
 }
 .qa-nav-cat-item {
@@ -1402,8 +1398,7 @@ select option {
   background-color: var(--surface);
   padding: 10px 5px;
   border-radius: var(--border);
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow);
   display: flex;
 }
 .qa-top-tags-count {
@@ -1548,8 +1543,7 @@ select option {
   background-color: var(--surface);
   padding: 8px var(--padding-lr);
   border-radius: var(--border);
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow);
 }
 .qa-page-links .qa-page-links-label {
   display: none;
