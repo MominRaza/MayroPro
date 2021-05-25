@@ -508,17 +508,15 @@ select option {
 .qa-nav-main-jee-neet-qna-books .qa-nav-main-link::before {
   content: "book";
 }
-.qa-nav-main-faq .qa-nav-main-link::before {
-  content: "help";
-}
-.qa-nav-main-about-us .qa-nav-main-link::before {
-  content: "person_search";
+.qa-nav-main-previous-year-papers .qa-nav-main-link::before {
+  content: "history";
 }
 #qa-cke-prev img {
   max-width: 100%;
   height: auto !important;
 }
-/* end: only only for jeeneetqna */
+/* end: only for jeeneetqna */
+
 .qa-nav-user-link::before {
   font-family: "Material Icons";
   font-size: 24px;
