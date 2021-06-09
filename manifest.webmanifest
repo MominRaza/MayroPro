@@ -28,7 +28,7 @@
       "purpose": "maskable"
     }
   ],
-  "start_url": "/",
+  "start_url": "/?utm_source=homescreen",
   "background_color": "#EEEEEE",
   "display": "standalone",
   "orientation": "portrait",
