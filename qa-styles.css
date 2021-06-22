@@ -976,7 +976,10 @@ select option {
 .qa-top-tags-table,
 .qa-top-users-table,
 .qa-form-wide-table {
+  width: 100%;
+  width: -moz-available;
   width: -webkit-fill-available;
+  width: stretch;
   border-spacing: 0;
 }
 .qa-part-form-profile .qa-form-wide-label {
