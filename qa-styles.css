@@ -14,16 +14,17 @@
   find them from here https://material.io/resources/color
 */
 :root {
-  color-scheme: light dark;
   --primary-700: #512da8;
   --primary-700-rgb: 81, 45, 168; /* convert --primary-700 to rgb */
   --primary-light-700: #8559da;
   --primary-dark-700: #140078;
   --primary-200: #b39ddb;
+
   --secondary-200: #ffab91;
   --secondary-dark-200: #c97b63;
   --secondary-light-200: #ffddc1;
   --secondary-100: #ffccbc;
+
   --on-primary-700: #ffffff; /* only black or white */
   --on-secondary-200: #000000; /* only black or white */
 
@@ -36,6 +37,7 @@
   --shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 
+  color-scheme: light dark;
   scroll-padding-top: 60px;
 }
 @media (max-width: 767px) {
@@ -48,20 +50,26 @@ body {
   --primary: var(--primary-700);
   --primary-dark: var(--primary-dark-700);
   --primary-light: var(--primary-light-700);
+
   --secondary: var(--secondary-200);
   --secondary-dark: var(--secondary-dark-200);
   --secondary-light: var(--secondary-light-200);
+
   --background: #eeeeee;
   --surface: #ffffff;
   --error: #b00020;
+
   --on-primary: var(--on-primary-700);
   --on-secondary: var(--on-secondary-200);
   --on-background: #000000;
   --on-surface: #000000;
   --on-error: #ffffff;
-  --link: #005c98;
+
   --selected: var(--primary);
   --on-selected: white;
+
+  --link: #005085;
+
   --appbar-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.2),
     0px 5px 5px 0px rgba(0, 0, 0, 0.14), 0px 10px 10px 0px rgba(0, 0, 0, 0.12);
   --fab-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
@@ -72,21 +80,27 @@ body.dark-theme {
   --primary: #35363a;
   --primary-dark: rgba(255, 255, 255, 0.14);
   --primary-light: rgba(255, 255, 255, 0.1);
+
   --secondary: #2c2c2c;
   --secondary-dark: rgba(255, 255, 255, 0.13);
   --secondary-light: rgba(255, 255, 255, 0.09);
+
   --background: #121212;
   --surface: rgba(255, 255, 255, 0.05);
   --surface-solid: #1e1e1e;
   --error: #cf6679;
+
   --on-primary: var(--primary-200);
   --on-secondary: var(--secondary-100);
   --on-background: #ffffff;
   --on-surface: rgb(255, 255, 255, 0.87);
   --on-error: #ffffff;
-  --link: #7dafcf;
+
   --selected: var(--on-primary);
   --on-selected: black;
+
+  --link: #65c2ff;
+
   --appbar-shadow: 0 transparent;
   --fab-shadow: 0 transparent;
 }
@@ -99,21 +113,27 @@ body.dark-theme img {
     --primary: #35363a;
     --primary-dark: rgba(255, 255, 255, 0.14);
     --primary-light: rgba(255, 255, 255, 0.1);
+
     --secondary: #2c2c2c;
     --secondary-dark: rgba(255, 255, 255, 0.13);
     --secondary-light: rgba(255, 255, 255, 0.09);
+
     --background: #121212;
     --surface: rgba(255, 255, 255, 0.05);
     --surface-solid: #1e1e1e;
     --error: #cf6679;
+
     --on-primary: var(--primary-200);
     --on-secondary: var(--secondary-100);
     --on-background: #ffffff;
     --on-surface: rgb(255, 255, 255, 0.87);
     --on-error: #ffffff;
-    --link: #7dafcf;
+
     --selected: var(--on-primary);
     --on-selected: black;
+
+    --link: #65c2ff;
+
     --appbar-shadow: 0 transparent;
     --fab-shadow: 0 transparent;
   }
@@ -125,21 +145,27 @@ body.dark-theme img {
     --primary: var(--primary-700);
     --primary-dark: var(--primary-dark-700);
     --primary-light: var(--primary-light-700);
+
     --secondary: var(--secondary-200);
     --secondary-dark: var(--secondary-dark-200);
     --secondary-light: var(--secondary-light-200);
+
     --background: #eeeeee;
     --surface: #ffffff;
     --surface-solid: unset;
     --error: #b00020;
+
     --on-primary: var(--on-primary-700);
     --on-secondary: var(--on-secondary-200);
     --on-background: #000000;
     --on-surface: #000000;
     --on-error: #ffffff;
-    --link: #005c98;
+
     --selected: var(--primary);
     --on-selected: white;
+
+    --link: #005085;
+
     --appbar-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.2),
       0px 5px 5px 0px rgba(0, 0, 0, 0.14), 0px 10px 10px 0px rgba(0, 0, 0, 0.12);
     --fab-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
