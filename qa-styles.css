@@ -1920,7 +1920,7 @@ select option {
   opacity: 0.4;
 }
 /* tag cloud */
-.qa-widget-side div[style="font-size: 10px;"] a,
+.tag-cloud a,
 #tag_hints .qa-tag-link,
 #tag_search_hints .qa-tag-link {
   display: inline-block;
