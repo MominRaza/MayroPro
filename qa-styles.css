@@ -1983,6 +1983,7 @@ select option {
   background: none;
   border: none;
 }
+
 /* media queries */
 @media (max-width: 360px) {
   #menu-toggle {
@@ -2250,5 +2251,33 @@ select option {
   }
   .qa-top-users-table tbody {
     grid-template-columns: repeat(5, calc(100% / 5 - 20px / 5));
+  }
+}
+
+/* highlight selected answer */
+.qa-a-list-item:target {
+  animation: answer-highlight 2s ease-in-out;
+}
+
+/* highlight selected comment */
+.qa-c-list-item:target {
+  animation: comment-highlight 2s ease-in-out;
+}
+
+@keyframes answer-highlight {
+  0% {
+    background-color: var(--selected);
+  }
+  100% {
+    background-color: var(--surface);
+  }
+}
+
+@keyframes comment-highlight {
+  0% {
+    background-color: var(--selected);
+  }
+  100% {
+    background-color: var(--surface);
   }
 }
