@@ -34,9 +34,6 @@
   --border: 10px;
   --btn-border: 20px;
 
-  --shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-
   color-scheme: light dark;
   scroll-padding-top: 60px;
 }
@@ -70,6 +67,8 @@ body {
 
   --link: #005085;
 
+  --shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   --appbar-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.2),
     0px 5px 5px 0px rgba(0, 0, 0, 0.14), 0px 10px 10px 0px rgba(0, 0, 0, 0.12);
   --fab-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
@@ -101,6 +100,7 @@ body.dark-theme {
 
   --link: #65c2ff;
 
+  --shadow: 0 transparent;
   --appbar-shadow: 0 transparent;
   --fab-shadow: 0 transparent;
 }
@@ -134,6 +134,7 @@ body.dark-theme img {
 
     --link: #65c2ff;
 
+    --shadow: 0 transparent;
     --appbar-shadow: 0 transparent;
     --fab-shadow: 0 transparent;
   }
@@ -166,6 +167,8 @@ body.dark-theme img {
 
     --link: #005085;
 
+    --shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+      0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
     --appbar-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.2),
       0px 5px 5px 0px rgba(0, 0, 0, 0.14), 0px 10px 10px 0px rgba(0, 0, 0, 0.12);
     --fab-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
