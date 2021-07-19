@@ -305,6 +305,51 @@ class qa_html_theme extends qa_html_theme_base
 		$this->output('</div>');
 	}
 
+	/**
+	 * Add close icon
+	 * @param array $q_item
+	 */
+	public function q_item_title($q_item)
+	{
+		$closedText = qa_lang('main/closed');
+		$imgHtml = empty($q_item['closed'])
+			? ''
+			: '<span title="' . $closedText . '" class="material-icons md-18">lock</span>';
+
+		$this->output(
+			'<div class="qa-q-item-title">',
+			// add closed note in title
+			'<a href="' . $q_item['url'] . '">' .$imgHtml, $q_item['title'] . '</a>',
+			'</div>'
+		);
+	}
+
+	/**
+	 * Add closed icon for closed questions
+	 */
+	public function title()
+	{
+		$q_view = isset($this->content['q_view']) ? $this->content['q_view'] : null;
+
+		// link title where appropriate
+		$url = isset($q_view['url']) ? $q_view['url'] : false;
+
+		// add closed image
+		$closedText = qa_lang('main/closed');
+		$imgHtml = empty($q_view['closed'])
+			? ''
+			: '<span title="' . $closedText . '" class="material-icons">lock</span>';
+
+		if (isset($this->content['title'])) {
+			$this->output(
+				$url ? '<a href="' . $url . '">' : '',
+				$imgHtml,
+				$this->content['title'],
+				$url ? '</a>' : ''
+			);
+		}
+	}
+
 	public function q_item_stats($q_item)
 	{
 		$this->output('<div class="qa-q-item-stats">');

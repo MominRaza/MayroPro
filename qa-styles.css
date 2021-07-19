@@ -2284,3 +2284,10 @@ select option {
     background-color: var(--surface);
   }
 }
+
+/* closed icon */
+.qa-q-item-title .material-icons,
+.qa-main-heading h1 span {
+  vertical-align: middle;
+  margin-right: 6px;
+}
