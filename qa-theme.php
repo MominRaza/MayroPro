@@ -24,7 +24,7 @@ class qa_html_theme extends qa_html_theme_base
 
 	public function css_name()
 	{
-		return 'qa-styles.css?' . QA_VERSION;
+		return 'qa-styles.min.css?' . QA_VERSION;
 	}
 
 	public function head_script()
