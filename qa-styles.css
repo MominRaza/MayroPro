@@ -715,6 +715,14 @@ select option {
 .qa-q-item-title a:visited p {
   color: gray;
 }
+
+/* closed icon */
+.qa-q-item-title .material-icons,
+.qa-main-heading h1 span {
+  vertical-align: middle;
+  margin-inline-end: 6px;
+}
+
 .qam-q-post-meta {
   min-height: 50px;
   padding-inline-start: 50px;
@@ -2174,13 +2182,6 @@ select option {
   100% {
     background-color: var(--surface);
   }
-}
-
-/* closed icon */
-.qa-q-item-title .material-icons,
-.qa-main-heading h1 span {
-  vertical-align: middle;
-  margin-inline-end: 6px;
 }
 
 /* icons */
