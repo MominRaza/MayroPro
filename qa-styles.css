@@ -5,8 +5,6 @@
   Theme Author: Momin Raza
   Theme Author URI: https://mominraza.github.io
 */
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:wght@400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 .material-icons {
   direction: unset;
 }

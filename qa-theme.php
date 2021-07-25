@@ -8,6 +8,12 @@ class qa_html_theme extends qa_html_theme_base
 	{
 		$this->output('<meta name="viewport" content="width=device-width, initial-scale=1"/>');
 		$this->output('<meta name="theme-color" content="#512da8">');
+		$this->output('<link rel="manifest" href="'. $this->rooturl .'manifest.webmanifest">');
+
+		$this->output('<link rel="preconnect" href="https://fonts.googleapis.com">');
+		$this->output('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>');
+		$this->output('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:wght@400;500;700&display=swap">');
+		$this->output('<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">');
 
 		parent::head_metas();
 	}
@@ -17,8 +23,6 @@ class qa_html_theme extends qa_html_theme_base
 		if ($this->isRTL)
 			$this->content['css_src'][] = $this->rooturl . 'qa-styles-rtl.min.css?' . QA_VERSION;
 		
-		$this->output('<link rel="manifest" href="'. $this->rooturl .'manifest.webmanifest">');
-
 		parent::head_css();
 	}
 
