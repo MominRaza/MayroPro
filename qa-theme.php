@@ -55,6 +55,9 @@ class qa_html_theme extends qa_html_theme_base
 		}
 
 		$this->output('class="' . $class . ' qa-body-js-off"');
+		
+		if ($this->isRTL)
+			$this->output('dir="rtl"');
 	}
 
 	public function logged_in()
