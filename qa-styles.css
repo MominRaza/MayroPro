@@ -216,7 +216,6 @@ textarea {
 }
 input[type="checkbox"],
 input[type="radio"] {
-  /* margin-right: 10px; */
   margin-inline-end: 10px;
 }
 input[type="submit"] {
@@ -235,7 +234,7 @@ button {
   cursor: pointer;
 }
 select {
-  margin-top: 10px;
+  margin-block-start: 10px;
 }
 select option {
   background-color: var(--surface-solid);
@@ -243,7 +242,7 @@ select option {
 /* header */
 .qa-header {
   position: sticky;
-  top: 0;
+  inset-block-start: 0;
   z-index: 3;
 }
 .qa-header-clear {
@@ -251,25 +250,22 @@ select option {
 }
 .qa-logo {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset-block-start: 0;
+  inset-inline-start: 0;
   width: 100%;
   height: 56px;
-  padding-top: 13px;
+  padding-block-start: 13px;
   background-color: var(--primary);
   box-shadow: var(--appbar-shadow);
   z-index: 4;
 }
 .qa-logo-link {
-  /* margin-left: 60px; */
   margin-inline-start: 60px;
   font-size: 24px;
   color: var(--on-primary);
 }
 #menu-toggle {
   position: absolute;
-  /* top: 13px; */
-  /* left: 10px; */
   inset-block-start: 13px;
   inset-inline-start: 10px;
   color: var(--on-primary);
@@ -279,8 +275,6 @@ select option {
 }
 #search-toggle {
   position: absolute;
-  /* top: 14px; */
-  /* right: 60px; */
   inset-block-start: 14px;
   inset-inline-end: 60px;
   color: var(--on-primary);
@@ -290,8 +284,6 @@ select option {
 }
 #user-toggle {
   position: absolute;
-  /* top: 10px; */
-  /* right: 10px; */
   inset-block-start: 10px;
   inset-inline-end: 10px;
   color: var(--on-primary);
@@ -315,13 +307,10 @@ select option {
 }
 #user-toggle i {
   font-size: 36px;
-  /* margin-left: -2px; */
   margin-inline-start: -2px;
   color: var(--on-primary);
 }
 #search-toggle.active {
-  /* left: 10px; */
-  /* right: unset; */
   inset-inline-start: 10px;
   inset-inline-end: unset;
   color: var(--selected);
@@ -329,8 +318,6 @@ select option {
 .qa-nav-user {
   position: fixed;
   visibility: hidden;
-  /* top: 40px; */
-  /* right: 40px; */
   inset-block-start: 40px;
   inset-inline-end: 40px;
   transform: scale(0.2);
@@ -352,12 +339,12 @@ select option {
   position: fixed;
   height: 100vh;
   width: 100%;
-  top: 0;
-  left: 0;
+  inset-block-start: 0;
+  inset-inline-start: 0;
 }
 #qa-nav-user.active .qa-nav-user {
-  top: 40%;
-  right: 50%;
+  inset-block-start: 40%;
+  inset-inline-end: 50%;
   visibility: visible;
   transform: translate(50%, -50%) scale(1);
   transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1), top 0.3s,
@@ -379,7 +366,6 @@ select option {
 .qa-nav-user-link {
   position: relative;
   display: block;
-  /* padding: 10px 0 10px 64px; */
   padding-block: 10px;
   padding-inline-start: 64px;
   padding-inline-end: 0;
@@ -399,8 +385,8 @@ select option {
   position: absolute;
   transform: scale(0.4);
   transform-origin: right;
-  top: 1px;
-  left: 0;
+  inset-block-start: 1px;
+  inset-inline-start: 0;
   width: 100%;
   background-color: var(--primary);
   height: 55px;
@@ -413,12 +399,10 @@ select option {
 }
 .qa-search-field,
 .qa-search-button {
-  margin-top: 10px;
+  margin-block-start: 10px;
   border: none;
 }
 .qa-search-field {
-  /* margin-top: 5px; */
-  /* margin-left: 5px; */
   margin-block-start: 5px;
   margin-inline-start: 5px;
   width: calc(100% - 10px) !important;
@@ -436,8 +420,6 @@ select option {
 }
 .qa-search-button {
   position: fixed;
-  /* top: 3px; */
-  /* right: 10px; */
   inset-block-start: 3px;
   inset-inline-end: 10px;
   width: 30px;
@@ -454,7 +436,6 @@ select option {
   will-change: visibility;
   visibility: hidden;
   position: absolute;
-  /* left: 0; */
   inset-inline-start: 0;
   width: 264px;
   background-color: var(--surface-solid, var(--surface));
@@ -463,7 +444,6 @@ select option {
 }
 .qa-nav-main {
   z-index: 7;
-  /* top: 56px; */
   inset-block-start: 56px;
   height: calc(100vh - 56px);
   box-shadow: var(--shadow);
@@ -472,16 +452,14 @@ select option {
 }
 #qa-nav-main .qa-logo {
   z-index: 8;
-  /* top: 0; */
   inset-block-start: 0;
   height: 56px;
-  padding-top: 13px;
+  padding-block-start: 13px;
   box-shadow: unset;
-  border-radius: 0 30px 0 0;
+  border-start-end-radius: 30px;
 }
 #qa-nav-main .qa-logo .qa-logo-link {
   color: var(--on-surface);
-  /* margin-left: 16px; */
   margin-inline-start: 16px;
 }
 .menu-active .qa-nav-main {
@@ -491,7 +469,7 @@ select option {
     visibility 0s linear 0s;
 }
 .qa-nav-main-list {
-  margin-top: 10px;
+  margin-block-start: 10px;
   list-style: none;
   width: 100%;
 }
@@ -500,14 +478,14 @@ select option {
 }
 .qa-nav-main-link {
   display: block;
-  /* padding: 13px 0 13px 60px; */
   padding-block: 13px;
   padding-inline-start: 60px;
   padding-inline-end: 0;
   margin: 4px 0;
   width: calc(100% - 4px);
   color: var(--on-surface);
-  border-radius: 0 25px 25px 0;
+  border-start-end-radius: 25px;
+  border-end-end-radius: 25px;
 }
 .qa-nav-main-link.qa-nav-main-selected {
   color: var(--selected);
@@ -521,8 +499,6 @@ select option {
   font-family: "Material Icons";
   font-size: 24px;
   position: absolute;
-  /* margin-top: -3px; */
-  /* margin-left: -46px; */
   margin-block-start: -3px;
   margin-inline-start: -46px;
 }
@@ -576,8 +552,6 @@ select option {
   font-family: "Material Icons";
   font-size: 24px;
   position: absolute;
-  /* margin-top: -3px; */
-  /* margin-left: -41px; */
   margin-block-start: -3px;
   margin-inline-start: -41px;
 }
@@ -612,7 +586,6 @@ select option {
   font-family: "Material Icons";
   color: var(--link);
   position: absolute;
-  /* margin-left: -7px; */
   margin-inline-start: -7px;
   content: "star_border";
   font-size: 18px;
@@ -622,8 +595,8 @@ select option {
 }
 .qa-nav-sub-list {
   position: absolute;
-  top: 56px;
-  left: 0;
+  inset-block-start: 56px;
+  inset-inline-start: 0;
   width: 100%;
   background-color: var(--primary);
   display: flex;
@@ -677,14 +650,11 @@ select option {
 .qa-q-view-follows a,
 .qa-q-view-closed span {
   display: block;
-  /* margin-top: 10px; */
-  /* margin-left: -24px; */
   margin-block-start: 10px;
   margin-inline-start: -24px;
 }
 .qa-q-view-follows,
 .qa-q-view-closed {
-  /* padding-left: 40px; */
   padding-inline-start: 40px;
   position: relative;
 }
@@ -693,8 +663,6 @@ select option {
   font-family: "Material Icons";
   font-size: 24px;
   position: absolute;
-  /* left: 12px; */
-  /* top: 12px; */
   inset-block-start: 12px;
   inset-inline-start: 12px;
 }
@@ -756,7 +724,6 @@ select option {
   transition: 0.25s;
 }
 .qa-widgets-full-top {
-  /* margin-left: 0 !important; */
   margin-inline-start: 0 !important;
 }
 .qa-main-heading {
@@ -767,7 +734,6 @@ select option {
 .qa-main-heading h1 {
   width: 100%;
   font-size: 24px;
-  /* margin-right: 10px; */
   margin-inline-end: 10px;
   line-height: 1.15;
   font-weight: 500;
@@ -776,15 +742,15 @@ select option {
 #a_list_title,
 .qa-widget-main h2,
 .qa-part-form-2 h2 {
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-block-start: 20px;
+  margin-block-end: 10px;
   line-height: 1.15;
   font-weight: 500;
 }
 [class^="qa-widget-"] h2 {
   line-height: 1.15;
   font-weight: 500;
-  margin-bottom: 10px;
+  margin-block-end: 10px;
 }
 /* questions list */
 .qa-q-list-item {
@@ -796,23 +762,18 @@ select option {
   box-shadow: var(--shadow);
 }
 .qa-q-list-item.qa-q-favorited {
-  /* border-left: 3px solid var(--selected); */
   border-inline-start: 3px solid var(--selected);
-  /* border-radius: 0 var(--border) var(--border) 0; */
   border-start-start-radius: 0;
   border-start-end-radius: var(--border);
   border-end-start-radius: 0;
   border-end-end-radius: var(--border);
-  /* padding-left: 13px; */
   padding-inline-start: 13px;
 }
 .qa-q-item-title {
   font-size: 1.25rem;
-  /* line-height: 2rem; */
   font-weight: 500;
   letter-spacing: 0.0125em;
-  margin-bottom: 5px;
-  /* margin-left: 50px; */
+  margin-block-end: 5px;
 }
 .qa-q-item-title a {
   color: var(--on-surface);
@@ -823,21 +784,17 @@ select option {
 }
 .qam-q-post-meta {
   min-height: 50px;
-  /* padding-left: 50px; */
   padding-inline-start: 50px;
-  /* margin-right: 18px; */
   margin-inline-end: 18px;
 }
 .qa-q-view-main > .qam-q-post-meta {
   min-height: 60px;
-  /* padding-left: 60px; */
   padding-inline-start: 60px;
 }
 .qa-template-user-questions .qam-q-post-meta,
 .qa-template-user-answers .qam-q-post-meta,
 .qa-template-user-activity .qam-q-post-meta {
   min-height: 30px;
-  /* padding-left: 0; */
   padding-inline-start: 0;
 }
 .qa-q-item-avatar-meta,
@@ -856,7 +813,6 @@ select option {
   position: absolute;
   height: 40px;
   width: 40px;
-  /* margin-left: -50px; */
   margin-inline-start: -50px;
   border-radius: 50%;
   overflow: hidden;
@@ -864,18 +820,15 @@ select option {
 .qa-c-item-avatar {
   height: 20px;
   width: 20px;
-  /* margin-left: -30px; */
   margin-inline-start: -30px;
 }
 .qa-c-list-item .qam-q-post-meta {
   min-height: 30px;
-  /* padding-left: 30px; */
   padding-inline-start: 30px;
 }
 .qa-q-view-avatar {
   height: 50px;
   width: 50px;
-  /* margin-left: -60px; */
   margin-inline-start: -60px;
 }
 .qa-part-form-profile .qa-avatar-link {
@@ -907,7 +860,7 @@ select option {
 }
 .qa-view-count::before {
   position: relative;
-  top: -2px;
+  inset-block-start: -2px;
   content: ".";
   font-size: 18px;
   font-weight: 700;
@@ -917,14 +870,14 @@ select option {
 .qa-q-view-tag-list {
   list-style: none;
   display: flex;
-  margin-top: 10px;
-  margin-bottom: 4px;
+  margin-block-start: 10px;
+  margin-block-end: 4px;
   overflow: hidden;
   overflow-x: auto;
 }
 .qa-q-view-tag-list {
-  margin-top: 14px;
-  margin-bottom: 10px;
+  margin-block-start: 14px;
+  margin-block-end: 10px;
 }
 .qa-q-item-tag-item,
 .qa-q-view-tag-item {
@@ -932,7 +885,6 @@ select option {
   border-radius: 20px;
   width: min-content;
   padding: 1px 0;
-  /* margin-right: 6px; */
   margin-inline-end: 6px;
   height: 24px;
   min-width: max-content;
@@ -949,8 +901,6 @@ select option {
   font-size: 18px;
   content: "star";
   display: inline-block;
-  /* margin-right: 6px; */
-  /* margin-left: -4px; */
   margin-inline-end: 6px;
   margin-inline-start: -4px;
   vertical-align: bottom;
@@ -964,9 +914,7 @@ select option {
 }
 .qa-voting {
   display: flex;
-  /* padding-right: 10px; */
   padding-inline-end: 10px;
-  /* margin-right: auto; */
   margin-inline-end: auto;
   align-items: center;
 }
@@ -975,17 +923,13 @@ select option {
 }
 .qa-a-count {
   padding: 10px;
-  /* padding-right: 0; */
   padding-inline-end: 0;
 }
 .qa-a-count-selected {
-  /* padding-right: 22px; */
   padding-inline-end: 22px;
 }
 .qa-template-user-activity .qa-a-count {
-  /* padding-left: 0; */
   padding-inline-start: 0;
-  /* padding-right: 20px; */
   padding-inline-end: 20px;
 }
 .qa-a-count-zero span {
@@ -1000,12 +944,11 @@ select option {
   text-transform: none;
   color: var(--selected);
   position: absolute;
-  /* margin-left: 5px; */
   margin-inline-start: 5px;
   font-size: 18px;
 }
 .qa-suggest-next {
-  margin-bottom: 20px;
+  margin-block-end: 20px;
 }
 
 /* fab */
@@ -1016,15 +959,11 @@ select option {
   border-radius: 24px;
   padding: 14px 0;
   position: fixed;
-  /* bottom: 16px; */
-  /* right: 16px; */
   box-shadow: var(--fab-shadow);
-  /* added first logical property */
   inset-block-end: 16px;
   inset-inline-end: 16px;
 }
 .qam-ask-link {
-  /* padding: 14px 20px 14px 14px; */
   padding: 14px;
   padding-inline-end: 20px;
   border-radius: 24px;
@@ -1032,7 +971,6 @@ select option {
   text-transform: uppercase;
 }
 .qam-ask .material-icons {
-  /* margin-right: 12px; */
   margin-inline-end: 12px;
   color: var(--on-secondary);
   vertical-align: middle;
@@ -1041,7 +979,7 @@ select option {
 
 /* footer */
 .qa-footer {
-  margin-top: 20px;
+  margin-block-start: 20px;
   padding: 10px;
   transition: 0.25s;
 }
@@ -1049,17 +987,13 @@ select option {
   display: flex;
   list-style: none;
   flex-wrap: wrap;
-  margin-bottom: 16px;
+  margin-block-end: 16px;
 }
 .qa-nav-footer-item {
-  /* margin-right: 16px; */
-  /* margin-bottom: 8px; */
   margin-inline-end: 16px;
   margin-block-end: 8px;
 }
 .qa-attribution {
-  /* margin-right: 10px; */
-  /* margin-bottom: 10px; */
   margin-inline-end: 10px;
   margin-block-end: 10px;
 }
@@ -1068,9 +1002,6 @@ select option {
 }
 #theme-toggle1 .material-icons {
   position: absolute;
-  /* left: 0; */
-  /* top: 0; */
-  /* padding: 7px 26px 8px 190px; */
   inset-inline-start: 0;
   inset-block-start: 0;
   padding-block-start: 7px;
@@ -1094,13 +1025,13 @@ select option {
 }
 .qa-form-tall-label,
 .qa-form-wide-label {
-  padding-top: 20px;
+  padding-block-start: 20px;
 }
 .qa-form-tall-ok,
 .qa-form-wide-ok {
   background-color: var(--primary-dark);
   color: var(--on-primary);
-  margin-top: 10px;
+  margin-block-start: 10px;
   padding: 8px 10px !important;
   border-radius: var(--border);
   box-shadow: var(--shadow);
@@ -1113,7 +1044,7 @@ select option {
   content: "done";
   font-family: "Material Icons";
   font-size: 18px;
-  margin-right: 10px;
+  margin-inline-end: 10px;
   vertical-align: bottom;
 }
 .qa-form-tall-ok span,
@@ -1121,27 +1052,26 @@ select option {
   color: var(--on-primary);
 }
 .qa-form-tall-data {
-  padding-top: 10px;
+  padding-block-start: 10px;
 }
 .qa-form-wide-data {
-  padding-top: 20px;
+  padding-block-start: 20px;
 }
 .qa-form-tall-note {
-  margin-top: 5px;
+  margin-block-start: 5px;
 }
 .qa-form-tall-buttons,
 .qa-form-wide-buttons {
-  padding-top: 10px;
+  padding-block-start: 10px;
 }
 .qa-form-tall-error {
   color: var(--error);
 }
 .qa-form-tall-data ul {
-  /* margin-left: 20px; */
   margin-inline-start: 20px;
 }
 .qa-form-tall-data ul li {
-  margin-top: 10px;
+  margin-block-start: 10px;
 }
 .qa-form-tall-data small,
 .qa-form-tall-static a {
@@ -1179,7 +1109,7 @@ select option {
 .qa-form-tall-button-close,
 .qa-form-light-button-reshow,
 .qa-form-light-button-clearflags {
-  margin-top: 10px;
+  margin-block-start: 10px;
   background-color: var(--selected);
   color: var(--on-selected);
 }
@@ -1195,27 +1125,26 @@ select option {
 .qa-form-wide-button-hideall,
 .qa-form-light-button-comment,
 .qa-form-tall-button-1 {
-  margin-top: 10px;
+  margin-block-start: 10px;
   background-color: transparent;
   border: 1px solid var(--selected);
   color: var(--selected);
-  padding-top: 6px !important;
-  padding-bottom: 6px !important;
+  padding-block: 6px !important;
 }
 .qa-form-wide-button-delete_expired,
 .qa-form-wide-button-delete_all,
 .qa-form-wide-button-delete,
 .qa-form-light-button-delete,
 .qa-form-basic-button-delete_hidden {
-  margin-top: 10px;
+  margin-block-start: 10px;
   background-color: var(--error);
   color: var(--on-error);
 }
 .qa-form-basic-button {
-  margin-top: 20px;
+  margin-block-start: 20px;
 }
 .qa-c-list-item .qa-form-light-button-comment {
-  margin-top: 2px;
+  margin-block-start: 2px;
   font-size: 0.9em;
   padding: 3px 10px !important;
 }
@@ -1242,8 +1171,6 @@ select option {
   flex-wrap: wrap;
 }
 .qam-stats-buttons .qa-voting {
-  /* margin-top: 10px; */
-  /* margin-right: 10px; */
   margin-block-start: 10px;
   margin-inline-end: 10px;
 }
@@ -1286,7 +1213,7 @@ select option {
 }
 .qa-c-item-content {
   font-size: 0.85em;
-  margin-left: 30px;
+  margin-inline-start: 30px;
 }
 .qa-post-content p,
 .qa-part-custom p {
@@ -1298,7 +1225,6 @@ select option {
 }
 .qa-post-content li,
 .qa-part-custom li {
-  /* margin-left: 25px; */
   margin-inline-start: 25px;
 }
 .qa-post-content ul,
@@ -1310,9 +1236,7 @@ select option {
 .qa-post-content blockquote {
   background-color: rgba(var(--primary-rgb), 0.12);
   padding: 5px;
-  /* padding-left: 20px; */
   padding-inline-start: 20px;
-  /* border-left: 5px solid var(--primary-light); */
   border-inline-start: 5px solid var(--primary-light);
 }
 .qa-template-admin .qa-q-item-content img {
@@ -1339,7 +1263,7 @@ select option {
   content: "error_outline";
   font-family: "Material Icons";
   font-size: 18px;
-  margin-right: 10px;
+  margin-inline-end: 10px;
   vertical-align: bottom;
 }
 .qa-error a {
@@ -1349,7 +1273,6 @@ select option {
 .qa-form-wide-label {
   font-weight: 700;
   display: block;
-  /* margin-right: 10px; */
   margin-inline-end: 10px;
 }
 .qa-form-tall-image {
@@ -1361,7 +1284,7 @@ select option {
   font-size: 18px;
   font-weight: normal;
   vertical-align: middle;
-  padding-right: 8px;
+  padding-inline-end: 8px;
 }
 #duration .qa-form-wide-label::before {
   content: "date_range";
@@ -1397,7 +1320,7 @@ select option {
   content: "stars";
 }
 #level .qa-form-wide-static a[href*="message"] {
-  margin-top: 10px;
+  margin-block-start: 10px;
   background-color: var(--selected);
   color: var(--on-selected);
   padding: 7px 16px;
@@ -1412,18 +1335,16 @@ select option {
   font-family: "Material Icons";
   font-size: 18px;
   vertical-align: middle;
-  margin-left: -5px;
-  margin-right: 10px;
+  margin-inline-start: -5px;
+  margin-inline-end: 10px;
 }
 /* category */
 .qa-category-link.qa-cat-favorited {
-  /* margin-left: 20px; */
   margin-inline-start: 20px;
 }
 .qa-category-link.qa-cat-favorited::before {
   font-family: "Material Icons";
   position: absolute;
-  /* margin-left: -20px; */
   margin-inline-start: -20px;
   content: "star";
   font-size: 18px;
@@ -1436,7 +1357,7 @@ select option {
 .qa-browse-cat-list-3,
 .qa-nav-cat-list-2,
 .qa-nav-cat-list-3 {
-  margin-top: 10px;
+  margin-block-start: 10px;
 }
 .qa-browse-cat-item,
 .qa-nav-cat-item {
@@ -1454,36 +1375,29 @@ select option {
 .qa-browse-cat-open {
   background-color: rgba(0, 0, 0, 0.075);
   display: block;
-  padding-bottom: 1px;
+  padding-block-end: 1px;
 }
 .qa-browse-cat-note a {
   min-width: max-content;
 }
 .qa-browse-cat-link {
-  /* margin-left: 20px; */
-  /* margin-right: auto; */
   margin-inline-start: 20px;
   margin-inline-end: auto;
 }
 .qa-browse-cat-link.qa-browse-cat-favorited {
-  /* margin-left: 40px; */
   margin-inline-start: 40px;
 }
 .qa-browse-cat-link::before {
   font-family: "Material Icons";
   font-size: 24px;
   position: absolute;
-  /* margin-left: -26px; */
-  /* margin-top: -3px; */
   margin-inline-start: -26px;
   margin-block-start: -3px;
 }
 .qa-browse-cat-link.qa-browse-cat-favorited::before {
-  /* margin-left: -46px; */
   margin-inline-start: -46px;
 }
 .qa-browse-cat-nolink {
-  /* margin-right: auto; */
   margin-inline-end: auto;
 }
 .qa-browse-cat-closed .qa-browse-cat-link::before,
@@ -1496,7 +1410,6 @@ select option {
 .qa-browse-cat-favorited,
 .qa-nav-cat-favorited {
   position: relative;
-  /* margin-left: 20px; */
   margin-inline-start: 20px;
 }
 .qa-browse-cat-favorited::after,
@@ -1505,9 +1418,7 @@ select option {
   position: absolute;
   font-family: "Material Icons";
   font-size: 18px;
-  /* left: 0; */
   inset-inline-start: 0;
-  /* margin-left: -22px; */
   margin-inline-start: -22px;
 }
 /* tags page */
@@ -1518,7 +1429,6 @@ select option {
 }
 .qa-top-tags-table .qa-tag-link {
   display: inline-block;
-  /* padding: 0 0 0 5px; */
   padding: 0;
   padding-inline-start: 5px;
 }
@@ -1531,14 +1441,11 @@ select option {
   display: flex;
 }
 .qa-top-tags-count {
-  /* margin: -10px 0 -10px -5px; */
   margin-block: -10px;
   margin-inline-start: -5px;
   margin-inline-end: 0;
-  /* padding: 10px 5px 10px 10px; */
   padding: 10px;
   padding-inline-end: 5px;
-  /* border-radius: var(--border) 0 0 var(--border); */
   border-start-start-radius: var(--border);
   border-start-end-radius: 0;
   border-end-start-radius: var(--border);
@@ -1560,7 +1467,7 @@ select option {
   position: relative;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  padding-top: 75%;
+  padding-block-start: 75%;
   border-radius: var(--border);
 }
 .qa-avatar-link {
@@ -1568,14 +1475,14 @@ select option {
 }
 .qa-top-users-label img {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset-block-start: 0;
+  inset-inline-start: 0;
   aspect-ratio: 1 / 1;
   object-fit: cover;
 }
 .qa-top-users-table .qa-user-link {
   position: absolute;
-  bottom: 0;
+  inset-block-end: 0;
   text-align: center;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
@@ -1585,13 +1492,11 @@ select option {
   line-height: 20px;
 }
 .qa-user-link.qa-user-favorited {
-  /* padding-left: 20px; */
   padding-inline-start: 20px;
 }
 .qa-user-link.qa-user-favorited::before {
   font-family: "Material Icons";
   position: absolute;
-  /* margin-left: -20px; */
   margin-inline-start: -20px;
   content: "star";
   font-size: 18px;
@@ -1599,7 +1504,7 @@ select option {
 .qa-top-users-score {
   position: absolute;
   width: 100%;
-  bottom: 2px;
+  inset-block-end: 2px;
   text-align: center;
   color: white;
   white-space: nowrap;
@@ -1612,8 +1517,8 @@ select option {
 .qa-part-ranking-users h2,
 .qa-part-ranking-tags h2,
 .qa-part-nav-list-categories h2 {
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-block-start: 20px;
+  margin-block-end: 10px;
   line-height: 1.15;
   font-weight: 500;
   font-size: 20px;
@@ -1625,7 +1530,7 @@ select option {
   font-family: "Material Icons";
   font-size: 24px;
   vertical-align: middle;
-  margin-right: 16px;
+  margin-inline-end: 16px;
 }
 .qa-part-q-list h2::before {
   content: "chat";
@@ -1641,15 +1546,15 @@ select option {
 }
 .qa-c-form h2,
 .qa-a-form h2 {
-  padding-top: 20px;
-  margin-bottom: 10px;
+  padding-block-start: 20px;
+  margin-block-end: 10px;
   line-height: 1.15;
   font-weight: 500;
 }
 .qa-part-form-activity h2,
 .qa-part-message-list h2,
 .qa-part-form-password h2 {
-  margin-bottom: 10px;
+  margin-block-end: 10px;
   line-height: 1.15;
   font-weight: 500;
 }
@@ -1657,21 +1562,20 @@ select option {
   background-color: var(--surface);
 }
 .qa-part-nav-list-categories .qa-browse-cat-open {
-  padding-bottom: 10px;
+  padding-block-end: 10px;
 }
 .qa-favoriting input {
   position: absolute;
   z-index: 4;
   opacity: 0;
   width: 30px;
-  /* margin-left: -2px; */
   margin-inline-start: -2px;
   cursor: pointer;
   height: 30px;
 }
 .qa-favoriting i {
-  margin-top: 5px;
-  padding-top: 5px;
+  margin-block-start: 5px;
+  padding-block-start: 5px;
   font-size: 30px;
   color: var(--link);
 }
@@ -1778,7 +1682,7 @@ select option {
   color: var(--error);
 }
 .qam-vote-info {
-  margin-left: 12px;
+  margin-inline-start: 12px;
   cursor: help;
 }
 /* login register */
@@ -1811,7 +1715,6 @@ select option {
 }
 .qa-related-qs .qa-related-q-list,
 .qa-ask-similar .qa-q-title-list {
-  /* margin-left: 0; */
   margin-inline-start: 0;
   list-style: none;
 }
@@ -1827,7 +1730,6 @@ select option {
 }
 /* extra menu */
 .qam-rest-buttons {
-  /* margin-left: auto; */
   margin-inline-start: auto;
 }
 .qam-stats-buttons .qa-form-light-button-edit,
@@ -1851,15 +1753,11 @@ select option {
 .qam-q-extra-menu {
   display: inline-block;
   position: absolute;
-  /* top: 19px; */
-  /* right: 19px; */
   inset-block-start: 19px;
   inset-inline-end: 19px;
 }
 .qa-c-list-item .qam-q-extra-menu,
 .qa-a-list-item .qam-q-extra-menu {
-  /* top: 29px; */
-  /* right: 29px; */
   inset-block-start: 29px;
   inset-inline-end: 29px;
 }
@@ -1872,8 +1770,6 @@ select option {
 .qam-q-extra-menu .qa-c-item-buttons,
 .qam-q-extra-menu .qa-a-item-buttons {
   position: absolute;
-  /* top: -5px; */
-  /* right: -5px; */
   inset-block-start: -5px;
   inset-inline-end: -5px;
   padding: 8px 0;
@@ -1914,8 +1810,6 @@ select option {
 }
 .qam-q-extra-menu-toggle {
   position: absolute;
-  /* top: -20px; */
-  /* right: -25px; */
   inset-block-start: -20px;
   inset-inline-end: -25px;
   cursor: pointer;
@@ -1927,8 +1821,8 @@ select option {
   background-color: rgba(var(--primary-rgb), 0.12);
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.22, 1.105);
   position: absolute;
-  top: 50%;
-  left: 50%;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
   transform: translateX(-50%) translateY(-56%) scale(0.2);
   border-radius: 50px;
   opacity: 0;
@@ -1936,8 +1830,8 @@ select option {
 .qam-q-extra-menu-toggle::after {
   z-index: 3;
   content: "";
-  top: 0;
-  left: 0;
+  inset-block-start: 0;
+  inset-inline-start: 0;
   width: 100%;
   height: 100%;
   position: fixed;
@@ -1970,7 +1864,6 @@ select option {
   visibility: visible;
   font-family: "Material Icons";
   position: absolute;
-  /* margin-left: -5px; */
   margin-inline-start: -5px;
   content: "arrow_right";
   font-size: 24px;
@@ -2001,15 +1894,11 @@ select option {
 }
 .qam-what-2 {
   position: absolute;
-  /* top: 40px; */
-  /* right: -2px; */
   inset-block-start: 40px;
   inset-inline-end: -2px;
 }
 .qa-c-list-item .qam-what-2,
 .qa-a-list-item .qam-what-2 {
-  /* top: 45px; */
-  /* right: 8px; */
   inset-block-start: 45px;
   inset-inline-end: 8px;
 }
@@ -2021,8 +1910,6 @@ select option {
 }
 .qam-what-2 i {
   position: absolute;
-  /* top: -6px; */
-  /* right: 0; */
   inset-block-start: -6px;
   inset-inline-end: 0;
   z-index: 1;
@@ -2030,12 +1917,9 @@ select option {
 }
 .qam-what-2-body {
   position: absolute;
-  /* top: -9px; */
-  /* right: -2px; */
   inset-block-start: -9px;
   inset-inline-end: -2px;
   padding: 1px 7px;
-  /* padding-right: 26px; */
   padding-inline-end: 26px;
   width: max-content;
   background-color: var(--secondary);
@@ -2068,7 +1952,7 @@ select option {
 .qa-a-item-flags::before,
 .qa-c-item-flags::before {
   position: relative;
-  top: -2px;
+  inset-block-start: -2px;
   content: ".";
   font-size: 18px;
   font-weight: 700;
@@ -2092,8 +1976,6 @@ select option {
 }
 /* feed */
 .qa-feed-link {
-  /* margin-left: 36px; */
-  /* margin-bottom: 6px; */
   margin-inline-start: 36px;
   margin-block-end: 6px;
   display: block;
@@ -2102,8 +1984,6 @@ select option {
   font-family: "Material Icons";
   font-size: 24px;
   position: absolute;
-  /* margin-left: -36px; */
-  /* margin-top: -3px; */
   margin-inline-start: -36px;
   margin-block-start: -3px;
   content: "rss_feed";
@@ -2112,12 +1992,12 @@ select option {
   background-color: var(--secondary);
   color: var(--on-secondary);
   padding: 10px;
-  padding-right: 40px;
+  padding-inline-end: 40px;
 }
 .qa-notice-close-button {
   position: absolute;
-  right: 0;
-  top: 2px;
+  inset-inline-end: 0;
+  inset-block-start: 2px;
   background: none;
   border: none;
 }
@@ -2125,17 +2005,16 @@ select option {
 /* media queries */
 @media (max-width: 360px) {
   #menu-toggle {
-    /* left: 4px; */
     inset-inline-start: 4px;
   }
   .qa-logo-link {
-    margin-left: 40px;
+    margin-inline-start: 40px;
   }
   #user-toggle {
-    right: 4px;
+    inset-inline-end: 4px;
   }
   #search-toggle {
-    right: 44px;
+    inset-inline-end: 44px;
   }
 }
 @media (min-width: 515px) {
@@ -2145,17 +2024,17 @@ select option {
 }
 @media (max-width: 767px) {
   .qa-main {
-    margin-bottom: 40px;
+    margin-block-end: 40px;
   }
   .qa-sidepanel,
   .qa-main {
     padding: 0 8px;
   }
   .qa-footer {
-    padding-bottom: 70px;
+    padding-block-end: 70px;
   }
   .qa-q-list-item.qa-q-favorited {
-    padding-left: 7px;
+    padding-inline-start: 7px;
   }
   .qa-nav-main,
   #qa-nav-main .qa-logo {
@@ -2183,8 +2062,6 @@ select option {
     float: left;
   }
   .qa-attribution:nth-child(3) {
-    /* padding-left: 10px; */
-    /* border-left: 1px solid var(--on-surface); */
     padding-inline-start: 10px;
     border-inline-start: 1px solid var(--on-surface);
   }
@@ -2194,13 +2071,14 @@ select option {
 }
 @media (max-width: 1023px) {
   .qa-nav-main {
-    top: 0;
+    inset-block-start: 0;
     box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2),
       0px 24px 38px 3px rgba(0, 0, 0, 0.14),
       0px 9px 46px 8px rgba(0, 0, 0, 0.12);
-    padding-top: 56px;
+    padding-block-start: 56px;
     height: 100vh;
-    border-radius: 0 30px 30px 0;
+    border-start-end-radius: 30px;
+    border-end-end-radius: 30px;
   }
   .menu-active #qa-nav-main-clear {
     z-index: 6;
@@ -2208,8 +2086,8 @@ select option {
     position: fixed;
     height: 100vh;
     width: 100%;
-    top: 0;
-    left: 0;
+    inset-block-start: 0;
+    inset-inline-start: 0;
   }
   .menu-active #qa-nav-main .qa-logo {
     transform: translateX(0);
@@ -2224,8 +2102,8 @@ select option {
     transform: scale(1);
   }
   .qa-search {
-    left: 310px;
-    right: 310px;
+    inset-inline-start: 310px;
+    inset-inline-end: 310px;
     width: auto;
     max-width: 980px;
     margin: 0 auto;
@@ -2233,9 +2111,7 @@ select option {
   .qa-search-field {
     width: 100% !important;
     background-color: var(--surface);
-    /* margin-left: 0; */
     margin-inline-start: 0;
-    /* padding: 10px 46px 10px 16px !important; */
     padding-inline-start: 16px !important;
     color: var(--on-surface);
   }
@@ -2244,7 +2120,6 @@ select option {
   }
   .qa-part-form-profile {
     width: calc(60% - 10px);
-    /* margin-right: 10px; */
     margin-inline-end: 10px;
     float: left;
   }
@@ -2256,7 +2131,7 @@ select option {
   .qa-part-message-list {
     width: 40%;
     float: right;
-    margin-top: 0;
+    margin-block-start: 0;
   }
   .menu-active .qa-part-form-profile,
   .menu-active .qa-part-form-activity,
@@ -2283,14 +2158,11 @@ select option {
   .menu-active .qam-main-sidepanel,
   .menu-active .qa-footer,
   .menu-active .qa-widgets-full {
-    /* margin-left: 264px; */
     margin-inline-start: 264px;
   }
   #theme-toggle {
     display: block;
     position: absolute;
-    /* top: 14px; */
-    /* right: 70px; */
     inset-block-start: 14px;
     inset-inline-end: 70px;
     color: var(--on-primary);
@@ -2316,14 +2188,11 @@ select option {
 }
 @media (min-width: 1280px) {
   .qa-search {
-    /* left: 340px; */
-    /* right: 480px; */
     inset-inline-start: 340px;
     inset-inline-end: 480px;
   }
   .menu-active .qa-part-form-profile {
     width: calc(60% - 10px);
-    /* margin-right: 10px; */
     margin-inline-end: 10px;
     float: left;
   }
@@ -2335,7 +2204,7 @@ select option {
   .menu-active .qa-part-message-list {
     width: 40%;
     float: right;
-    margin-top: 0;
+    margin-block-start: 0;
   }
   .qa-template-user-wall.menu-active .qa-part-message-list,
   .qa-template-messages.menu-active .qa-part-message-list,
@@ -2354,25 +2223,21 @@ select option {
     transform: translateX(-264px);
   }
   .qa-nav-sub-list {
-    /* margin-left: 264px; */
     margin-inline-start: 264px;
     width: calc(100% - 264px);
   }
   .menu-active .qa-nav-sub-list {
-    /* margin-left: 0; */
     margin-inline-start: 0;
     width: 100%;
   }
   .qam-main-sidepanel,
   .qa-footer,
   .qa-widgets-full {
-    /* margin-left: 264px; */
     margin-inline-start: 264px;
   }
   .menu-active .qam-main-sidepanel,
   .menu-active .qa-footer,
   .menu-active .qa-widgets-full {
-    /* margin-left: 0; */
     margin-inline-start: 0;
   }
   .qa-main {
@@ -2434,5 +2299,5 @@ select option {
 .qa-q-item-title .material-icons,
 .qa-main-heading h1 span {
   vertical-align: middle;
-  margin-right: 6px;
+  margin-inline-end: 6px;
 }
