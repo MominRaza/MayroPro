@@ -16,16 +16,16 @@
   find them from here https://material.io/resources/color
 */
 :root {
-  --primary-700: #512da8;
-  --primary-700-rgb: 81, 45, 168; /* convert --primary-700 to rgb */
-  --primary-light-700: #8559da;
-  --primary-dark-700: #140078;
-  --primary-200: #b39ddb;
+  --primary-700: #002de3;
+  --primary-700-rgb: 65, 102, 245; /* convert --primary-700 to rgb */
+  --primary-light-700: #4b6fff;
+  --primary-dark-700: #001e94;
+  --primary-200: #738fff;
 
-  --secondary-200: #ffab91;
-  --secondary-dark-200: #c97b63;
-  --secondary-light-200: #ffddc1;
-  --secondary-100: #ffccbc;
+  --secondary-200: #00c7e6;
+  --secondary-dark-200: #0096b4;
+  --secondary-light-200: #67faff;
+  --secondary-100: #5feaff;
 
   --on-primary-700: #ffffff; /* only black or white */
   --on-secondary-200: #000000; /* only black or white */
