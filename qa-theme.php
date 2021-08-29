@@ -7,7 +7,7 @@ class qa_html_theme extends qa_html_theme_base
 	public function head_metas()
 	{
 		$this->output('<meta name="viewport" content="width=device-width, initial-scale=1"/>');
-		$this->output('<meta name="theme-color" content="#512da8">');
+		$this->output('<meta name="theme-color" content="#002de3">');
 		$this->output('<link rel="manifest" href="'. $this->rooturl .'manifest.webmanifest">');
 
 		$this->output('<link rel="preconnect" href="https://fonts.googleapis.com">');
