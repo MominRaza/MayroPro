@@ -22,10 +22,10 @@
   --primary-dark-700: #001e94;
   --primary-200: #738fff;
 
-  --secondary-200: #00c7e6;
-  --secondary-dark-200: #0096b4;
-  --secondary-light-200: #67faff;
-  --secondary-100: #5feaff;
+  --secondary-200: #ffab91;
+  --secondary-dark-200: #c97b63;
+  --secondary-light-200: #ffddc1;
+  --secondary-100: #ffccbc;
 
   --on-primary-700: #ffffff; /* only black or white */
   --on-secondary-200: #000000; /* only black or white */
