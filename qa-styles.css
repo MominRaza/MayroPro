@@ -91,13 +91,13 @@ body.dark-theme {
   --surface-solid: #1e1e1e;
   --error: #cf6679;
 
-  --on-primary: var(--primary-200);
-  --on-secondary: var(--secondary-100);
+  /* --on-primary: var(--primary-200); */
+  --on-secondary: var(--on-surface);
   --on-background: #ffffff;
   --on-surface: rgb(255, 255, 255, 0.87);
   --on-error: #ffffff;
 
-  --selected: var(--on-primary);
+  --selected: var(--primary-200);
   --on-selected: black;
 
   --link: #65c2ff;
@@ -125,13 +125,13 @@ body.dark-theme img {
     --surface-solid: #1e1e1e;
     --error: #cf6679;
 
-    --on-primary: var(--primary-200);
-    --on-secondary: var(--secondary-100);
+    /* --on-primary: var(--primary-200); */
+    --on-secondary: var(--on-surface);
     --on-background: #ffffff;
     --on-surface: rgb(255, 255, 255, 0.87);
     --on-error: #ffffff;
 
-    --selected: var(--on-primary);
+    --selected: var(--primary-200);
     --on-selected: black;
 
     --link: #65c2ff;
@@ -158,7 +158,7 @@ body.dark-theme img {
     --surface-solid: unset;
     --error: #b00020;
 
-    --on-primary: var(--on-primary-700);
+    /* --on-primary: var(--on-primary-700); */
     --on-secondary: var(--on-secondary-200);
     --on-background: #000000;
     --on-surface: #000000;
@@ -427,7 +427,7 @@ select option {
 }
 .qa-search-button i {
   font-size: 30px;
-  color: var(--selected);
+  color: var(--on-surface);
 }
 .qa-nav-main,
 #qa-nav-main .qa-logo {
@@ -490,8 +490,10 @@ select option {
   color: var(--selected);
   background-color: rgba(var(--primary-rgb), 0.12);
 }
-.qa-nav-main-link:hover {
-  background-color: rgba(var(--primary-rgb), 0.12);
+.qa-nav-main-link:hover,
+.qa-nav-sub-link:hover {
+  background-color: rgba(var(--primary-rgb), 0.2);
+  transition: 0.25s;
 }
 .qa-nav-main-link::before {
   font-family: "Material Icons";
@@ -702,8 +704,8 @@ select option {
   padding-inline-start: 13px;
 }
 .qa-q-item-title {
-  font-size: 1.25rem;
-  font-weight: 500;
+  font-size: 1.2rem;
+  font-weight: normal;
   letter-spacing: 0.0125em;
   margin-block-end: 5px;
 }
@@ -889,6 +891,7 @@ select option {
 
 .qa-suggest-next {
   margin-block-end: 20px;
+  text-align: center;
 }
 
 /* fab */
@@ -1487,6 +1490,7 @@ select option {
 .qa-page-links-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   list-style: none;
 }
 .qa-page-links-item {
@@ -1932,6 +1936,9 @@ select option {
   .qa-part-form-profile .qa-form-wide-data {
     display: block;
     padding: 10px 0;
+  }
+  .qa-nav-main-link {
+    padding-block: 10px;
   }
 }
 @media (min-width: 768px) {
