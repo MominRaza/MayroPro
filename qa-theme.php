@@ -127,7 +127,6 @@ class qa_html_theme extends qa_html_theme_base
 	public function body_content()
 	{
 		$this->body_prefix();
-		$this->notices();
 
 		$extratags = isset($this->content['wrapper_tags']) ? $this->content['wrapper_tags'] : '';
 		$this->output('<div class="qa-body-wrapper"' . $extratags . '>', '');
@@ -163,6 +162,33 @@ class qa_html_theme extends qa_html_theme_base
 		$this->output('</div> <!-- END body-wrapper -->');
 
 		$this->body_suffix();
+	}
+
+	public function main()
+	{
+		$content = $this->content;
+		$hidden = !empty($content['hidden']) ? ' qa-main-hidden' : '';
+
+		$this->output('<div class="qa-main' . $hidden . '">');
+
+		$this->notices();
+		
+		$this->widgets('main', 'top');
+
+		$this->page_title_error();
+
+		$this->widgets('main', 'high');
+
+		$this->main_parts($content);
+
+		$this->widgets('main', 'low');
+
+		$this->page_links();
+		$this->suggest_next();
+
+		$this->widgets('main', 'bottom');
+
+		$this->output('</div> <!-- END qa-main -->', '');
 	}
 
 	public function header()
