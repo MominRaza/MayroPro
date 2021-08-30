@@ -45,7 +45,7 @@ function toggleThemeJS() {
     if (document.body.classList.contains("light-theme"))
       document
         .querySelector('meta[name="theme-color"]')
-        .setAttribute("content", "#512da8");
+        .setAttribute("content", "#002de3");
     else
       document
         .querySelector('meta[name="theme-color"]')
@@ -57,7 +57,7 @@ function toggleThemeJS() {
   else
     document
       .querySelector('meta[name="theme-color"]')
-      .setAttribute("content", "#512da8");
+      .setAttribute("content", "#002de3");
 }
 toggleThemeJS();
 window.matchMedia("(prefers-color-scheme: dark)").onchange = function () {
