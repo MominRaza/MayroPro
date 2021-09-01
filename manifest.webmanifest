@@ -33,6 +33,14 @@
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/",
+  "url_handlers": [
+    {
+      "origin": "https://jeeneetqna.in"
+    },
+    {
+      "origin": "https://*.jeeneetqna.in"
+    }
+  ],
   "theme_color": "#EEEEEE",
   "shortcuts": [
     {
