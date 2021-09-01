@@ -215,7 +215,7 @@ textarea {
 }
 input[type="checkbox"],
 input[type="radio"] {
-  accent-color: var(--selected);
+  /* accent-color: var(--selected); */
   margin-inline-end: 10px;
 }
 input[type="submit"] {
