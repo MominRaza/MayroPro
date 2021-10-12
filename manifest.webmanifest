@@ -1,55 +1,50 @@
 {
-  "short_name": "Mayro Pro",
-  "name": "Mayro Pro: Google Material Design Theme",
-  "description": "Google Material Design Theme for Question2Answer (Q2A).",
+  "name": "Jee Neet QnA",
+  "short_name": "Jee Neet QnA",
+  "description": "Jee Neet QnA is an online community of Jee Neet aspirants where you can ask questions, give answers of questions and add comments to question/answer also can like/dislike question/answer.",
+
+  "start_url": "/?utm_source=homescreen",
+  "scope": "/",
+  "theme_color": "#EEEEEE",
+  "background_color": "#EEEEEE",
+  "orientation": "portrait",
+  "display": "standalone",
+
   "icons": [
     {
-      "src": "/images/icons-192.png",
+      "src": "/images/icons/icons-192.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any"
     },
     {
-      "src": "/images/icons-192-maskable.png",
+      "src": "/images/icons/icons-192-maskable.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/images/icons-512.png",
+      "src": "/images/icons/icons-512.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any"
     },
     {
-      "src": "/images/icons-512-maskable.png",
+      "src": "/images/icons/icons-512-maskable.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
     }
   ],
-  "start_url": "/?utm_source=homescreen",
-  "background_color": "#EEEEEE",
-  "display": "standalone",
-  "orientation": "portrait",
-  "scope": "/",
-  "url_handlers": [
-    {
-      "origin": "https://jeeneetqna.in"
-    },
-    {
-      "origin": "https://*.jeeneetqna.in"
-    }
-  ],
-  "theme_color": "#EEEEEE",
+
   "shortcuts": [
     {
       "name": "My Updates",
       "short_name": "Updates",
-      "url": "/updates",
+      "url": "/updates/?utm_source=homescreen&utm_medium=shortcut",
       "icons": [
         {
-          "src": "/images/updates.png",
+          "src": "/images/shortcuts/updates.png",
           "sizes": "192x192"
         }
       ]
@@ -57,13 +52,41 @@
     {
       "name": "Ask a Question",
       "short_name": "Ask",
-      "url": "/ask",
+      "url": "/ask/?utm_source=homescreen&utm_medium=shortcut",
       "icons": [
         {
-          "src": "/images/ask.png",
+          "src": "/images/shortcuts/ask.png",
           "sizes": "192x192"
         }
       ]
+    }
+  ],
+
+  "screenshots": [
+    {
+      "src": "/images/screenshots/screenshot1.webp",
+      "sizes": "720x1440",
+      "type": "image/webp"
+    },
+    {
+      "src": "/images/screenshots/screenshot2.webp",
+      "sizes": "720x1440",
+      "type": "image/webp"
+    },
+    {
+      "src": "/images/screenshots/screenshot3.webp",
+      "sizes": "720x1440",
+      "type": "image/webp"
+    },
+    {
+      "src": "/images/screenshots/screenshot4.webp",
+      "sizes": "720x1440",
+      "type": "image/webp"
+    },
+    {
+      "src": "/images/screenshots/screenshot5.webp",
+      "sizes": "720x1440",
+      "type": "image/webp"
     }
   ]
 }

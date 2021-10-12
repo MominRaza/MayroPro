@@ -224,6 +224,14 @@ class qa_html_theme extends qa_html_theme_base
 			case 'register' :
 			case 'forgot' :
 			case 'ask' :
+			case 'message' :
+			case 'messages' :
+			case 'user' :
+			case 'user-wall' :
+			case 'users' :
+			case 'account' :
+			case 'favorites' :
+			case 'feedback' :
 			break;
 			default:
 				$this->output($this->ask_button());
