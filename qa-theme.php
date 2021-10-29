@@ -117,11 +117,6 @@ class qa_html_theme extends qa_html_theme_base
 				$themeTitle = 'Light';
 			}
 		}
-		$this->output('<ul class="qa-nav-user-list" id="theme-toggle1">');
-		$this->output('<li class="qa-nav-user-item qa-nav-user-settings">');
-		$this->output('<div class="qa-nav-user-link">Theme <i class="material-icons" onclick="toggleTheme(this)" title="'.$themeTitle.'">'.$themeIcon.'</i></div>');
-		$this->output('</li>');
-		$this->output('</ul>');
 	}
 
 	public function body_content()

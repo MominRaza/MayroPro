@@ -906,8 +906,8 @@ select option {
 /* fab */
 .qam-ask {
   z-index: 4;
-  background-color: var(--secondary);
-  color: var(--on-secondary);
+  background-color: var(--primary);
+  /* color: var(--on-primary); */
   border-radius: 16px;
   height: 56px;
   position: fixed;
@@ -919,7 +919,7 @@ select option {
   padding: 18px;
   padding-inline-end: 20px;
   border-radius: 16px;
-  color: var(--on-secondary);
+  color: var(--on-primary);
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
@@ -928,7 +928,7 @@ select option {
 }
 .qam-ask .material-icons {
   margin-inline-end: 12px;
-  color: var(--on-secondary);
+  color: var(--on-primary);
   vertical-align: middle;
   line-height: 14px;
 }
@@ -954,17 +954,15 @@ select option {
   margin-block-end: 10px;
 }
 #theme-toggle {
-  display: none;
-}
-#theme-toggle1 .material-icons {
   position: absolute;
-  inset-inline-start: 0;
-  inset-block-start: 0;
-  padding-block-start: 7px;
-  padding-inline-end: 26px;
-  padding-block-end: 8px;
-  padding-inline-start: 190px;
+  inset-block-start: 14px;
+  inset-inline-end: 70px;
+  color: var(--on-primary);
+  font-size: 30px;
+  z-index: 5;
+  cursor: pointer;
 }
+
 /* form */
 .qa-form-tall-table,
 .qa-top-tags-table,
@@ -1885,7 +1883,7 @@ select option {
   background-color: var(--secondary);
   color: var(--on-secondary);
   margin-inline-end: 5px;
-  margin-block: 8px;
+  margin-block: 5px;
   padding: 6px 16px;
   border-radius: 8px;
 
@@ -2023,6 +2021,19 @@ select option {
     transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
       visibility 0s linear 0s;
   }
+
+  #theme-toggle {
+    position: fixed;
+    inset-block-start: unset;
+    inset-block-end: 88px;
+    inset-inline-end: 16px;
+    font-size: 26px;
+    background: var(--secondary);
+    color: var(--on-secondary);
+    border-radius: 16px;
+    box-shadow: var(--fab-shadow);
+    padding: 10px;
+  }
 }
 @media (min-width: 1024px) {
   .qa-search {
@@ -2088,19 +2099,7 @@ select option {
   .menu-active .qa-widgets-full {
     margin-inline-start: 264px;
   }
-  #theme-toggle {
-    display: block;
-    position: absolute;
-    inset-block-start: 14px;
-    inset-inline-end: 70px;
-    color: var(--on-primary);
-    font-size: 30px;
-    z-index: 5;
-    cursor: pointer;
-  }
-  #theme-toggle1 {
-    display: none;
-  }
+
   .qa-top-tags-table tbody {
     grid-template-columns: repeat(3, calc(33.3% - 7px));
   }
