@@ -645,6 +645,12 @@ select option {
   display: block;
   font-size: 1.3em;
   font-weight: 700;
+  background: var(--secondary);
+  border-radius: 22px;
+  padding: 8px 16px;
+  margin-block-end: 8px;
+  max-width: 120px;
+  margin-inline: auto;
 }
 /* qa-main */
 .qam-main-sidepanel {
@@ -825,26 +831,28 @@ select option {
 .qa-q-item-tag-item,
 .qa-q-view-tag-item {
   background-color: var(--secondary);
-  border-radius: 20px;
-  width: min-content;
-  padding: 1px 0;
-  margin-inline-end: 6px;
-  height: 24px;
+  border-radius: 8px;
+  margin-inline-end: 8px;
+  height: 32px;
   min-width: max-content;
 }
 .qa-tag-link {
-  padding: 4px 8px;
-  border-radius: 20px;
+  padding: 6px 16px;
+  border-radius: 8px;
   color: var(--on-secondary);
-  font-size: 0.85em;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+
+  display: block;
 }
 .qa-tag-link.qa-tag-favorited::before {
   font-family: 'Material Icons';
-  position: relative;
   font-size: 18px;
-  display: inline-block;
-  margin-inline-end: 6px;
-  margin-inline-start: -4px;
+  margin-inline-end: 8px;
+  margin-inline-start: -8px;
   vertical-align: bottom;
 }
 
@@ -900,19 +908,23 @@ select option {
   z-index: 4;
   background-color: var(--secondary);
   color: var(--on-secondary);
-  border-radius: 24px;
-  padding: 14px 0;
+  border-radius: 16px;
+  height: 56px;
   position: fixed;
   box-shadow: var(--fab-shadow);
   inset-block-end: 16px;
   inset-inline-end: 16px;
 }
 .qam-ask-link {
-  padding: 14px;
+  padding: 18px;
   padding-inline-end: 20px;
-  border-radius: 24px;
+  border-radius: 16px;
   color: var(--on-secondary);
-  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  display: block;
 }
 .qam-ask .material-icons {
   margin-inline-end: 12px;
@@ -1872,9 +1884,14 @@ select option {
   display: inline-block;
   background-color: var(--secondary);
   color: var(--on-secondary);
-  margin: 1px 0;
-  padding: 2px 8px;
-  border-radius: 12px;
+  margin-inline-end: 5px;
+  margin-block: 8px;
+  padding: 6px 16px;
+  border-radius: 8px;
+
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
 }
 /* feed */
 .qa-feed-link {
