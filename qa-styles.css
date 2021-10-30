@@ -1128,24 +1128,35 @@ select option {
   margin-block-start: 10px;
   margin-inline-end: 10px;
 }
+.qa-a-selection {
+  background: var(--secondary);
+  border-radius: 8px;
+  max-width: fit-content;
+  margin-block-end: 16px;
+}
 .qa-a-selection input {
   position: absolute;
   z-index: 4;
   opacity: 0;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 32px;
   cursor: pointer;
 }
 .qa-a-selection input.qa-a-unselect-button {
-  width: 40px;
-  height: 40px;
+  width: 136px;
+  height: 32px;
+}
+.qa-a-selected {
+  display: none;
 }
 .qa-a-selected-text {
   display: inline-block;
   color: var(--selected);
+  vertical-align: middle;
+  margin-inline-end: 8px;
 }
 .qa-a-selection i {
-  font-size: 30px;
+  font-size: 24px;
   vertical-align: middle;
 }
 .qa-a-selection i.unselect {
@@ -1153,10 +1164,13 @@ select option {
 }
 .qa-a-selection i.select {
   color: var(--selected);
+  padding: 4px 8px;
 }
 .qa-a-selection i.selected {
   color: var(--selected);
-  font-size: 40px;
+  margin-inline-start: 8px;
+  margin-inline-end: 4px;
+  margin-block: 4px;
 }
 /* post content */
 .qa-q-view-content,
