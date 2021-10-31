@@ -865,7 +865,6 @@ select option {
 }
 .qa-voting {
   display: flex;
-  padding-inline-end: 10px;
   margin-inline-end: auto;
   align-items: center;
 }
@@ -1102,6 +1101,12 @@ select option {
   font-size: 0.9em;
   padding: 3px 10px !important;
 }
+
+.qa-form-light-button-answer,
+.qa-q-view-buttons .qa-form-light-button-comment {
+  min-width: 146px;
+}
+
 /* question view */
 .qa-part-q-view,
 .qa-a-list-item,
@@ -1126,7 +1131,6 @@ select option {
 }
 .qam-stats-buttons .qa-voting {
   margin-block-start: 10px;
-  margin-inline-end: 10px;
 }
 .qa-a-selection {
   background: var(--secondary);
@@ -1573,7 +1577,8 @@ select option {
   z-index: 1;
   opacity: 0;
   cursor: pointer;
-  width: 60px;
+  width: 0;
+  height: 32px;
 }
 .qa-vote-buttons i {
   margin: 5px;
@@ -1984,6 +1989,19 @@ select option {
   }
   .qa-nav-main-link {
     padding-block: 10px;
+  }
+  .qam-rest-buttons {
+    width: 100%;
+  }
+  .qa-q-view-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 8px;
+  }
+  .qa-form-light-button-answer,
+  .qa-q-view-buttons .qa-form-light-button-comment {
+    flex: 1;
+    min-width: 200px;
   }
 }
 @media (min-width: 768px) {
