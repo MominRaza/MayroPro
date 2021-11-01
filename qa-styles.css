@@ -906,7 +906,6 @@ select option {
 .qam-ask {
   z-index: 4;
   background-color: var(--primary);
-  /* color: var(--on-primary); */
   border-radius: 16px;
   height: 56px;
   position: fixed;
@@ -2054,17 +2053,27 @@ select option {
       visibility 0s linear 0s;
   }
 
-  #theme-toggle {
+  .fab {
     position: fixed;
-    inset-block-start: unset;
-    inset-block-end: 88px;
-    inset-inline-end: 16px;
+    bottom: 0;
+    right: 0;
+    text-align: end;
+    margin-inline-end: 16px;
+  }
+
+  #theme-toggle {
+    position: unset;
     font-size: 26px;
     background: var(--secondary);
     color: var(--on-secondary);
     border-radius: 16px;
     box-shadow: var(--fab-shadow);
     padding: 10px;
+    margin-block-end: 16px;
+  }
+  .qam-ask {
+    position: unset;
+    margin-block-end: 16px;
   }
 }
 @media (min-width: 1024px) {

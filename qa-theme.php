@@ -195,42 +195,47 @@ class qa_html_theme extends qa_html_theme_base
 		$this->output('<i id="menu-toggle" onclick="toggleMenu()" class="material-icons">menu</i>');
 		$this->output('<i id="search-toggle"  onclick="toggleSearch()" class="material-icons">search</i>');
 
-		$themeIcon = 'brightness_auto';
-		$themeTitle = 'System default';
-		if (!empty($_COOKIE['theme'])) {
-			if ($_COOKIE['theme'] == 'dark') {
-				$themeIcon = 'dark_mode';
-				$themeTitle = 'Dark';
-			} else if ($_COOKIE['theme'] == 'light') {
-				$themeIcon = 'light_mode';
-				$themeTitle = 'Light';
-			}
-		}
-		$this->output('<i id="theme-toggle" class="material-icons" onclick="toggleTheme(this)" title="'.$themeTitle.'">'.$themeIcon.'</i>');
-
+		
 		if (isset($this->content['loggedin']['suffix'])) {
-            $this->output($this->content['loggedin']['suffix']);
+			$this->output($this->content['loggedin']['suffix']);
         }
-
+		
 		$this->nav_user_search();
-		switch ( $this->template ) {
-			case 'admin' :
-			case 'login' :
-			case 'register' :
-			case 'forgot' :
-			case 'ask' :
-			case 'message' :
-			case 'messages' :
-			case 'user' :
-			case 'user-wall' :
-			case 'users' :
-			case 'account' :
-			case 'favorites' :
-			case 'feedback' :
-			break;
-			default:
-				$this->output($this->ask_button());
-		}
+		
+		$this->output('<div class="fab">');
+			$themeIcon = 'brightness_auto';
+			$themeTitle = 'System default';
+			if (!empty($_COOKIE['theme'])) {
+				if ($_COOKIE['theme'] == 'dark') {
+					$themeIcon = 'dark_mode';
+					$themeTitle = 'Dark';
+				} else if ($_COOKIE['theme'] == 'light') {
+					$themeIcon = 'light_mode';
+					$themeTitle = 'Light';
+				}
+			}
+			$this->output('<i id="theme-toggle" class="material-icons" onclick="toggleTheme(this)" title="'.$themeTitle.'">'.$themeIcon.'</i>');
+		
+			switch ( $this->template ) {
+				case 'admin' :
+				case 'login' :
+				case 'register' :
+				case 'forgot' :
+				case 'ask' :
+				case 'message' :
+				case 'messages' :
+				case 'user' :
+				case 'user-wall' :
+				case 'users' :
+				case 'account' :
+				case 'favorites' :
+				case 'feedback' :
+				break;
+				default:
+					$this->output($this->ask_button());
+			}
+		$this->output('</div>');
+
 		$this->nav_main_sub();
 		$this->header_clear();
 
