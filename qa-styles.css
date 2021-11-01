@@ -1990,7 +1990,7 @@ select option {
   .qa-nav-main-link {
     padding-block: 10px;
   }
-  .qam-rest-buttons {
+  .qa-q-view-main .qam-rest-buttons {
     width: 100%;
   }
   .qa-q-view-buttons {
