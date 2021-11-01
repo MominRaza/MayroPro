@@ -1986,9 +1986,6 @@ select option {
     display: block;
     padding: 10px 0;
   }
-  .qa-nav-main-link {
-    padding-block: 10px;
-  }
   .qa-q-view-main .qam-rest-buttons {
     width: 100%;
   }
