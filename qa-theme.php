@@ -189,19 +189,28 @@ class qa_html_theme extends qa_html_theme_base
 	public function header()
 	{
 		$this->output('<div class="qa-header">');
+			$this->output('<div class="qa-appbar">');
+				$this->output('<i id="menu-toggle" onclick="toggleMenu()" class="material-icons">menu</i>');
+				$this->logo();
+				$this->nav_user_search();
+			$this->output('</div> <!-- END qa-appbar -->', '');
 
-		$this->logo();
+			$this->nav_main_sub();
+			$this->header_clear();
 
-		$this->output('<i id="menu-toggle" onclick="toggleMenu()" class="material-icons">menu</i>');
+		$this->output('</div> <!-- END qa-header -->', '');
+	}
+
+	public function nav_user_search()
+	{
+		$this->output('<div id="qa-search">');
+			$this->search();
+		$this->output('</div>');
 		$this->output('<i id="search-toggle"  onclick="toggleSearch()" class="material-icons">search</i>');
-
-		
 		if (isset($this->content['loggedin']['suffix'])) {
 			$this->output($this->content['loggedin']['suffix']);
-        }
-		
-		$this->nav_user_search();
-		
+		}
+
 		$this->output('<div class="fab">');
 			$themeIcon = 'brightness_auto';
 			$themeTitle = 'System default';
@@ -236,21 +245,10 @@ class qa_html_theme extends qa_html_theme_base
 			}
 		$this->output('</div>');
 
-		$this->nav_main_sub();
-		$this->header_clear();
-
-		$this->output('</div> <!-- END qa-header -->', '');
-	}
-
-	public function nav_user_search()
-	{
 		$this->qam_user_account();
 		$this->output('<div id="qa-nav-user">');
-		$this->nav('user');
-		$this->output('<div id="qa-nav-user-clear" onclick="toggleUser()"></div>');
-		$this->output('</div>');
-		$this->output('<div id="qa-search">');
-		$this->search();
+			$this->nav('user');
+			$this->output('<div id="qa-nav-user-clear" onclick="toggleUser()"></div>');
 		$this->output('</div>');
 	}
 
