@@ -21,14 +21,14 @@ class qa_html_theme extends qa_html_theme_base
 	public function head_css()
 	{
 		if ($this->isRTL)
-			$this->content['css_src'][] = $this->rooturl . 'qa-styles-rtl.min.css?' . QA_VERSION;
+			$this->content['css_src'][] = $this->rooturl . 'css/style-rtl.css?' . QA_VERSION;
 		
 		parent::head_css();
 	}
 
 	public function css_name()
 	{
-		return 'qa-styles.min.css?' . QA_VERSION;
+		return 'css/style.css?' . QA_VERSION;
 	}
 
 	public function head_script()
