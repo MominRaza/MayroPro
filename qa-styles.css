@@ -242,7 +242,7 @@ select option {
 /* header */
 .qa-header {
   position: sticky;
-  inset-block-start: 0;
+  top: 0;
   z-index: 3;
 }
 .qa-header-clear {
@@ -250,8 +250,8 @@ select option {
 }
 .qa-logo {
   position: absolute;
-  inset-block-start: 0;
-  inset-inline-start: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 56px;
   padding-block-start: 13px;
@@ -266,8 +266,8 @@ select option {
 }
 #menu-toggle {
   position: absolute;
-  inset-block-start: 13px;
-  inset-inline-start: 10px;
+  top: 13px;
+  left: 10px;
   color: var(--on-primary);
   font-size: 30px;
   cursor: pointer;
@@ -275,8 +275,8 @@ select option {
 }
 #search-toggle {
   position: absolute;
-  inset-block-start: 14px;
-  inset-inline-end: 60px;
+  top: 14px;
+  right: 60px;
   color: var(--on-primary);
   font-size: 30px;
   z-index: 6;
@@ -284,8 +284,8 @@ select option {
 }
 #user-toggle {
   position: absolute;
-  inset-block-start: 10px;
-  inset-inline-end: 10px;
+  top: 10px;
+  right: 10px;
   color: var(--on-primary);
   font-size: 30px;
   width: 36px;
@@ -311,15 +311,15 @@ select option {
   color: var(--on-primary);
 }
 #search-toggle.active {
-  inset-inline-start: 10px;
-  inset-inline-end: unset;
+  left: 10px;
+  right: unset;
   color: var(--selected);
 }
 .qa-nav-user {
   position: fixed;
   visibility: hidden;
-  inset-block-start: 40px;
-  inset-inline-end: 40px;
+  top: 40px;
+  right: 40px;
   transform: scale(0.2);
   background-color: var(--surface-solid, var(--surface));
   border-radius: 30px;
@@ -339,12 +339,12 @@ select option {
   position: fixed;
   height: 100vh;
   width: 100%;
-  inset-block-start: 0;
-  inset-inline-start: 0;
+  top: 0;
+  left: 0;
 }
 #qa-nav-user.active .qa-nav-user {
-  inset-block-start: 40%;
-  inset-inline-end: 50%;
+  top: 40%;
+  right: 50%;
   visibility: visible;
   transform: translate(50%, -50%) scale(1);
   transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1), top 0.3s,
@@ -385,8 +385,8 @@ select option {
   position: absolute;
   transform: scale(0.4);
   transform-origin: right;
-  inset-block-start: 1px;
-  inset-inline-start: 0;
+  top: 1px;
+  left: 0;
   width: 100%;
   background-color: var(--primary);
   height: 55px;
@@ -420,8 +420,8 @@ select option {
 }
 .qa-search-button {
   position: fixed;
-  inset-block-start: 3px;
-  inset-inline-end: 10px;
+  top: 3px;
+  right: 10px;
   width: 30px;
   background-color: unset;
   color: var(--on-primary);
@@ -436,7 +436,7 @@ select option {
   will-change: visibility;
   visibility: hidden;
   position: absolute;
-  inset-inline-start: 0;
+  left: 0;
   width: 264px;
   background-color: var(--surface-solid, var(--surface));
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
@@ -444,7 +444,7 @@ select option {
 }
 .qa-nav-main {
   z-index: 7;
-  inset-block-start: 56px;
+  top: 56px;
   height: calc(100vh - 56px);
   box-shadow: var(--shadow);
   overflow: hidden;
@@ -452,7 +452,7 @@ select option {
 }
 #qa-nav-main .qa-logo {
   z-index: 8;
-  inset-block-start: 0;
+  top: 0;
   height: 56px;
   padding-block-start: 13px;
   box-shadow: unset;
@@ -535,8 +535,8 @@ select option {
 }
 .qa-nav-sub-list {
   position: absolute;
-  inset-block-start: 56px;
-  inset-inline-start: 0;
+  top: 56px;
+  left: 0;
   width: 100%;
   background-color: var(--primary);
   display: flex;
@@ -603,8 +603,8 @@ select option {
   font-family: 'Material Icons';
   font-size: 24px;
   position: absolute;
-  inset-block-start: 12px;
-  inset-inline-start: 12px;
+  top: 12px;
+  left: 12px;
 }
 
 .qa-part-form,
@@ -809,7 +809,7 @@ select option {
 }
 .qa-view-count::before {
   position: relative;
-  inset-block-start: -2px;
+  top: -2px;
   content: '.';
   font-size: 18px;
   font-weight: 700;
@@ -910,8 +910,8 @@ select option {
   height: 56px;
   position: fixed;
   box-shadow: var(--fab-shadow);
-  inset-block-end: 16px;
-  inset-inline-end: 16px;
+  bottom: 16px;
+  right: 16px;
 }
 .qam-ask-link {
   padding: 18px;
@@ -953,8 +953,8 @@ select option {
 }
 #theme-toggle {
   position: absolute;
-  inset-block-start: 14px;
-  inset-inline-end: 70px;
+  top: 14px;
+  right: 70px;
   color: var(--on-primary);
   font-size: 30px;
   z-index: 5;
@@ -1359,7 +1359,7 @@ select option {
   position: absolute;
   font-family: 'Material Icons';
   font-size: 18px;
-  inset-inline-start: 0;
+  left: 0;
   margin-inline-start: -22px;
 }
 
@@ -1417,14 +1417,14 @@ select option {
 }
 .qa-top-users-label img {
   position: absolute;
-  inset-block-start: 0;
-  inset-inline-start: 0;
+  top: 0;
+  left: 0;
   aspect-ratio: 1 / 1;
   object-fit: cover;
 }
 .qa-top-users-table .qa-user-link {
   position: absolute;
-  inset-block-end: 0;
+  bottom: 0;
   text-align: center;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
@@ -1446,7 +1446,7 @@ select option {
 .qa-top-users-score {
   position: absolute;
   width: 100%;
-  inset-block-end: 2px;
+  bottom: 2px;
   text-align: center;
   color: white;
   white-space: nowrap;
@@ -1683,13 +1683,13 @@ select option {
 .qam-q-extra-menu {
   display: inline-block;
   position: absolute;
-  inset-block-start: 19px;
-  inset-inline-end: 19px;
+  top: 19px;
+  right: 19px;
 }
 .qa-c-list-item .qam-q-extra-menu,
 .qa-a-list-item .qam-q-extra-menu {
-  inset-block-start: 29px;
-  inset-inline-end: 29px;
+  top: 29px;
+  right: 29px;
 }
 .qam-q-extra-menu .qa-form-light-button-answer,
 .qam-q-extra-menu .qa-form-light-button-comment,
@@ -1700,8 +1700,8 @@ select option {
 .qam-q-extra-menu .qa-c-item-buttons,
 .qam-q-extra-menu .qa-a-item-buttons {
   position: absolute;
-  inset-block-start: -5px;
-  inset-inline-end: -5px;
+  top: -5px;
+  right: -5px;
   padding: 8px 0;
   box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
     0 1px 3px 1px rgba(60, 64, 67, 0.149);
@@ -1740,8 +1740,8 @@ select option {
 }
 .qam-q-extra-menu-toggle {
   position: absolute;
-  inset-block-start: -20px;
-  inset-inline-end: -25px;
+  top: -20px;
+  right: -25px;
   cursor: pointer;
 }
 .qam-q-extra-menu-toggle::before {
@@ -1751,8 +1751,8 @@ select option {
   background-color: rgba(var(--primary-rgb), 0.12);
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.22, 1.105);
   position: absolute;
-  inset-block-start: 50%;
-  inset-inline-start: 50%;
+  top: 50%;
+  left: 50%;
   transform: translateX(-50%) translateY(-56%) scale(0.2);
   border-radius: 50px;
   opacity: 0;
@@ -1760,8 +1760,8 @@ select option {
 .qam-q-extra-menu-toggle::after {
   z-index: 3;
   content: '';
-  inset-block-start: 0;
-  inset-inline-start: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   position: fixed;
@@ -1824,13 +1824,13 @@ select option {
 }
 .qam-what-2 {
   position: absolute;
-  inset-block-start: 40px;
-  inset-inline-end: -2px;
+  top: 40px;
+  right: -2px;
 }
 .qa-c-list-item .qam-what-2,
 .qa-a-list-item .qam-what-2 {
-  inset-block-start: 45px;
-  inset-inline-end: 8px;
+  top: 45px;
+  right: 8px;
 }
 .qam-what-2 .qa-q-item-what::before,
 .qam-what-2 .qa-q-view-what::before,
@@ -1840,15 +1840,15 @@ select option {
 }
 .qam-what-2 i {
   position: absolute;
-  inset-block-start: -6px;
-  inset-inline-end: 0;
+  top: -6px;
+  right: 0;
   z-index: 1;
   cursor: pointer;
 }
 .qam-what-2-body {
   position: absolute;
-  inset-block-start: -9px;
-  inset-inline-end: -2px;
+  top: -9px;
+  right: -2px;
   padding: 1px 7px;
   padding-inline-end: 26px;
   width: max-content;
@@ -1882,7 +1882,7 @@ select option {
 .qa-a-item-flags::before,
 .qa-c-item-flags::before {
   position: relative;
-  inset-block-start: -2px;
+  top: -2px;
   content: '.';
   font-size: 18px;
   font-weight: 700;
@@ -1936,8 +1936,8 @@ select option {
 }
 .qa-notice-close-button {
   position: absolute;
-  inset-inline-end: 0;
-  inset-block-start: 2px;
+  right: 0;
+  top: 2px;
   background: none;
   border: none;
   padding-inline-end: 12px !important;
@@ -1946,16 +1946,16 @@ select option {
 /* media queries */
 @media (max-width: 360px) {
   #menu-toggle {
-    inset-inline-start: 4px;
+    left: 4px;
   }
   .qa-logo-link {
     margin-inline-start: 40px;
   }
   #user-toggle {
-    inset-inline-end: 4px;
+    right: 4px;
   }
   #search-toggle {
-    inset-inline-end: 44px;
+    right: 44px;
   }
 }
 @media (min-width: 515px) {
@@ -2025,7 +2025,7 @@ select option {
 }
 @media (max-width: 1023px) {
   .qa-nav-main {
-    inset-block-start: 0;
+    top: 0;
     box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2),
       0px 24px 38px 3px rgba(0, 0, 0, 0.14),
       0px 9px 46px 8px rgba(0, 0, 0, 0.12);
@@ -2040,8 +2040,8 @@ select option {
     position: fixed;
     height: 100vh;
     width: 100%;
-    inset-block-start: 0;
-    inset-inline-start: 0;
+    top: 0;
+    left: 0;
   }
   .menu-active #qa-nav-main .qa-logo {
     transform: translateX(0);
@@ -2079,8 +2079,8 @@ select option {
     transform: scale(1);
   }
   .qa-search {
-    inset-inline-start: 310px;
-    inset-inline-end: 310px;
+    left: 310px;
+    right: 310px;
     width: auto;
     max-width: 980px;
     margin: 0 auto;
@@ -2153,8 +2153,8 @@ select option {
 }
 @media (min-width: 1280px) {
   .qa-search {
-    inset-inline-start: 340px;
-    inset-inline-end: 480px;
+    left: 340px;
+    right: 480px;
   }
   .menu-active .qa-part-form-profile {
     width: calc(60% - 10px);
