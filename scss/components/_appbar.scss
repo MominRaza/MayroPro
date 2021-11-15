@@ -1,0 +1,197 @@
+@use '../abstracts';
+
+.qa-header {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 3;
+}
+.qa-header-clear {
+  //   height: 56px;
+}
+.qa-appbar {
+  display: flex;
+  align-items: center;
+
+  background-color: var(--primary);
+  box-shadow: var(--appbar-shadow);
+}
+.qa-logo {
+  //   position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  //   width: 100%;
+  height: abstracts.$appbar-height;
+  padding-block-start: 13px;
+  z-index: 4;
+}
+.qa-logo-link {
+  //   margin-inline-start: 60px;
+  font-size: 24px;
+  color: var(--on-primary);
+}
+#menu-toggle {
+  //   position: absolute;
+  inset-block-start: 13px;
+  inset-inline-start: 10px;
+  color: var(--on-primary);
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 4;
+}
+#search-toggle {
+  //   position: absolute;
+  inset-block-start: 14px;
+  inset-inline-end: 60px;
+  color: var(--on-primary);
+  font-size: 30px;
+  z-index: 6;
+  cursor: pointer;
+}
+#user-toggle {
+  //   position: absolute;
+  inset-block-start: 10px;
+  inset-inline-end: 10px;
+  color: var(--on-primary);
+  font-size: 30px;
+  width: 36px;
+  height: 36px;
+  overflow: hidden;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 4;
+}
+#user-toggle img {
+  width: 100%;
+  height: auto;
+}
+#user-toggle .login-person {
+  border: 2px solid var(--on-primary);
+  border-radius: 50%;
+  height: 36px;
+  width: 36px;
+}
+#user-toggle i {
+  font-size: 36px;
+  margin-inline-start: -2px;
+  color: var(--on-primary);
+}
+#search-toggle.active {
+  inset-inline-start: 10px;
+  inset-inline-end: unset;
+  color: var(--selected);
+}
+.qa-nav-user {
+  position: fixed;
+  visibility: hidden;
+  inset-block-start: 40px;
+  inset-inline-end: 40px;
+  transform: scale(0.2);
+  background-color: var(--surface-solid, var(--surface));
+  border-radius: 30px;
+  box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2),
+    0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+  max-height: 360px;
+  min-width: 240px;
+  max-width: 240px;
+  z-index: 4;
+  padding: 10px 0;
+  transition: transform 0.25s;
+  transform-origin: 100% 0;
+}
+#qa-nav-user.active #qa-nav-user-clear {
+  z-index: 6;
+  background-color: rgba(0, 0, 0, 0.32);
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+}
+#qa-nav-user.active .qa-nav-user {
+  inset-block-start: 40%;
+  inset-inline-end: 50%;
+  visibility: visible;
+  transform: translate(50%, -50%) scale(1);
+  transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1), top 0.3s,
+    right 0.3s;
+  z-index: 7;
+}
+.qa-nav-user .qa-logged-in {
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.0125em;
+  padding: 10px 24px;
+}
+.qa-nav-user-list {
+  list-style: none;
+}
+.qa-nav-user-item {
+  padding: 0;
+}
+.qa-nav-user-link {
+  position: relative;
+  display: block;
+  padding-block: 10px;
+  padding-inline-start: 64px;
+  padding-inline-end: 0;
+  color: var(--on-surface);
+  border-radius: 20px;
+  margin: 4px;
+}
+.qa-nav-user-link.qa-nav-user-selected {
+  background-color: rgba(var(--primary-rgb), 0.12);
+  color: var(--selected);
+}
+.qa-nav-user-link:hover {
+  background-color: rgba(var(--primary-rgb), 0.12);
+}
+.qa-search {
+  visibility: hidden;
+  //   position: absolute;
+  transform: scale(0.4);
+  transform-origin: right;
+  inset-block-start: 1px;
+  inset-inline-start: 0;
+  width: 100%;
+  background-color: var(--primary);
+  height: 55px;
+  z-index: 5;
+  transition: 0.25s transform ease;
+}
+#qa-search.active .qa-search {
+  visibility: visible;
+  transform: scale(1);
+}
+.qa-search-field,
+.qa-search-button {
+  margin-block-start: 10px;
+  border: none;
+}
+.qa-search-field {
+  margin-block-start: 5px;
+  margin-inline-start: 5px;
+  width: calc(100% - 10px) !important;
+  background-color: unset;
+  font-size: 20px;
+  color: var(--on-surface);
+  padding: 10px 46px !important;
+  border-radius: 20px !important;
+}
+.qa-search-field:focus {
+  outline: none;
+}
+.qa-search-field::placeholder {
+  color: #9e9e9e;
+}
+.qa-search-button {
+  position: fixed;
+  inset-block-start: 3px;
+  inset-inline-end: 10px;
+  width: 30px;
+  background-color: unset;
+  color: var(--on-primary);
+}
+.qa-search-button i {
+  font-size: 30px;
+  color: var(--on-surface);
+}
