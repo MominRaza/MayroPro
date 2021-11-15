@@ -211,7 +211,7 @@ textarea {
 input[type='checkbox'],
 input[type='radio'] {
   /* accent-color: var(--selected); */
-  margin-inline-end: 10px;
+  margin-right: 10px;
 }
 input[type='submit'] {
   padding: 7px 16px;
@@ -229,7 +229,7 @@ button {
   cursor: pointer;
 }
 select {
-  margin-block-start: 10px;
+  margin-top: 10px;
 }
 select option {
   background-color: var(--surface-solid);
@@ -259,13 +259,13 @@ select option {
   z-index: 8;
   top: 0;
   height: 56px;
-  padding-block-start: 13px;
+  padding-top: 13px;
   box-shadow: unset;
   border-start-end-radius: 30px;
 }
 #qa-nav-main .qa-logo .qa-logo-link {
   color: var(--on-surface);
-  margin-inline-start: 16px;
+  margin-left: 16px;
 }
 .menu-active .qa-nav-main {
   transform: translateX(0);
@@ -274,7 +274,7 @@ select option {
     visibility 0s linear 0s;
 }
 .qa-nav-main-list {
-  margin-block-start: 10px;
+  margin-top: 10px;
   list-style: none;
   width: 100%;
 }
@@ -283,9 +283,10 @@ select option {
 }
 .qa-nav-main-link {
   display: block;
-  padding-block: 13px;
-  padding-inline-start: 60px;
-  padding-inline-end: 0;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 60px;
+  padding-right: 0;
   margin: 4px 0;
   width: calc(100% - 4px);
   color: var(--on-surface);
@@ -305,8 +306,8 @@ select option {
   font-family: 'Material Icons';
   font-size: 24px;
   position: absolute;
-  margin-block-start: -3px;
-  margin-inline-start: -46px;
+  margin-top: -3px;
+  margin-left: -46px;
 }
 
 /* start: only for jeeneetqna */
@@ -320,8 +321,8 @@ select option {
   font-family: 'Material Icons';
   font-size: 24px;
   position: absolute;
-  margin-block-start: -3px;
-  margin-inline-start: -41px;
+  margin-top: -3px;
+  margin-left: -41px;
 }
 
 .qa-favorite-image {
@@ -331,7 +332,7 @@ select option {
   font-family: 'Material Icons';
   color: var(--link);
   position: absolute;
-  margin-inline-start: -7px;
+  margin-left: -7px;
   font-size: 18px;
 }
 
@@ -395,12 +396,12 @@ select option {
 .qa-q-view-follows a,
 .qa-q-view-closed span {
   display: block;
-  margin-block-start: 10px;
-  margin-inline-start: -24px;
+  margin-top: 10px;
+  margin-left: -24px;
 }
 .qa-q-view-follows,
 .qa-q-view-closed {
-  padding-inline-start: 40px;
+  padding-left: 40px;
   position: relative;
 }
 .qa-q-view-follows::before,
@@ -453,9 +454,10 @@ select option {
   background: var(--secondary);
   border-radius: 22px;
   padding: 8px 16px;
-  margin-block-end: 8px;
+  margin-bottom: 8px;
   max-width: 120px;
-  margin-inline: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 /* qa-main */
 .qam-main-sidepanel {
@@ -470,7 +472,7 @@ select option {
   transition: 0.25s;
 }
 .qa-widgets-full-top {
-  margin-inline-start: 0 !important;
+  margin-left: 0 !important;
 }
 .qa-main-heading {
   display: flex;
@@ -480,7 +482,7 @@ select option {
 .qa-main-heading h1 {
   width: 100%;
   font-size: 24px;
-  margin-inline-end: 10px;
+  margin-right: 10px;
   line-height: 1.15;
   font-weight: 500;
 }
@@ -488,15 +490,15 @@ select option {
 #a_list_title,
 .qa-widget-main h2,
 .qa-part-form-2 h2 {
-  margin-block-start: 20px;
-  margin-block-end: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   line-height: 1.15;
   font-weight: 500;
 }
 [class^='qa-widget-'] h2 {
   line-height: 1.15;
   font-weight: 500;
-  margin-block-end: 10px;
+  margin-bottom: 10px;
 }
 /* questions list */
 .qa-q-list-item {
@@ -508,18 +510,18 @@ select option {
   box-shadow: var(--shadow);
 }
 .qa-q-list-item.qa-q-favorited {
-  border-inline-start: 3px solid var(--selected);
+  border-left: 3px solid var(--selected);
   border-start-start-radius: 0;
   border-start-end-radius: var(--border);
   border-end-start-radius: 0;
   border-end-end-radius: var(--border);
-  padding-inline-start: 13px;
+  padding-left: 13px;
 }
 .qa-q-item-title {
   font-size: 1.2rem;
   font-weight: normal;
   letter-spacing: 0.0125em;
-  margin-block-end: 5px;
+  margin-bottom: 5px;
 }
 .qa-q-item-title a {
   color: var(--on-surface);
@@ -533,23 +535,23 @@ select option {
 .qa-q-item-title .material-icons,
 .qa-main-heading h1 span {
   vertical-align: middle;
-  margin-inline-end: 6px;
+  margin-right: 6px;
 }
 
 .qam-q-post-meta {
   min-height: 50px;
-  padding-inline-start: 50px;
-  margin-inline-end: 18px;
+  padding-left: 50px;
+  margin-right: 18px;
 }
 .qa-q-view-main > .qam-q-post-meta {
   min-height: 60px;
-  padding-inline-start: 60px;
+  padding-left: 60px;
 }
 .qa-template-user-questions .qam-q-post-meta,
 .qa-template-user-answers .qam-q-post-meta,
 .qa-template-user-activity .qam-q-post-meta {
   min-height: 30px;
-  padding-inline-start: 0;
+  padding-left: 0;
 }
 .qa-q-item-avatar-meta,
 .qa-q-view-avatar-meta,
@@ -567,23 +569,23 @@ select option {
   position: absolute;
   height: 40px;
   width: 40px;
-  margin-inline-start: -50px;
+  margin-left: -50px;
   border-radius: 50%;
   overflow: hidden;
 }
 .qa-c-item-avatar {
   height: 20px;
   width: 20px;
-  margin-inline-start: -30px;
+  margin-left: -30px;
 }
 .qa-c-list-item .qam-q-post-meta {
   min-height: 30px;
-  padding-inline-start: 30px;
+  padding-left: 30px;
 }
 .qa-q-view-avatar {
   height: 50px;
   width: 50px;
-  margin-inline-start: -60px;
+  margin-left: -60px;
 }
 .qa-part-form-profile .qa-avatar-link {
   position: absolute;
@@ -624,20 +626,20 @@ select option {
 .qa-q-view-tag-list {
   list-style: none;
   display: flex;
-  margin-block-start: 10px;
-  margin-block-end: 4px;
+  margin-top: 10px;
+  margin-bottom: 4px;
   overflow: hidden;
   overflow-x: auto;
 }
 .qa-q-view-tag-list {
-  margin-block-start: 14px;
-  margin-block-end: 10px;
+  margin-top: 14px;
+  margin-bottom: 10px;
 }
 .qa-q-item-tag-item,
 .qa-q-view-tag-item {
   background-color: var(--secondary);
   border-radius: 8px;
-  margin-inline-end: 8px;
+  margin-right: 8px;
   height: 32px;
   min-width: max-content;
 }
@@ -656,8 +658,8 @@ select option {
 .qa-tag-link.qa-tag-favorited::before {
   font-family: 'Material Icons';
   font-size: 18px;
-  margin-inline-end: 8px;
-  margin-inline-start: -8px;
+  margin-right: 8px;
+  margin-left: -8px;
   vertical-align: bottom;
 }
 
@@ -670,7 +672,7 @@ select option {
 }
 .qa-voting {
   display: flex;
-  margin-inline-end: auto;
+  margin-right: auto;
   align-items: center;
 }
 .qa-q-list-vote-disabled .qa-voting {
@@ -678,14 +680,14 @@ select option {
 }
 .qa-a-count {
   padding: 10px;
-  padding-inline-end: 0;
+  padding-right: 0;
 }
 .qa-a-count-selected {
-  padding-inline-end: 22px;
+  padding-right: 22px;
 }
 .qa-template-user-activity .qa-a-count {
-  padding-inline-start: 0;
-  padding-inline-end: 20px;
+  padding-left: 0;
+  padding-right: 20px;
 }
 .qa-a-count-zero span {
   color: var(--error);
@@ -698,12 +700,12 @@ select option {
   text-transform: none;
   color: var(--selected);
   position: absolute;
-  margin-inline-start: 5px;
+  margin-left: 5px;
   font-size: 18px;
 }
 
 .qa-suggest-next {
-  margin-block-end: 20px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -720,7 +722,7 @@ select option {
 }
 .qam-ask-link {
   padding: 18px;
-  padding-inline-end: 20px;
+  padding-right: 20px;
   border-radius: 16px;
   color: var(--on-primary);
   font-size: 14px;
@@ -730,7 +732,7 @@ select option {
   display: block;
 }
 .qam-ask .material-icons {
-  margin-inline-end: 12px;
+  margin-right: 12px;
   color: var(--on-primary);
   vertical-align: middle;
   line-height: 14px;
@@ -738,7 +740,7 @@ select option {
 
 /* footer */
 .qa-footer {
-  margin-block-start: 20px;
+  margin-top: 20px;
   padding: 10px;
   transition: 0.25s;
 }
@@ -746,15 +748,15 @@ select option {
   display: flex;
   list-style: none;
   flex-wrap: wrap;
-  margin-block-end: 16px;
+  margin-bottom: 16px;
 }
 .qa-nav-footer-item {
-  margin-inline-end: 16px;
-  margin-block-end: 8px;
+  margin-right: 16px;
+  margin-bottom: 8px;
 }
 .qa-attribution {
-  margin-inline-end: 10px;
-  margin-block-end: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 #theme-toggle {
   position: absolute;
@@ -782,13 +784,13 @@ select option {
 }
 .qa-form-tall-label,
 .qa-form-wide-label {
-  padding-block-start: 20px;
+  padding-top: 20px;
 }
 .qa-form-tall-ok,
 .qa-form-wide-ok {
   background-color: var(--primary-dark);
   color: var(--on-primary);
-  margin-block-start: 10px;
+  margin-top: 10px;
   padding: 8px 10px !important;
   border-radius: var(--border);
   box-shadow: var(--shadow);
@@ -800,7 +802,7 @@ select option {
 .qa-form-wide-ok::before {
   font-family: 'Material Icons';
   font-size: 18px;
-  margin-inline-end: 10px;
+  margin-right: 10px;
   vertical-align: bottom;
 }
 
@@ -809,26 +811,26 @@ select option {
   color: var(--on-primary);
 }
 .qa-form-tall-data {
-  padding-block-start: 10px;
+  padding-top: 10px;
 }
 .qa-form-wide-data {
-  padding-block-start: 20px;
+  padding-top: 20px;
 }
 .qa-form-tall-note {
-  margin-block-start: 5px;
+  margin-top: 5px;
 }
 .qa-form-tall-buttons,
 .qa-form-wide-buttons {
-  padding-block-start: 10px;
+  padding-top: 10px;
 }
 .qa-form-tall-error {
   color: var(--error);
 }
 .qa-form-tall-data ul {
-  margin-inline-start: 20px;
+  margin-left: 20px;
 }
 .qa-form-tall-data ul li {
-  margin-block-start: 10px;
+  margin-top: 10px;
 }
 .qa-form-tall-data small,
 .qa-form-tall-static a {
@@ -866,7 +868,7 @@ select option {
 .qa-form-tall-button-close,
 .qa-form-light-button-reshow,
 .qa-form-light-button-clearflags {
-  margin-block-start: 10px;
+  margin-top: 10px;
   background-color: var(--selected);
   color: var(--on-selected);
 }
@@ -882,26 +884,27 @@ select option {
 .qa-form-wide-button-hideall,
 .qa-form-light-button-comment,
 .qa-form-tall-button-1 {
-  margin-block-start: 10px;
+  margin-top: 10px;
   background-color: transparent;
   border: 1px solid var(--selected);
   color: var(--selected);
-  padding-block: 6px !important;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
 }
 .qa-form-wide-button-delete_expired,
 .qa-form-wide-button-delete_all,
 .qa-form-wide-button-delete,
 .qa-form-light-button-delete,
 .qa-form-basic-button-delete_hidden {
-  margin-block-start: 10px;
+  margin-top: 10px;
   background-color: var(--error);
   color: var(--on-error);
 }
 .qa-form-basic-button {
-  margin-block-start: 20px;
+  margin-top: 20px;
 }
 .qa-c-list-item .qa-form-light-button-comment {
-  margin-block-start: 2px;
+  margin-top: 2px;
   font-size: 0.9em;
   padding: 3px 10px !important;
 }
@@ -934,13 +937,13 @@ select option {
   flex-wrap: wrap;
 }
 .qam-stats-buttons .qa-voting {
-  margin-block-start: 10px;
+  margin-top: 10px;
 }
 .qa-a-selection {
   background: var(--secondary);
   border-radius: 8px;
   max-width: fit-content;
-  margin-block-end: 16px;
+  margin-bottom: 16px;
 }
 .qa-a-selection input {
   position: absolute;
@@ -961,7 +964,7 @@ select option {
   display: inline-block;
   color: var(--selected);
   vertical-align: middle;
-  margin-inline-end: 8px;
+  margin-right: 8px;
 }
 .qa-a-selection i {
   font-size: 24px;
@@ -976,9 +979,10 @@ select option {
 }
 .qa-a-selection i.selected {
   color: var(--selected);
-  margin-inline-start: 8px;
-  margin-inline-end: 4px;
-  margin-block: 4px;
+  margin-left: 8px;
+  margin-right: 4px;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 /* post content */
 .qa-q-view-content,
@@ -989,7 +993,7 @@ select option {
 }
 .qa-c-item-content {
   font-size: 0.85em;
-  margin-inline-start: 30px;
+  margin-left: 30px;
 }
 .qa-post-content p,
 .qa-part-custom p {
@@ -1001,7 +1005,7 @@ select option {
 }
 .qa-post-content li,
 .qa-part-custom li {
-  margin-inline-start: 25px;
+  margin-left: 25px;
 }
 .qa-post-content ul,
 .qa-part-custom ul,
@@ -1012,8 +1016,8 @@ select option {
 .qa-post-content blockquote {
   background-color: rgba(var(--primary-rgb), 0.12);
   padding: 5px;
-  padding-inline-start: 20px;
-  border-inline-start: 5px solid var(--primary-light);
+  padding-left: 20px;
+  border-left: 5px solid var(--primary-light);
 }
 .qa-post-content table {
   max-width: 100%;
@@ -1047,7 +1051,7 @@ select option {
 .qa-error::before {
   font-family: 'Material Icons';
   font-size: 18px;
-  margin-inline-end: 10px;
+  margin-right: 10px;
   vertical-align: bottom;
 }
 
@@ -1058,7 +1062,7 @@ select option {
 .qa-form-wide-label {
   font-weight: 700;
   display: block;
-  margin-inline-end: 10px;
+  margin-right: 10px;
 }
 .qa-form-tall-image {
   text-align: center;
@@ -1069,11 +1073,11 @@ select option {
   font-size: 18px;
   font-weight: normal;
   vertical-align: middle;
-  padding-inline-end: 8px;
+  padding-right: 8px;
 }
 
 #level .qa-form-wide-static a[href*='message'] {
-  margin-block-start: 10px;
+  margin-top: 10px;
   background-color: var(--selected);
   color: var(--on-selected);
   padding: 7px 16px;
@@ -1087,18 +1091,18 @@ select option {
   font-family: 'Material Icons';
   font-size: 18px;
   vertical-align: middle;
-  margin-inline-start: -5px;
-  margin-inline-end: 10px;
+  margin-left: -5px;
+  margin-right: 10px;
 }
 
 /* category */
 .qa-category-link.qa-cat-favorited {
-  margin-inline-start: 20px;
+  margin-left: 20px;
 }
 .qa-category-link.qa-cat-favorited::before {
   font-family: 'Material Icons';
   position: absolute;
-  margin-inline-start: -20px;
+  margin-left: -20px;
   font-size: 18px;
 }
 
@@ -1110,7 +1114,7 @@ select option {
 .qa-browse-cat-list-3,
 .qa-nav-cat-list-2,
 .qa-nav-cat-list-3 {
-  margin-block-start: 10px;
+  margin-top: 10px;
 }
 .qa-browse-cat-item,
 .qa-nav-cat-item {
@@ -1128,36 +1132,36 @@ select option {
 .qa-browse-cat-open {
   background-color: rgba(0, 0, 0, 0.075);
   display: block;
-  padding-block-end: 1px;
+  padding-bottom: 1px;
 }
 .qa-browse-cat-note a {
   min-width: max-content;
 }
 .qa-browse-cat-link {
-  margin-inline-start: 20px;
-  margin-inline-end: auto;
+  margin-left: 20px;
+  margin-right: auto;
 }
 .qa-browse-cat-link.qa-browse-cat-favorited {
-  margin-inline-start: 40px;
+  margin-left: 40px;
 }
 .qa-browse-cat-link::before {
   font-family: 'Material Icons';
   font-size: 24px;
   position: absolute;
-  margin-inline-start: -26px;
-  margin-block-start: -3px;
+  margin-left: -26px;
+  margin-top: -3px;
 }
 .qa-browse-cat-link.qa-browse-cat-favorited::before {
-  margin-inline-start: -46px;
+  margin-left: -46px;
 }
 .qa-browse-cat-nolink {
-  margin-inline-end: auto;
+  margin-right: auto;
 }
 
 .qa-browse-cat-favorited,
 .qa-nav-cat-favorited {
   position: relative;
-  margin-inline-start: 20px;
+  margin-left: 20px;
 }
 .qa-browse-cat-favorited::after,
 .qa-nav-cat-favorited::after {
@@ -1165,7 +1169,7 @@ select option {
   font-family: 'Material Icons';
   font-size: 18px;
   left: 0;
-  margin-inline-start: -22px;
+  margin-left: -22px;
 }
 
 /* tags page */
@@ -1177,7 +1181,7 @@ select option {
 .qa-top-tags-table .qa-tag-link {
   display: inline-block;
   padding: 0;
-  padding-inline-start: 5px;
+  padding-left: 5px;
 }
 .qa-top-tags-table tr {
   margin: 5px 0;
@@ -1188,11 +1192,12 @@ select option {
   display: flex;
 }
 .qa-top-tags-count {
-  margin-block: -10px;
-  margin-inline-start: -5px;
-  margin-inline-end: 0;
+  margin-top: -10px;
+  margin-bottom: -10px;
+  margin-left: -5px;
+  margin-right: 0;
   padding: 10px;
-  padding-inline-end: 5px;
+  padding-right: 5px;
   border-start-start-radius: var(--border);
   border-start-end-radius: 0;
   border-end-start-radius: var(--border);
@@ -1214,7 +1219,7 @@ select option {
   position: relative;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  padding-block-start: 75%;
+  padding-top: 75%;
   border-radius: var(--border);
 }
 .qa-avatar-link {
@@ -1239,12 +1244,12 @@ select option {
   line-height: 20px;
 }
 .qa-user-link.qa-user-favorited {
-  padding-inline-start: 20px;
+  padding-left: 20px;
 }
 .qa-user-link.qa-user-favorited::before {
   font-family: 'Material Icons';
   position: absolute;
-  margin-inline-start: -20px;
+  margin-left: -20px;
   font-size: 18px;
 }
 
@@ -1264,8 +1269,8 @@ select option {
 .qa-part-ranking-users h2,
 .qa-part-ranking-tags h2,
 .qa-part-nav-list-categories h2 {
-  margin-block-start: 20px;
-  margin-block-end: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   line-height: 1.15;
   font-weight: 500;
   font-size: 20px;
@@ -1277,20 +1282,20 @@ select option {
   font-family: 'Material Icons';
   font-size: 24px;
   vertical-align: middle;
-  margin-inline-end: 16px;
+  margin-right: 16px;
 }
 
 .qa-c-form h2,
 .qa-a-form h2 {
-  padding-block-start: 20px;
-  margin-block-end: 10px;
+  padding-top: 20px;
+  margin-bottom: 10px;
   line-height: 1.15;
   font-weight: 500;
 }
 .qa-part-form-activity h2,
 .qa-part-message-list h2,
 .qa-part-form-password h2 {
-  margin-block-end: 10px;
+  margin-bottom: 10px;
   line-height: 1.15;
   font-weight: 500;
 }
@@ -1298,20 +1303,20 @@ select option {
   background-color: var(--surface);
 }
 .qa-part-nav-list-categories .qa-browse-cat-open {
-  padding-block-end: 10px;
+  padding-bottom: 10px;
 }
 .qa-favoriting input {
   position: absolute;
   z-index: 4;
   opacity: 0;
   width: 30px;
-  margin-inline-start: -2px;
+  margin-left: -2px;
   cursor: pointer;
   height: 30px;
 }
 .qa-favoriting i {
-  margin-block-start: 5px;
-  padding-block-start: 5px;
+  margin-top: 5px;
+  padding-top: 5px;
   font-size: 30px;
   color: var(--link);
 }
@@ -1417,7 +1422,7 @@ select option {
   color: var(--error);
 }
 .qam-vote-info {
-  margin-inline-start: 12px;
+  margin-left: 12px;
   cursor: help;
 }
 /* login register */
@@ -1450,7 +1455,7 @@ select option {
 }
 .qa-related-qs .qa-related-q-list,
 .qa-ask-similar .qa-q-title-list {
-  margin-inline-start: 0;
+  margin-left: 0;
   list-style: none;
 }
 .qa-related-qs .qa-related-q-item,
@@ -1465,7 +1470,7 @@ select option {
 }
 /* extra menu */
 .qam-rest-buttons {
-  margin-inline-start: auto;
+  margin-left: auto;
 }
 .qam-stats-buttons .qa-form-light-button-edit,
 .qam-stats-buttons .qa-form-light-button-close,
@@ -1599,7 +1604,7 @@ select option {
   visibility: visible;
   font-family: 'Material Icons';
   position: absolute;
-  margin-inline-start: -5px;
+  margin-left: -5px;
   font-size: 24px;
 }
 
@@ -1655,7 +1660,7 @@ select option {
   top: -9px;
   right: -2px;
   padding: 1px 7px;
-  padding-inline-end: 26px;
+  padding-right: 26px;
   width: max-content;
   background-color: var(--secondary);
   color: var(--on-secondary);
@@ -1705,8 +1710,9 @@ select option {
   display: inline-block;
   background-color: var(--secondary);
   color: var(--on-secondary);
-  margin-inline-end: 5px;
-  margin-block: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   padding: 6px 16px;
   border-radius: 8px;
 
@@ -1716,25 +1722,25 @@ select option {
 }
 /* feed */
 .qa-feed-link {
-  margin-inline-start: 36px;
-  margin-block-end: 6px;
+  margin-left: 36px;
+  margin-bottom: 6px;
   display: block;
 }
 .qa-feed-link::before {
   font-family: 'Material Icons';
   font-size: 24px;
   position: absolute;
-  margin-inline-start: -36px;
-  margin-block-start: -3px;
+  margin-left: -36px;
+  margin-top: -3px;
 }
 
 .qa-notice {
   background-color: var(--secondary);
   color: var(--on-secondary);
   padding: calc(1.2 * var(--padding-lr)) calc(1.6 * var(--padding-lr));
-  padding-inline-end: 40px;
+  padding-right: 40px;
   position: relative;
-  margin-block-start: 16px;
+  margin-top: 16px;
   border-radius: var(--border);
   box-shadow: var(--shadow);
   line-height: 1.2em;
@@ -1745,7 +1751,7 @@ select option {
   top: 2px;
   background: none;
   border: none;
-  padding-inline-end: 12px !important;
+  padding-right: 12px !important;
 }
 
 /* media queries */
@@ -1754,7 +1760,7 @@ select option {
     left: 4px;
   }
   .qa-logo-link {
-    margin-inline-start: 40px;
+    margin-left: 40px;
   }
   #user-toggle {
     right: 4px;
@@ -1770,17 +1776,17 @@ select option {
 }
 @media (max-width: 767px) {
   .qa-main {
-    margin-block-end: 40px;
+    margin-bottom: 40px;
   }
   .qa-sidepanel,
   .qa-main {
     padding: 0 8px;
   }
   .qa-footer {
-    padding-block-end: 70px;
+    padding-bottom: 70px;
   }
   .qa-q-list-item.qa-q-favorited {
-    padding-inline-start: 7px;
+    padding-left: 7px;
   }
   .qa-nav-main,
   #qa-nav-main .qa-logo {
@@ -1821,8 +1827,8 @@ select option {
     float: left;
   }
   .qa-attribution:nth-child(3) {
-    padding-inline-start: 10px;
-    border-inline-start: 1px solid var(--on-surface);
+    padding-left: 10px;
+    border-left: 1px solid var(--on-surface);
   }
   .qa-top-users-table tbody {
     grid-template-columns: repeat(3, calc(100% / 3 - 10px / 3));
@@ -1834,7 +1840,7 @@ select option {
     box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2),
       0px 24px 38px 3px rgba(0, 0, 0, 0.14),
       0px 9px 46px 8px rgba(0, 0, 0, 0.12);
-    padding-block-start: 56px;
+    padding-top: 56px;
     height: 100vh;
     border-start-end-radius: 30px;
     border-end-end-radius: 30px;
@@ -1860,7 +1866,7 @@ select option {
     bottom: 0;
     right: 0;
     text-align: end;
-    margin-inline-end: 16px;
+    margin-right: 16px;
   }
 
   #theme-toggle {
@@ -1871,11 +1877,11 @@ select option {
     border-radius: 16px;
     box-shadow: var(--fab-shadow);
     padding: 10px;
-    margin-block-end: 16px;
+    margin-bottom: 16px;
   }
   .qam-ask {
     position: unset;
-    margin-block-end: 16px;
+    margin-bottom: 16px;
   }
 }
 @media (min-width: 1024px) {
@@ -1893,8 +1899,8 @@ select option {
   .qa-search-field {
     width: 100% !important;
     background-color: var(--surface);
-    margin-inline-start: 0;
-    padding-inline-start: 16px !important;
+    margin-left: 0;
+    padding-left: 16px !important;
     color: var(--on-surface);
   }
   #search-toggle {
@@ -1902,7 +1908,7 @@ select option {
   }
   .qa-part-form-profile {
     width: calc(60% - 10px);
-    margin-inline-end: 10px;
+    margin-right: 10px;
     float: left;
   }
   .qa-part-form-activity,
@@ -1913,7 +1919,7 @@ select option {
   .qa-part-message-list {
     width: 40%;
     float: right;
-    margin-block-start: 0;
+    margin-top: 0;
   }
   .menu-active .qa-part-form-profile,
   .menu-active .qa-part-form-activity,
@@ -1940,7 +1946,7 @@ select option {
   .menu-active .qam-main-sidepanel,
   .menu-active .qa-footer,
   .menu-active .qa-widgets-full {
-    margin-inline-start: 264px;
+    margin-left: 264px;
   }
 
   .qa-top-tags-table tbody {
@@ -1963,7 +1969,7 @@ select option {
   }
   .menu-active .qa-part-form-profile {
     width: calc(60% - 10px);
-    margin-inline-end: 10px;
+    margin-right: 10px;
     float: left;
   }
   .menu-active .qa-part-form-activity,
@@ -1974,7 +1980,7 @@ select option {
   .menu-active .qa-part-message-list {
     width: 40%;
     float: right;
-    margin-block-start: 0;
+    margin-top: 0;
   }
   .qa-template-user-wall.menu-active .qa-part-message-list,
   .qa-template-messages.menu-active .qa-part-message-list,
@@ -1993,22 +1999,22 @@ select option {
     transform: translateX(-264px);
   }
   .qa-nav-sub-list {
-    margin-inline-start: 264px;
+    margin-left: 264px;
     width: calc(100% - 264px);
   }
   .menu-active .qa-nav-sub-list {
-    margin-inline-start: 0;
+    margin-left: 0;
     width: 100%;
   }
   .qam-main-sidepanel,
   .qa-footer,
   .qa-widgets-full {
-    margin-inline-start: 264px;
+    margin-left: 264px;
   }
   .menu-active .qam-main-sidepanel,
   .menu-active .qa-footer,
   .menu-active .qa-widgets-full {
-    margin-inline-start: 0;
+    margin-left: 0;
   }
   .qa-main {
     width: calc(100% - 400px);

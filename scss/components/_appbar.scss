@@ -21,11 +21,11 @@
   left: 0;
   //   width: 100%;
   height: abstracts.$appbar-height;
-  padding-block-start: 13px;
+  padding-top: 13px;
   z-index: 4;
 }
 .qa-logo-link {
-  //   margin-inline-start: 60px;
+  //   margin-left: 60px;
   font-size: 24px;
   color: var(--on-primary);
 }
@@ -72,7 +72,7 @@
 }
 #user-toggle i {
   font-size: 36px;
-  margin-inline-start: -2px;
+  margin-left: -2px;
   color: var(--on-primary);
 }
 #search-toggle.active {
@@ -131,9 +131,10 @@
 .qa-nav-user-link {
   position: relative;
   display: block;
-  padding-block: 10px;
-  padding-inline-start: 64px;
-  padding-inline-end: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 64px;
+  padding-right: 0;
   color: var(--on-surface);
   border-radius: 20px;
   margin: 4px;
@@ -164,12 +165,12 @@
 }
 .qa-search-field,
 .qa-search-button {
-  margin-block-start: 10px;
+  margin-top: 10px;
   border: none;
 }
 .qa-search-field {
-  margin-block-start: 5px;
-  margin-inline-start: 5px;
+  margin-top: 5px;
+  margin-left: 5px;
   width: calc(100% - 10px) !important;
   background-color: unset;
   font-size: 20px;
