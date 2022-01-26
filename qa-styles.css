@@ -1993,7 +1993,7 @@ select option {
     display: block;
     padding: 10px 0;
   }
-  .qa-q-view-main .qam-rest-buttons {
+  .qa-q-view-main > .qam-stats-buttons .qam-rest-buttons {
     width: 100%;
   }
   .qa-q-view-buttons {
