@@ -1,7 +1,7 @@
 {
-  "name": "Jee Neet QnA",
-  "short_name": "Jee Neet QnA",
-  "description": "Jee Neet QnA is an online community of Jee Neet aspirants where you can ask questions, give answers of questions and add comments to question/answer also can like/dislike question/answer.",
+  "name": "Mayro Pro",
+  "short_name": "Mayro Pro: Material Design Theme",
+  "description": "Material Design Theme for Question2Answer (Q2A).",
 
   "start_url": "/?utm_source=homescreen",
   "scope": "/",
