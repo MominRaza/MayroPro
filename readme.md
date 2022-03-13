@@ -119,10 +119,15 @@ Google Material Design & PWA ready Theme for [Question2Answer ( Q2A )].
 ## Installation
 
 1. [Install Question2Answer][]. This theme requires version 1.8 or later
-2. [Download the latest version][latest release] of theme
-3. Copy the `Mayro-Pro` folder to `qa-theme` directory of your q2a installation (eg. `qa-theme/Mayro-Pro`)
-4. Visit `http://your-q2a-site.com/admin/general` , select the `Mayro Pro` for both the `Site theme` and `Theme for mobile`
-5. Congratulations, Mayro Pro theme is now up and running on your website :smile:
+1. [Download the latest version][latest release] of theme
+1. Copy the `Mayro-Pro` folder to `qa-theme` directory of your q2a installation (eg. `qa-theme/Mayro-Pro`)
+1. Visit `http://your-q2a-site.com/admin/general` , select the `Mayro Pro` for both the `Site theme` and `Theme for mobile`
+1. For non English language only
+   - In `qa-lang/your-lang/qa-lang-main.php` file find meta_order and make sure line is same as this
+   ```php
+   'meta_order' => "^what^when^where^who",
+   ```
+1. Congratulations, Mayro Pro theme is now up and running on your website :smile:
 
 ## Recommended Settings
 
