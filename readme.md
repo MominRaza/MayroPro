@@ -137,13 +137,34 @@ Google Material Design & PWA ready Theme for [Question2Answer ( Q2A )].
 
 - Columns on Tags page, Users page: 1
 
-## Manifest File Setup for PWA
+## Manifest and Service Worker File Setup for PWA
+
+### Step 1
 
 - Edit `manifest.webmanifest` file as your requirements.
-- Add four images in `images` folder to your website root directory (eg. `http://your-q2a-site.com/images/icons-192.png`).
-  - `icons-192.png`, `icons-192-maskable.png`, `icons-512.png` and `icons-512-maskable.png`
-- Add two more images `updates.png` and `ask.png`
+- Add these images in root directory of your website. (eg. `https://your-q2a-site.com/images/icons/192.png`)
+  - `images/`
+    - `icons/`
+      - `icons-192.png`
+      - `icons-192-maskable.png`
+      - `icons-512.png`
+      - `icons-512-maskable.png`
+    - `shortcuts/` (find in `extra` folder)
+      - `updates.png`
+      - `ask.png`
+    - `screenshots/` (optional)
+      - `screenshot1.webp`
+      - `screenshot2.webp`
+      - `screenshot3.webp`
+      - `screenshot4.webp`
+      - `screenshot5.webp`
 - For more info https://web.dev/add-manifest/
+
+### Step 2
+
+- Add `sw_offline.js` in your website root directory. (find in `extra` folder)
+- Add `offline.html` in your website root directory and edit as your requirements. (find in `extra` folder)
+- For more info https://web.dev/service-worker-mindset/
 
 ## Author
 
