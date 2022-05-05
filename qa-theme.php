@@ -12,7 +12,6 @@ class qa_html_theme extends qa_html_theme_base
 
 		$this->output('<link rel="preconnect" href="https://fonts.googleapis.com">');
 		$this->output('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>');
-		$this->output('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:wght@400;500;700&display=swap">');
 		$this->output('<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">');
 
 		parent::head_metas();

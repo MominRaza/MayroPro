@@ -184,7 +184,7 @@ body.dark-theme img {
   }
 }
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: var(--background);
   width: 100%;
   overflow: hidden;
@@ -1188,7 +1188,7 @@ select option {
 .qa-a-item-content {
   line-height: 1.25em;
   font-size: 1.07em;
-  font-family: 'Roboto Serif', serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .qa-c-item-content {
   font-size: 0.85em;
