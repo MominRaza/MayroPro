@@ -7,7 +7,6 @@
   "scope": "/",
   "theme_color": "#EEEEEE",
   "background_color": "#EEEEEE",
-  "orientation": "portrait",
   "display": "standalone",
 
   "icons": [
