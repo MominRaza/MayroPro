@@ -39,13 +39,24 @@
 
   "shortcuts": [
     {
+      "name": "Private Messages",
+      "short_name": "Messages",
+      "url": "/messages/?utm_source=homescreen&utm_medium=shortcut",
+      "icons": [
+        {
+          "src": "/images/shortcuts/messages.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
       "name": "My Updates",
       "short_name": "Updates",
       "url": "/updates/?utm_source=homescreen&utm_medium=shortcut",
       "icons": [
         {
           "src": "/images/shortcuts/updates.png",
-          "sizes": "192x192"
+          "sizes": "96x96"
         }
       ]
     },
@@ -56,7 +67,7 @@
       "icons": [
         {
           "src": "/images/shortcuts/ask.png",
-          "sizes": "192x192"
+          "sizes": "96x96"
         }
       ]
     }
