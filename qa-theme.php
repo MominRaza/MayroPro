@@ -669,7 +669,7 @@ class qa_html_theme extends qa_html_theme_base
 		elseif ($post['selected'])
 			$this->output('<div class="qa-a-selected">&nbsp;</div>');
 		if (isset($post['select_text'])){
-			$this->output('<i class="material-icons selected">done_all</i>');
+			$this->output('<i class="material-icons selected">verified</i>');
 			$this->output('<div class="qa-a-selected-text">' . @$post['select_text'] . '</div>');
 		}
 		$this->output('</div>');

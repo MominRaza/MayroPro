@@ -2013,7 +2013,6 @@ select option {
 @media (min-width: 768px) {
   .qam-main-sidepanel {
     display: flex;
-    justify-content: center;
   }
   .qa-main {
     width: calc(100% - 300px);
@@ -2230,14 +2229,6 @@ select option {
     grid-template-columns: repeat(4, calc(25% - 7.5px));
   }
   .menu-active .qa-top-users-table tbody {
-    grid-template-columns: repeat(5, calc(100% / 5 - 20px / 5));
-  }
-}
-@media (min-width: 1700px) {
-  .qa-top-tags-table tbody {
-    grid-template-columns: repeat(4, calc(25% - 7.5px));
-  }
-  .qa-top-users-table tbody {
     grid-template-columns: repeat(5, calc(100% / 5 - 20px / 5));
   }
 }
