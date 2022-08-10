@@ -169,6 +169,9 @@ input[type='radio'] {
   padding-left: 20px;
   padding-right: 0;
 }
+.qa-q-item-stats {
+  justify-content: left;
+}
 .qa-a-count-selected {
   padding-right: 0;
   padding-left: 22px;

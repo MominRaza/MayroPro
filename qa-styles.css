@@ -827,7 +827,6 @@ select option {
   list-style: none;
   display: flex;
   margin-top: 10px;
-  margin-bottom: 4px;
   overflow: hidden;
   overflow-x: auto;
 }
@@ -865,10 +864,10 @@ select option {
 
 .qa-q-item-stats {
   display: flex;
+  justify-content: right;
   color: var(--link);
   min-height: 10px;
   margin: 0;
-  border-top: 1px solid transparent;
 }
 .qa-voting {
   display: flex;
@@ -879,15 +878,10 @@ select option {
   display: none;
 }
 .qa-a-count {
-  padding: 10px;
-  padding-right: 0;
+  padding-bottom: 10px;
 }
 .qa-a-count-selected {
   padding-right: 22px;
-}
-.qa-template-user-activity .qa-a-count {
-  padding-left: 0;
-  padding-right: 20px;
 }
 .qa-a-count-zero span {
   color: var(--error);
@@ -901,6 +895,7 @@ select option {
   color: var(--selected);
   position: absolute;
   margin-left: 5px;
+  margin-top: 2px;
   font-size: 18px;
 }
 
@@ -1807,6 +1802,7 @@ select option {
   font-family: 'Material Icons';
   position: absolute;
   margin-left: -5px;
+  margin-top: 2px;
   font-size: 24px;
 }
 
@@ -2343,7 +2339,7 @@ select option {
   content: 'lock';
 }
 .qa-a-count-selected::after {
-  content: 'check_circle';
+  content: 'verified';
 }
 .qa-form-tall-ok::before,
 .qa-form-wide-ok::before {
