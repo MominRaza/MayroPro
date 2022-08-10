@@ -562,6 +562,10 @@ select option {
   min-width: max-content;
   padding: 10px 0 13px 0;
 }
+.qa-nav-sub-hot,
+.qa-nav-sub-votes {
+  display: none;
+}
 .qa-nav-sub-link {
   min-width: max-content;
   padding: 10px;
